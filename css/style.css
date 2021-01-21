@@ -748,8 +748,8 @@ body {
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item.active {
   opacity: 0.9;
-  background: #ff4e6a;
-  box-shadow: 0 2px 12px #ff4e6a;
+  background: #e6e6fa;
+  box-shadow: 0 2px 12px #e6e6fa;
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item i {
   font-size: 22px;
@@ -868,9 +868,9 @@ body {
 }
 #nexmoe-content .nexmoe-primary .nexmoe-page-nav .current {
   color: #fff;
-  background: #ff4e6a;
+  background: #e8a8ff;
   opacity: 0.9;
-  box-shadow: 0 2px 12px #ff4e6a;
+  box-shadow: 0 2px 12px #e8a8ff;
 }
 #nexmoe-content .nexmoe-primary .nexmoe-page-nav > * {
   color: #999;
@@ -1065,13 +1065,13 @@ body {
   }
 }
 article .mdui-btn {
-  background-color: #ff4e6a;
+  background-color: #00ced1;
   color: #fff;
   border-radius: 10px;
 }
 article .mdui-btn:focus,
 article .mdui-btn:hover {
-  background-color: #ff4e6a;
+  background-color: #00ced1;
   color: #fff;
 }
 font.douyin {
