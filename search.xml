@@ -38,12 +38,20 @@
 <li>添加X-Forwarded-For: 127.0.0.1</li>
 <img src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" >
 
-<p>可以看到IP地址发生了变化,直接将127.0.0.1输出到了页面上;借助搜索引擎我发现一篇<a href="https://www.cnblogs.com/wangtanzhi/p/12238779.html/" title="大佬的博客">大佬的博客</a>里面实际验证了这是一种SSTI模板注入;</p>
-<li>1</li>
+<p>可以看到IP地址发生了变化,直接将127.0.0.1输出到了页面上;借助搜索引擎我发现一篇<a href="https://www.cnblogs.com/wangtanzhi/p/12238779.html">大佬的博客</a>,里面实际验证了这是一种SSTI模板注入;</p>
+<li>尝试构造payload: </li>
+   <pre><code>
+   X-Forwarded-For: &#123;&#123;system("ls")&#125;&#125;
+   </code></pre>
+
 <img src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" >
 发现flag文件,利用cat拿取flag;
 
-<li>2</li>
+<li>构造payload: </li>
+   <pre><code>
+   X-Forwarded-For: &#123;&#123;system("cat /flag")&#125;&#125;
+   </code></pre>
+
 <img src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" >
 
 <p>于是拿到了flag,放入题目中sumbit;yas</p>

