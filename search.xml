@@ -29,9 +29,20 @@
   <entry>
     <title>BJDCTF2020-The mystery of ip</title>
     <url>/2021/01/22/BJDCTF2020-The-mystery-of-ip/</url>
-    <content><![CDATA[<p>进入靶机后我们会看到左上角的Flag标签，打开后会给我们一份IP地址：172.16.134.121；登录这个IP瞧瞧。</p>
+    <content><![CDATA[<p>先进入题目给的靶机</p>
 <a id="more"></a>
-<p>我们可以先尝试一下抓包，打开bp；<br><img src="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png"></p>
+<h1 id="审视页面"><a href="#审视页面" class="headerlink" title="审视页面"></a>审视页面</h1><p>发现左上角有两个标签: Flag和Hint;</p>
+<h2 id="Hint-php"><a href="#Hint-php" class="headerlink" title="Hint.php"></a>Hint.php</h2><p>给出提示从IP地址入手<br><img src="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png" ></p>
+<h2 id="Flag-php"><a href="#Flag-php" class="headerlink" title="Flag.php"></a>Flag.php</h2><p>Flag标签,打开后会给我们一份IP地址: 172.16.134.121;登录这个IP瞧瞧.<br>使用bp抓取Flag页面的包;<br><img src="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png"><br>尝试更改一下IP地址看看?</p>
+<li>添加X-Forwarded-For: 127.0.0.1</li>
+<img src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" >
+可以看到IP地址发生了变化,直接将127.0.0.1输出到了页面上;借助搜索引擎我发现一篇[大佬的博客](https://www.cnblogs.com/wangtanzhi/p/12238779.html/ "大佬的博客")里面实际验证了这是一种SSTI模板注入;
+<li>1</li>
+<img src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" >
+发现flag文件,利用cat拿取flag;
+<li>2</li>
+<img src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" >
+于是拿到了flag,放入题目中sumbit;yas
 ]]></content>
       <categories>
         <category>wp</category>
