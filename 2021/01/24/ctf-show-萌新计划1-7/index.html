@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>ctf.show-萌新计划1-4 - 人 類 補 完 計 画</title>
+  <title>ctf.show-萌新web1-4 - 人 類 補 完 計 画</title>
   <meta charset="UTF-8">
   <meta name="description" content="V10A2B9S">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -14,21 +14,21 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
   <meta name="description" content="简单记录sql绕过方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ctf.show-萌新计划1-4">
+<meta property="og:title" content="ctf.show-萌新web1-4">
 <meta property="og:url" content="http://example.com/2021/01/24/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/index.html">
 <meta property="og:site_name" content="人 類 補 完 計 画">
 <meta property="og:description" content="简单记录sql绕过方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png">
 <meta property="article:published_time" content="2021-01-24T02:48:40.021Z">
-<meta property="article:modified_time" content="2021-01-24T05:00:44.732Z">
+<meta property="article:modified_time" content="2021-01-24T05:56:55.159Z">
 <meta property="article:author" content="Kyrita">
 <meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1611464458673">
+  <link rel="stylesheet" href="/css/style.css?v=1611467848427">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -172,14 +172,14 @@
         <div class="nexmoe-post">
   
       <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-          <img data-src="https://i.loli.net/2021/01/24/PmWL5QY7Trg4ykl.jpg" data-sizes="auto" alt="ctf.show-萌新计划1-4" class="lazyload">
-          <h1>ctf.show-萌新计划1-4</h1>
+          <img data-src="https://i.loli.net/2021/01/24/PmWL5QY7Trg4ykl.jpg" data-sizes="auto" alt="ctf.show-萌新web1-4" class="lazyload">
+          <h1>ctf.show-萌新web1-4</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月24日</a>
-    <a><i class="nexmoefont icon-areachart"></i>327 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>338 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -190,7 +190,7 @@
   <article>
     <p>简单记录sql绕过方法</p>
 <a id="more"></a>
-<h1 id="Question1"><a href="#Question1" class="headerlink" title="Question1"></a>Question1</h1><h2 id="源码"><a href="#源码" class="headerlink" title="源码:"></a>源码:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>ctf.show萌新计划web1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">&lt;?php</span><br><span class="line"># 包含数据库连接文件</span><br><span class="line">include(&quot;config.php&quot;);</span><br><span class="line"># 判断get提交的参数id是否存在</span><br><span class="line">if(isset($_GET[&#x27;id&#x27;]))&#123;</span><br><span class="line">    $id = $_GET[&#x27;id&#x27;];</span><br><span class="line">    # 判断id的值是否大于999</span><br><span class="line">    if(intval($id) &gt; 999)&#123;</span><br><span class="line">        # id 大于 999 直接退出并返回错误</span><br><span class="line">        die(&quot;id error&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        # id 小于 999 拼接sql语句</span><br><span class="line">        $sql = &quot;select * from article where id = $id order by id limit 1 &quot;;</span><br><span class="line">        echo &quot;执行的sql为：$sql<span class="tag">&lt;<span class="name">br</span>&gt;</span>&quot;;</span><br><span class="line">        # 执行sql 语句</span><br><span class="line">        $result = $conn-&gt;query($sql);</span><br><span class="line">        # 判断有没有查询结果</span><br><span class="line">        if ($result-&gt;num_rows &gt; 0) &#123;</span><br><span class="line">            # 如果有结果，获取结果对象的值$row</span><br><span class="line">            while($row = $result-&gt;fetch_assoc()) &#123;</span><br><span class="line">                echo &quot;id: &quot; . $row[&quot;id&quot;]. &quot; - title: &quot; . $row[&quot;title&quot;]. &quot; <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">hr</span>&gt;</span>&quot; . $row[&quot;content&quot;]. &quot;<span class="tag">&lt;<span class="name">br</span>&gt;</span>&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        # 关闭数据库连接</span><br><span class="line">        $conn-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- flag in id = 1000 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Question1"><a href="#Question1" class="headerlink" title="Question1"></a>Question1</h1><h2 id="源码"><a href="#源码" class="headerlink" title="源码:"></a>源码:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;ctf.show萌新计划web1&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;?php</span><br><span class="line"># 包含数据库连接文件</span><br><span class="line">include(&quot;config.php&quot;);</span><br><span class="line"># 判断get提交的参数id是否存在</span><br><span class="line">if(isset($_GET[&#39;id&#39;]))&#123;</span><br><span class="line">    $id &#x3D; $_GET[&#39;id&#39;];</span><br><span class="line">    # 判断id的值是否大于999</span><br><span class="line">    if(intval($id) &gt; 999)&#123;</span><br><span class="line">        # id 大于 999 直接退出并返回错误</span><br><span class="line">        die(&quot;id error&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        # id 小于 999 拼接sql语句</span><br><span class="line">        $sql &#x3D; &quot;select * from article where id &#x3D; $id order by id limit 1 &quot;;</span><br><span class="line">        echo &quot;执行的sql为：$sql&lt;br&gt;&quot;;</span><br><span class="line">        # 执行sql 语句</span><br><span class="line">        $result &#x3D; $conn-&gt;query($sql);</span><br><span class="line">        # 判断有没有查询结果</span><br><span class="line">        if ($result-&gt;num_rows &gt; 0) &#123;</span><br><span class="line">            # 如果有结果，获取结果对象的值$row</span><br><span class="line">            while($row &#x3D; $result-&gt;fetch_assoc()) &#123;</span><br><span class="line">                echo &quot;id: &quot; . $row[&quot;id&quot;]. &quot; - title: &quot; . $row[&quot;title&quot;]. &quot; &lt;br&gt;&lt;hr&gt;&quot; . $row[&quot;content&quot;]. &quot;&lt;br&gt;&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        # 关闭数据库连接</span><br><span class="line">        $conn-&gt;close();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;!-- flag in id &#x3D; 1000 --&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 <p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41617034/article/details/94040212">CG-CTF</a>才知道这题考察的是intval漏洞，需要满足id=1000，同时intval($id)&gt;999要返回false;</p>
 <li>这里可以使用'1000'字符绕过，'1000'进行intval后还是1000("1000"同理) </li>
 
@@ -269,16 +269,6 @@ if(preg_match("/or|\-|\\\|\/|\\*|\<|\>|\!|x|hex|\(|\)|\+|select/i",$id))
 </section>
   </div>
 </div>
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-<!-- 代码语言 -->
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-<!-- 代码块复制 -->
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
-<!-- 代码块收缩 -->
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
-<!-- 代码块折行 -->
-<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
 
     </div>
   </div>
@@ -292,7 +282,7 @@ if(preg_match("/or|\-|\\\|\/|\\*|\<|\>|\!|x|hex|\(|\)|\+|select/i",$id))
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1611464458676"></script>
+ <script src="/js/app.js?v=1611467848428"></script>
 
   
 
