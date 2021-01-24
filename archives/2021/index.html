@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1611471306506">
+  <link rel="stylesheet" href="/css/style.css?v=1611498931526">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -216,21 +216,34 @@
         <a href="/2021/01/21/EZre/">
             
                 <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="https://i.loli.net/2019/07/21/5d33d5dc1531213134.png" data-sizes="auto" alt="RE-内涵的软件" class="lazyload">
-                    <h1>RE-内涵的软件</h1>
+                    <img data-src="https://i.loli.net/2019/07/21/5d33d5dc1531213134.png" data-sizes="auto" alt="RE-新年快乐" class="lazyload">
+                    <h1>RE-新年快乐</h1>
                 </div>
             
         </a>
 
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月21日</a>
-            <a><i class="nexmoefont icon-areachart"></i>8 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>133 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
         <article>
             
-                <p>前方维护，立入禁止</p>
+                <h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><img src="https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png" >
+
+
+<p>是叫我们输入一个flag,看看就知道没什么卵用;</p>
+<p>拖进IDA后啥也没弄到，这时我就(想到)是不是需要脱壳??</p>
+<h2 id="先脱壳"><a href="#先脱壳" class="headerlink" title="先脱壳"></a>先脱壳</h2><img src="https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png" >
+
+<p>将脱壳后的exe程序拖入IDA中;<br>这时便可以看到脱掉壳的exe已经可以浏览函数了;<br>shift+F12看一下</p>
+<img src="https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png" >
+
+<p>选中到flag F5跳转到函数页面分析得知是要我们输入一个字符串;</p>
+<img src="https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png" >
+
+<p>且字符串和str2比较,相同则得到flag;由此得知flag=”flag{HappyNewYear!}”</p>
 
             
         </article>
@@ -282,7 +295,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1611471306507"></script>
+ <script src="/js/app.js?v=1611498931527"></script>
 
   
 
