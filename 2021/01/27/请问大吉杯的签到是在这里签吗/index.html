@@ -4,7 +4,7 @@
 
 <head>
   
-  <title>BJDCTF2020-The mystery of ip - 人 類 補 完 計 画</title>
+  <title>请问大吉杯的签到是在这里签吗? - 人 類 補 完 計 画</title>
   <meta charset="UTF-8">
   <meta name="description" content="V10A2B9S">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,27 +12,35 @@
   
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
-  <meta name="description" content="先进入题目给的靶机">
+  <meta name="description" content="之前没接触过zlib文件格式;一直在思考如何将文件中的zlib解压，这一题整整忙了我两天.我是傻逼.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BJDCTF2020-The mystery of ip">
-<meta property="og:url" content="http://example.com/2021/01/22/BJDCTF2020-The-mystery-of-ip/index.html">
+<meta property="og:title" content="请问大吉杯的签到是在这里签吗?">
+<meta property="og:url" content="http://example.com/2021/01/27/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/index.html">
 <meta property="og:site_name" content="人 類 補 完 計 画">
-<meta property="og:description" content="先进入题目给的靶机">
+<meta property="og:description" content="之前没接触过zlib文件格式;一直在思考如何将文件中的zlib解压，这一题整整忙了我两天.我是傻逼.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png">
-<meta property="og:image" content="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png">
-<meta property="og:image" content="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png">
-<meta property="og:image" content="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png">
-<meta property="og:image" content="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png">
-<meta property="article:published_time" content="2021-01-22T02:22:19.668Z">
-<meta property="article:modified_time" content="2021-01-22T15:27:25.331Z">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png">
+<meta property="article:published_time" content="2021-01-27T02:16:08.102Z">
+<meta property="article:modified_time" content="2021-01-27T02:49:45.455Z">
 <meta property="article:author" content="Kyrita">
-<meta property="article:tag" content="Web">
+<meta property="article:tag" content="misc">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1611715819130">
+  <link rel="stylesheet" href="/css/style.css?v=1611715819094">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -183,14 +191,14 @@
         <div class="nexmoe-post">
   
       <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-          <img data-src="https://i.loli.net/2021/01/22/4I7GRrXAjDlWNYS.jpg" data-sizes="auto" alt="BJDCTF2020-The mystery of ip" class="lazyload">
-          <h1>BJDCTF2020-The mystery of ip</h1>
+          <img data-src="https://i.loli.net/2021/01/27/hXB3ERa7rzskUvf.jpg" data-sizes="auto" alt="请问大吉杯的签到是在这里签吗?" class="lazyload">
+          <h1>请问大吉杯的签到是在这里签吗?</h1>
       </div>
   
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月22日</a>
-    <a><i class="nexmoefont icon-areachart"></i>212 字</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月27日</a>
+    <a><i class="nexmoefont icon-areachart"></i>408 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
@@ -199,32 +207,45 @@
   </div>
 
   <article>
-    <p>先进入题目给的靶机</p>
+    <p>之前没接触过zlib文件格式;一直在思考如何将文件中的zlib解压，这一题整整忙了我两天.<br>我是傻逼.</p>
 <a id="more"></a>
-<h1 id="审视页面"><a href="#审视页面" class="headerlink" title="审视页面"></a>审视页面</h1><p>发现左上角有两个标签: Flag和Hint;</p>
-<h2 id="Hint-php"><a href="#Hint-php" class="headerlink" title="Hint.php"></a>Hint.php</h2><p>给出提示从IP地址入手.<br><img src="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png" ><br>那我们就来看看第二个标签.</p>
-<h2 id="Flag-php"><a href="#Flag-php" class="headerlink" title="Flag.php"></a>Flag.php</h2><p>Flag标签,打开后会给我们一份IP地址: 172.16.134.121;<br>登录这个IP瞧瞧.</p>
-<p>使用bp抓取Flag页面的包;<br><img src="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png"><br>尝试更改一下IP地址看看?</p>
-<li>添加X-Forwarded-For: 127.0.0.1</li>
-<img src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" >
+<h2 id="Notepad查看"><a href="#Notepad查看" class="headerlink" title="Notepad查看"></a>Notepad查看</h2><p>把下载下来的png用Notepad打开，发现里面还藏着一个png.</p>
+<img src="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png" >
 
-<p>可以看到IP地址发生了变化,直接将127.0.0.1输出到了页面上;借助搜索引擎我发现一篇<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangtanzhi/p/12238779.html">大佬的博客</a>,里面实际验证了这是一种SSTI模板注入;</p>
-<li>尝试构造payload: </li>
-   <pre><code>
-   X-Forwarded-For: &#123;&#123;system("ls")&#125;&#125;
-   </code></pre>
+<h2 id="我们用binwalk分离一下"><a href="#我们用binwalk分离一下" class="headerlink" title="我们用binwalk分离一下"></a>我们用binwalk分离一下</h2><img src="https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png" >
 
-<img src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" >
-发现flag文件,利用cat拿取flag;
+<img src="https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png" >
 
-<li>构造payload: </li>
-   <pre><code>
-   X-Forwarded-For: &#123;&#123;system("cat /flag")&#125;&#125;
-   </code></pre>
+<p>发现分离文件中有一张png,一张在zip里的png，一份空白文档(我以为有什么妙用,缩放(并不是)二维码什么的)以及一份zlib文件;(接下来的几天里我一直在攻略这份zlib)</p>
+<img src="https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png" >
 
-<img src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" >
+<p>依据在此,我更加确信这是出错在zlib.于是在搜索引擎里不断地搜索关于zlib解压的方法(我是傻逼)<br>···<br>···<br>后来,我才知道,有zlib说明大概率是LSB隐写;</p>
+<p>在此之前,我先把分离出的4张png都扫了一遍</p>
+<img src="https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg" >
 
-<p>于是拿到了flag,放入题目中sumbit;yas</p>
+<img src="https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg" >
+
+<img src="https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg" >
+
+<img src="https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg" >
+
+<p>可以清楚地知道,第二张图已经明确告诉我们扫到第二张就行了,error就在png2;</p>
+<img src="https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png" >
+
+<h2 id="放入stegsolve-记住此刻原图的形状-我觉得倒像是一直兔子的"><a href="#放入stegsolve-记住此刻原图的形状-我觉得倒像是一直兔子的" class="headerlink" title="放入stegsolve ##(记住此刻原图的形状,我觉得倒像是一直兔子的)"></a>放入stegsolve ##(记住此刻原图的形状,我觉得倒像是一直兔子的)</h2><p>然后我们查看最低位通道图</p>
+<img src="https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png" >
+
+<p>是的,没看错,二维码变了;但是还不可以扫喔.<br>接下来我们需要将原图和这张二维码异或一下.</p>
+<img src="https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png" >
+不过我还找到另一个简便的出现方式
+<img src="https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png" >
+不约而同地,两张图都出现了神秘的符号;
+百度后了解了这是猪圈密码.
+<img src="https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png" >
+
+<p>按照这个解密就好了;</p>
+<p>最后得到flag:flag{dajiadoaidjb}</p>
+<p>还是挺简单的,但是之前没接触过zlib,stegsolve用得也不熟练,导致这几天steam时长大大缩小/(ㄒoㄒ)/~~</p>
 
   </article>
 
@@ -232,7 +253,7 @@
     
   <div class="nexmoe-post-copyright">
     <strong>本文作者：</strong>Kyrita<br>
-    <strong>本文链接：</strong><a href="http://example.com/2021/01/22/BJDCTF2020-The-mystery-of-ip/" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;22&#x2F;BJDCTF2020-The-mystery-of-ip&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;22&#x2F;BJDCTF2020-The-mystery-of-ip&#x2F;</a><br>
+    <strong>本文链接：</strong><a href="http://example.com/2021/01/27/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;27&#x2F;%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;27&#x2F;%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97&#x2F;</a><br>
     
       <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
     
@@ -246,7 +267,7 @@
         <a class="nexmoefont icon-appstore-fill -link" href="/categories/wp/">wp</a>
     
     
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Web/" rel="tag">Web</a>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/misc/" rel="tag">misc</a>
     
 </div>
 
@@ -282,7 +303,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1611715819131"></script>
+ <script src="/js/app.js?v=1611715819097"></script>
 
   
 
