@@ -11,7 +11,7 @@
   
   
 
-  <link rel="shortcut icon" href="https://ftp.bmp.ovh/imgs/2021/01/db92cd5ae1614cd5.png" type="image/png" />
+  <link rel="shortcut icon" href="https://ftp.bmp.ovh/imgs/2021/01/4c9478fe93557c8b.jpg" type="image/png" />
   <meta name="description" content="V10A2B9S">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MIKUTAP">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1611843529340">
+  <link rel="stylesheet" href="/css/style.css?v=1611846191648">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -86,12 +86,17 @@
     </div>
     <aside id="nexmoe-sidebar">
   
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="" onsubmit="return search();">
-            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
-        </form>
-    </div>
+  <!-- 使用 /js/local-search.js 不要使用 js/local-search.js ，因为最前面的 / 表示网站的根目录，不加的话，在文章页面会无法载入 local-search.js 脚本文件 ； -->
+<script src="/js/local-search.js" type="text/javascript" language="javascript"></script>
+<link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.css" />
+
+<div class="nexmoe-widget-wrap">
+<div class="nexmoe-widget nexmoe-search">
+<form id="search_form">
+<!-- 参考： https://github.com/theme-next/hexo-theme-next/blob/master/layout/_partials/search/localsearch.swig -->
+<label><a role="button" class="popup-trigger" style="display:inline-block;color:#a3a8ae;width:100%;padding:20px;height:58px;line-height:23.5px;text-align:center;font-size:16px;"><i class="fa fa-search fa-fw fa-lg" style="margin-right:5px;"></i>全文搜索</a></label>
+</form>
+</div>
 </div>
   
   <div class="nexmoe-widget-wrap">
@@ -262,8 +267,28 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1611843529342"></script>
+ <script src="/js/app.js?v=1611846191649"></script>
 
+  <div class="search-pop-overlay">
+<div class="popup search-popup">
+<div class="search-header">
+<span class="search-icon">
+<i class="fa fa-search"></i>
+</span>
+<div class="search-input-container">
+<input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+</div>
+<span class="popup-btn-close">
+<i class="fa fa-times-circle"></i>
+</span>
+</div>
+<div id="search-result">
+<div id="no-result">
+<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+</div>
+</div>
+</div>
+</div> 
 </body>
 
 </html>

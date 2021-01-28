@@ -32,8 +32,3 @@ for (let link of links) {
 $("table")
   .has("img")
   .addClass("nexmoe-album");
-
-function search() {
-  window.open($("#search_form").attr("action_e") + " " + $("#search_value").val());
-  return false;
-}
