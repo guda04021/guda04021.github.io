@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>ctf.show-萌新web1-4 - 人 類 補 完 計 画</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="V10A2B9S">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="简单记录sql绕过方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctf.show-萌新web1-4">
+<meta property="og:url" content="http://example.com/2021/01/24/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/index.html">
+<meta property="og:site_name" content="人 類 補 完 計 画">
+<meta property="og:description" content="简单记录sql绕过方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png">
+<meta property="article:published_time" content="2021-01-24T02:48:40.021Z">
+<meta property="article:modified_time" content="2021-01-24T06:25:42.016Z">
+<meta property="article:author" content="Kyrita">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css?v=1611814134708">
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Kyrita" class="mdui-btn mdui-btn-icon"><img src="https://i.loli.net/2021/01/22/uN3eW6zlCXSI7fB.jpg" alt="Kyrita"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Kyrita">
+            <img src="https://i.loli.net/2021/01/22/uN3eW6zlCXSI7fB.jpg" alt="Kyrita" alt="Kyrita">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>9</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about/" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:kyrita.top" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=fqM5fPgY" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(135, 206, 250);background-color: rgba(135, 206, 250, .10);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/33973219" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/guda04021" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://steamcommunity.com/profiles/76561198317198297" target="_blank" mdui-tooltip="{content: 'Steam'}" style="color: rgb(65, 105, 225);background-color: rgba(65, 105, 225, .15);">
+            <i class="nexmoefont icon-steam"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/wiki/">wiki</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/wp/">wp</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Re/" style="font-size: 15px;">Re</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/crypto/" style="font-size: 10px;">crypto</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/pwn/" style="font-size: 20px;">pwn</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  <div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=450 src="//music.163.com/outchain/player?type=0&id=5470527098&auto=0&height=430"></iframe>
+</div>
+</aside>
+
+
+
+    <div class="nexmoe-copyright">
+        &copy; 2021 Kyrita
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://i.loli.net/2021/01/24/PmWL5QY7Trg4ykl.jpg" data-sizes="auto" alt="ctf.show-萌新web1-4" class="lazyload">
+          <h1>ctf.show-萌新web1-4</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月24日</a>
+    <a><i class="nexmoefont icon-areachart"></i>890 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>简单记录sql绕过方法</p>
+<a id="more"></a>
+<h1 id="Question1"><a href="#Question1" class="headerlink" title="Question1"></a>Question1</h1><h2 id="源码"><a href="#源码" class="headerlink" title="源码:"></a>源码:</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token prolog">&lt;?php
+# 包含数据库连接文件
+include("config.php");
+# 判断get提交的参数id是否存在
+if(isset($_GET['id']))&#123;
+    $id = $_GET['id'];
+    # 判断id的值是否大于999
+    if(intval($id) > 999)&#123;
+        # id 大于 999 直接退出并返回错误
+        die("id error");
+    &#125;else&#123;
+        # id 小于 999 拼接sql语句
+        $sql = "select * from article where id = $id order by id limit 1 ";
+        echo "执行的sql为：$sql&lt;br>";
+        # 执行sql 语句
+        $result = $conn->query($sql);
+        # 判断有没有查询结果
+        if ($result->num_rows > 0) &#123;
+            # 如果有结果，获取结果对象的值$row
+            while($row = $result->fetch_assoc()) &#123;
+                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
+            &#125;
+        &#125;
+        # 关闭数据库连接
+        $conn->close();
+    &#125;
+    
+&#125;else&#123;
+    highlight_file(__FILE__);
+&#125;
+
+?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- flag in id = 1000 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41617034/article/details/94040212">CG-CTF</a>才知道这题考察的是intval漏洞，需要满足id=1000，同时intval($id)&gt;999要返回false;</p>
+<li>这里可以使用'1000'字符绕过，'1000'进行intval后还是1000("1000"同理) </li>   
+
+<li>125<< 3也可以，而8000>>3却不行.</li>   
+
+<li>当然可以使用680|320绕过</li>   
+
+<li>也可以使用hex(16进制)绕过：例如0x3e8</li>   
+
+<img src="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png" >
+
+<p>任意一种方法都可get flag</p>
+<h1 id="Question2"><a href="#Question2" class="headerlink" title="Question2"></a>Question2</h1><h2 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token prolog">&lt;?php
+# 包含数据库连接文件
+include("config.php");
+# 判断get提交的参数id是否存在
+if(isset($_GET['id']))&#123;
+        $id = $_GET['id'];
+    if(preg_match("/or|\+/i",$id))&#123;
+            die("id error");
+    &#125;
+    # 判断id的值是否大于999
+    if(intval($id) > 999)&#123;
+        # id 大于 999 直接退出并返回错误
+        die("id error");
+    &#125;else&#123;
+        # id 小于 999 拼接sql语句
+        $sql = "select * from article where id = $id order by id limit 1 ";
+        echo "执行的sql为：$sql&lt;br>";
+        # 执行sql 语句
+        $result = $conn->query($sql);
+        # 判断有没有查询结果
+        if ($result->num_rows > 0) &#123;
+            # 如果有结果，获取结果对象的值$row
+            while($row = $result->fetch_assoc()) &#123;
+                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
+            &#125;
+        &#125;
+        # 关闭数据库连接
+        $conn->close();
+    &#125;
+    
+&#125;else&#123;
+    highlight_file(__FILE__);
+&#125;
+
+?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- flag in id = 1000 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>keycode：</li>
+<pre><code>
+if(preg_match("/or|\+/i",$id))
+</code></pre>
+
+<p>payload:同样用’1000’绕过</p>
+<h1 id="Question3"><a href="#Question3" class="headerlink" title="Question3"></a>Question3</h1><h2 id="源码-2"><a href="#源码-2" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token prolog">&lt;?php
+# 包含数据库连接文件
+include("config.php");
+# 判断get提交的参数id是否存在
+if(isset($_GET['id']))&#123;
+        $id = $_GET['id'];
+    if(preg_match("/or|\-|\\|\*|\&lt;|\>|\!|x|hex|\+/i",$id))&#123;
+            die("id error");
+    &#125;
+    # 判断id的值是否大于999
+    if(intval($id) > 999)&#123;
+        # id 大于 999 直接退出并返回错误
+        die("id error");
+    &#125;else&#123;
+        # id 小于 999 拼接sql语句
+        $sql = "select * from article where id = $id order by id limit 1 ";
+        echo "执行的sql为：$sql&lt;br>";
+        # 执行sql 语句
+        $result = $conn->query($sql);
+        # 判断有没有查询结果
+        if ($result->num_rows > 0) &#123;
+            # 如果有结果，获取结果对象的值$row
+            while($row = $result->fetch_assoc()) &#123;
+                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
+            &#125;
+        &#125;
+        # 关闭数据库连接
+        $conn->close();
+    &#125;
+    
+&#125;else&#123;
+    highlight_file(__FILE__);
+&#125;
+
+?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- flag in id = 1000 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>keycode:</li>
+<pre><code>
+if(preg_match("/or|\-|\\|\*|\<|\>|\!|x|hex|\+/i",$id))
+</code></pre>
+同理
+
+
+<h1 id="Question4"><a href="#Question4" class="headerlink" title="Question4"></a>Question4</h1><h2 id="源码-3"><a href="#源码-3" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token prolog">&lt;?php
+# 包含数据库连接文件
+include("config.php");
+# 判断get提交的参数id是否存在
+if(isset($_GET['id']))&#123;
+        $id = $_GET['id'];
+    if(preg_match("/or|\-|\\\|\/|\\*|\&lt;|\>|\!|x|hex|\(|\)|\+|select/i",$id))&#123;
+            die("id error");
+    &#125;
+    # 判断id的值是否大于999
+    if(intval($id) > 999)&#123;
+        # id 大于 999 直接退出并返回错误
+        die("id error");
+    &#125;else&#123;
+        # id 小于 999 拼接sql语句
+        $sql = "select * from article where id = $id order by id limit 1 ";
+        echo "执行的sql为：$sql&lt;br>";
+        # 执行sql 语句
+        $result = $conn->query($sql);
+        # 判断有没有查询结果
+        if ($result->num_rows > 0) &#123;
+            # 如果有结果，获取结果对象的值$row
+            while($row = $result->fetch_assoc()) &#123;
+                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
+            &#125;
+        &#125;
+        # 关闭数据库连接
+        $conn->close();
+    &#125;
+    
+&#125;else&#123;
+    highlight_file(__FILE__);
+&#125;
+
+?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- flag in id = 1000 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>keycode:</li>
+<pre><code>
+if(preg_match("/or|\-|\\\|\/|\\*|\<|\>|\!|x|hex|\(|\)|\+|select/i",$id))
+</code></pre>
+
+<p>payload:使用’1000’</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Kyrita<br>
+    <strong>本文链接：</strong><a href="http://example.com/2021/01/24/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;24&#x2F;ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;24&#x2F;ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/wp/">wp</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Web/" rel="tag">Web</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '3a1d03ac6ff28de78bee',
+        clientSecret: '8f832c7d5a9bddebc5fb0ee387c6c30743340a56',
+        id: decodeURI("{{ page.url }}"),
+        repo: 'Discussion',
+        owner: 'guda04021',
+        admin: 'guda04021'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ <script src="/js/app.js?v=1611814134709"></script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
