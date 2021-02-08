@@ -547,10 +547,13 @@ mq <span class="token operator">=</span> <span class="token builtin">pow</span><
 m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mp<span class="token operator">-</span>mq<span class="token punctuation">)</span><span class="token operator">*</span>I<span class="token punctuation">)</span><span class="token operator">%</span>p<span class="token punctuation">)</span><span class="token operator">*</span>q<span class="token operator">+</span>mq       <span class="token comment">#求明文公式</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment">#转为十六进制</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<li>pow(a,b,c)表示 (a^b)%c </li>>
+<li>pow(a,b,c)表示 a^b%c 即a^b mod c</li>
 
-<p>待写…</p>
-]]></content>
+<h3 id="数学运算规律"><a href="#数学运算规律" class="headerlink" title="数学运算规律"></a>数学运算规律</h3><p>a^b%p = ((a%p)^b)%p<br>若a≡b(%p),则对任意的c,都有(a+c)≡(b+c)(%p)<br>若a≡b(%p),则对任意的c,都有(a<em>c)≡(b</em>c)(%p)<br>若a≡b(%p),对任意的c,都有c≡d(%p),那么(a+c)≡(b+d)(%p),(a<em>c)≡(b</em>d)(%p)</p>
+<p>运算推论:参考 <a href="https://blog.csdn.net/mikecoke/article/details/105967809?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242">https://blog.csdn.net/mikecoke/article/details/105967809?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242</a></p>
+<img src = 'https://ftp.bmp.ovh/imgs/2021/02/6477b861b60b9672.png' />
+
+<img src = 'https://ftp.bmp.ovh/imgs/2021/02/2488b83b697b9b94.png' />]]></content>
       <categories>
         <category>crypto</category>
       </categories>
