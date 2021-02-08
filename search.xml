@@ -510,4 +510,52 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
         <tag>Re</tag>
       </tags>
   </entry>
+  <entry>
+    <title>RSA加密算法详细解说</title>
+    <url>/2021/02/08/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</url>
+    <content><![CDATA[<p>RSA加密算法是一种非对称加密算法,加密由公钥,私钥,明文,密文四部分组成.</p>
+<a id="more"></a>
+<h2 id="取模运算"><a href="#取模运算" class="headerlink" title="取模运算"></a>取模运算</h2><p>a mod n ≡ b表示a与b对模n同余(a,b分别除以n)</p>
+<li>举个栗子: 3 mod 2 ≡ 1 <--> 1mod2=1且3mod2=1</li>
+
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>任意给定正整数n，计算在小于等于n的正整数之中，有多少个与n构成互质关系？计算这个值的方法就叫做欧拉函数，以φ(n)表示.</p>
+<li>例如，在1到8之中，与8形成互质关系的是1、3、5、7，所以φ(n)=4</li>
+
+<h3 id="在RSA算法中，欧拉函数对以下定理成立"><a href="#在RSA算法中，欧拉函数对以下定理成立" class="headerlink" title="在RSA算法中，欧拉函数对以下定理成立"></a>在RSA算法中，欧拉函数对以下定理成立</h3><p>1.如果n可以分解成两个互质的整数之积，即n=p×q，则有：φ(n)=φ(pq)=φ( p )φ( q );<br>2.当p为质数，φ( p )=p-1</p>
+<p>所以有φ(n)=(p-1)(q-1)</p>
+<h2 id="欧拉定理与模反元素"><a href="#欧拉定理与模反元素" class="headerlink" title="欧拉定理与模反元素"></a>欧拉定理与模反元素</h2><p>欧拉函数的用处，在于欧拉定理<br>“欧拉定理”指的是:<br>如果两个正整数a和n互质，则n的欧拉函数φ(n)可以让下面的等式成立：<br>a^φ(n)≡1(modn)<br>也就是说，a的φ(n)次方被n除的余数为1</p>
+<h3 id="模反元素的推导过程如下"><a href="#模反元素的推导过程如下" class="headerlink" title="模反元素的推导过程如下:"></a>模反元素的推导过程如下:</h3><p>根据欧拉定理，有：<br>a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
+<p>令b=a^(φ(n)−1)，得：</p>
+<p>ab≡1(modn)</p>
+<li>b就是a的模反元素</li>
+<li>所以，如果两个正整数a和n互质，那么一定可以找到整数b使得ab-1被n整除，或者说ab被n除的余数是1</li>
+
+<li>所以求私钥d的公式：d*e≡1mod[(p-1)(q-1)]</li>
+
+<p>代入φ(n) = (p-1)(q-1),φ(n) 与e互质，k为正整数<br>可化为：d= (k*φ(n)+1)/e</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">公钥    n -->  两素数p、q之积
+        e -->  1&lt;e<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>(p-1)·(q-1)且e与乘积互质</span>
+<span class="token attr-name">私钥</span>    <span class="token attr-name">d</span> <span class="token attr-name">--</span><span class="token punctuation">></span></span>  d·e ≡ 1 mod[(p-1)·(q-1)]
+        n -->  同公钥n
+加密    ----->  C ≡ M^e mod(n)   M为明文
+解密    ----->  M ≡ C^d mod(n)   C为密文<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="由p-q-dp-dq-c求明文的算法"><a href="#由p-q-dp-dq-c求明文的算法" class="headerlink" title="由p,q,dp,dq,c求明文的算法"></a>由p,q,dp,dq,c求明文的算法</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
+I <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>q<span class="token punctuation">,</span>p<span class="token punctuation">)</span>
+mp <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dp<span class="token punctuation">,</span>p<span class="token punctuation">)</span>
+mq <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dq<span class="token punctuation">,</span>q<span class="token punctuation">)</span>               <span class="token comment">#求幂取模运算</span>
+
+m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mp<span class="token operator">-</span>mq<span class="token punctuation">)</span><span class="token operator">*</span>I<span class="token punctuation">)</span><span class="token operator">%</span>p<span class="token punctuation">)</span><span class="token operator">*</span>q<span class="token operator">+</span>mq       <span class="token comment">#求明文公式</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment">#转为十六进制</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li>pow(a,b,c)表示 (a^b)%c </li>>
+
+<p>待写…</p>
+]]></content>
+      <categories>
+        <category>crypto</category>
+      </categories>
+      <tags>
+        <tag>wiki</tag>
+      </tags>
+  </entry>
 </search>
