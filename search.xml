@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>BJDCTF2020-The mystery of ip</title>
-    <url>/BJDCTF2020-The-mystery-of-ip/</url>
+    <url>/child/BJDCTF2020-The-mystery-of-ip/</url>
     <content><![CDATA[<p>先进入题目给的靶机</p>
 <a id="more"></a>
 <h1 id="审视页面"><a class="anchor" href="#审视页面">#</a> 审视页面</h1>
@@ -42,7 +42,7 @@
   </entry>
   <entry>
     <title>RE-新年快乐</title>
-    <url>/EZre/</url>
+    <url>/child/EZre/</url>
     <content><![CDATA[<h1 id="新年快乐"><a class="anchor" href="#新年快乐">#</a> 新年快乐</h1>
 <a id="more"></a>
 <img src="https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png" >
@@ -67,7 +67,7 @@ shift+F12 看一下</p>
   </entry>
   <entry>
     <title>HASH破解</title>
-    <url>/HASH%E7%A0%B4%E8%A7%A3/</url>
+    <url>/child/HASH%E7%A0%B4%E8%A7%A3/</url>
     <content><![CDATA[<p>待写</p>
 <a id="more"></a>
 <p>简单论述 windows hash 破解</p>
@@ -81,7 +81,7 @@ shift+F12 看一下</p>
   </entry>
   <entry>
     <title>RSA加密算法详细解说</title>
-    <url>/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</url>
+    <url>/child/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</url>
     <content><![CDATA[<p>RSA 加密算法是一种非对称加密算法，加密由公钥，私钥，明文，密文四部分组成.</p>
 <a id="more"></a>
 <h2 id="取模运算"><a class="anchor" href="#取模运算">#</a> 取模运算</h2>
@@ -129,7 +129,7 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
   </entry>
   <entry>
     <title>XOR</title>
-    <url>/XOR/</url>
+    <url>/child/XOR/</url>
     <content><![CDATA[<p>关于 python xor 的脚本</p>
 <a id="more"></a>
 <h2 id="ida打开看看"><a class="anchor" href="#ida打开看看">#</a> IDA 打开看看</h2>
@@ -155,7 +155,7 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
   </entry>
   <entry>
     <title>Rip覆盖</title>
-    <url>/Rip%E8%A6%86%E7%9B%96/</url>
+    <url>/child/Rip%E8%A6%86%E7%9B%96/</url>
     <content><![CDATA[<p>实属栈溢出.</p>
 <a id="more"></a>
 <img src="https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png" >
@@ -186,7 +186,7 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
   </entry>
   <entry>
     <title>ciscn_2019_n_1</title>
-    <url>/ciscn-2019-n-1/</url>
+    <url>/child/ciscn-2019-n-1/</url>
     <content><![CDATA[<p>可能是栈溢出吗</p>
 <a id="more"></a>
 <h2 id="先放出pwn的checksec"><a class="anchor" href="#先放出pwn的checksec">#</a> 先放出 pwn 的 checksec</h2>
@@ -215,7 +215,7 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
   </entry>
   <entry>
     <title>ctf.show-萌新web1-4</title>
-    <url>/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/</url>
+    <url>/child/ctf-show-%E8%90%8C%E6%96%B0%E8%AE%A1%E5%88%921-7/</url>
     <content><![CDATA[<p>简单记录 sql 绕过方法</p>
 <a id="more"></a>
 <h1 id="question1"><a class="anchor" href="#question1">#</a> Question1</h1>
@@ -299,7 +299,7 @@ if(preg_match("/or|\-|\\\|\/|\\*|\<|\>|\!|x|hex|\(|\)|\+|select/i",$id))
   </entry>
   <entry>
     <title>砰！</title>
-    <url>/pwn/</url>
+    <url>/child/pwn/</url>
     <content><![CDATA[<p>放假在家准备接触一下从未挑战过的 pwn</p>
 <a id="more"></a>
 <h1 id="pwn1_sctf_2016"><a class="anchor" href="#pwn1_sctf_2016">#</a> pwn1_sctf_2016</h1>
@@ -344,7 +344,7 @@ flag</p>
   </entry>
   <entry>
     <title>请问大吉杯的签到是在这里签吗?</title>
-    <url>/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
+    <url>/child/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
     <content><![CDATA[<p>之前没接触过 zlib 文件格式；一直在思考如何将文件中的 zlib 解压，这一题整整忙了我两天.<br />
  我是傻逼.</p>
 <a id="more"></a>
