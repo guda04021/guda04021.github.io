@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>Hexo</title>
-        <subtitle>subtitle</subtitle>
+        <title>Galaxy Knight</title>
+        <subtitle>工贼是没有好果汁吃的</subtitle>
         <icon>http://kyrita.top/images/favicon.ico</icon>
         <link>http://kyrita.top</link>
         <author>
-          <name>John Doe</name>
+          <name>Kyrita</name>
         </author>
-        <description>描述123</description>
+        <description>要是以后找不到工作可怎么办呀</description>
         <language>zh-CN</language>
         <pubDate>Mon, 08 Feb 2021 16:04:48 +0800</pubDate>
         <lastBuildDate>Mon, 08 Feb 2021 16:04:48 +0800</lastBuildDate>

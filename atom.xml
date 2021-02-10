@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://kyrita.top</id>
-    <title>Hexo</title>
-    <subtitle>subtitle</subtitle>
+    <title>Galaxy Knight</title>
+    <subtitle>工贼是没有好果汁吃的</subtitle>
     <icon>http://kyrita.top/images/favicon.ico</icon>
     <link href="http://kyrita.top" />
     <author>
-      <name>John Doe</name>
+      <name>Kyrita</name>
     </author>
     <updated>2021-02-08T08:04:48.652Z</updated>
     <category term="kyrita" />
