@@ -9,19 +9,19 @@
 <p>发现左上角有两个标签: Flag 和 Hint;</p>
 <h2 id="hintphp"><a class="anchor" href="#hintphp">#</a> Hint.php</h2>
 <p>给出提示从 IP 地址入手.<br />
-&lt;img src=&quot;<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIvZjJzbmQ2RTFyWjNweXd2LnBuZw==">https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png</span>&quot; &gt;<br />
+<img data-src="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png" alt="" /><br />
  那我们就来看看第二个标签.</p>
 <h2 id="flagphp"><a class="anchor" href="#flagphp">#</a> Flag.php</h2>
 <p>Flag 标签，打开后会给我们一份 IP 地址: 172.16.134.121;<br />
  登录这个 IP 瞧瞧.</p>
 <p>使用 bp 抓取 Flag 页面的包；<br />
-&lt;img src=&quot;<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIveUVvYUxoWHdCRnVBZzNOLnBuZw==">https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png</span>&quot;&gt;<br />
+<img data-src="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png" alt="" /><br />
  尝试更改一下 IP 地址看看？<br />
 &lt;li&gt; 添加 X-Forwarded-For: 127.0.0.1&lt;/li&gt;<br />
-&lt;img src=&quot;<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIvcXRXTmRtc004bFlRQ3ZiLnBuZw==">https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png</span>&quot; &gt;</p>
+<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIvcXRXTmRtc004bFlRQ3ZiLnBuZw==">https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png</span></p>
 <p>可以看到 IP 地址发生了变化，直接将 127.0.0.1 输出到了页面上；借助搜索引擎我发现一篇 &lt; a href=&quot;<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ3RhbnpoaS9wLzEyMjM4Nzc5Lmh0bWw=">https://www.cnblogs.com/wangtanzhi/p/12238779.html</span>&quot;&gt; 大佬的博客 &lt;/a&gt;, 里面实际验证了这是一种 SSTI 模板注入；</p>
 <p>&lt;li&gt; 尝试构造 payload: &lt;/li&gt;</p>
-<p>&lt;img src=&quot;<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIvTDdLeWM1SDRaU3NxcEFHLnBuZw==">https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png</span>&quot; &gt;<br />
+<p>&quot;<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIvTDdLeWM1SDRaU3NxcEFHLnBuZw==">https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png</span>&quot;<br />
  发现 flag 文件，利用 cat 拿取 flag;</p>
 <p>&lt;li&gt; 构造 payload: &lt;/li&gt;</p>
 <p>&lt;img src=&quot;<span class="exturl" data-url="aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjEvMDEvMjIvWmZFa3FOU0RPZ1JDV2w5LnBuZw==">https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png</span>&quot; &gt;</p>
