@@ -17,12 +17,12 @@
         <content type="html">&lt;p&gt;Crunch 普遍用于生成密码字典，配合其他工具使用进行暴力破解。作为 kali linux 下前十名最常使用的工具之一，用途非常广泛。&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;-t-命令如下&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-t-命令如下&#34;&gt;#&lt;/a&gt; -t 命令如下:&lt;/h3&gt;
-&lt;p&gt;-t &#39;@&#39;/&#39;,&#39;/&#39;%&#39;/&#39;&lt;sup&gt;&#39;, 指定模式，&#39;@&#39;/&#39;,&#39;/&#39;%&#39;/&#39;&lt;/sup&gt;&#39; 分别代表意义如下:&lt;br /&gt;
-&lt;span&gt;@ 插入小写字母&lt;/span&gt;&lt;ruby&gt;.yellow}
-[, 插入大写字母]{.purple}
-[% 插入数字]{.green}
-[&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;插入特殊符号]{.red&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;br /&gt;
- 使用实例：(当确定使用的对象类型但不具体知道是那些时可以使用占位符)&lt;br /&gt;
+&lt;p&gt;-t &#39;@&#39;/&#39;,&#39;/&#39;%&#39;/&#39;&lt;sup&gt;&#39;, 指定模式，&#39;@&#39;/&#39;,&#39;/&#39;%&#39;/&#39;&lt;/sup&gt;&#39; 分别代表意义如下:&lt;/p&gt;
+&lt;p&gt;@ 插入小写字母&lt;br /&gt;
+，插入大写字母&lt;br /&gt;
+ % 插入数字&lt;br /&gt;
+ ^ 插入特殊符号&lt;br /&gt;
+使用实例：(当确定使用的对象类型但不具体知道是那些时可以使用占位符)&lt;br /&gt;
  例 1:&lt;br /&gt;
  生成缺位的手机号码 (有可能作为路由器密码或 wifi 密码（8-11 位）)&lt;br /&gt;
  命令：crunch 11 11   -t  1503453%%%%   -o 1.txt 或 &amp;gt;&amp;gt; 1.txt (以 % 位数字占位符)&lt;br /&gt;
