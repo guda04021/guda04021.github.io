@@ -10,9 +10,33 @@
         </author>
         <description>以后找不到工作可怎么办呀</description>
         <language>zh-CN</language>
-        <pubDate>Mon, 08 Feb 2021 16:04:48 +0800</pubDate>
-        <lastBuildDate>Mon, 08 Feb 2021 16:04:48 +0800</lastBuildDate>
+        <pubDate>Sat, 13 Feb 2021 19:18:57 +0800</pubDate>
+        <lastBuildDate>Sat, 13 Feb 2021 19:18:57 +0800</lastBuildDate>
         <category term="kyrita" />
+        <item>
+            <guid isPermalink="true">http://kyrita.top/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</guid>
+            <title>想蹭网先解开密码&amp;Crunch密码生成器</title>
+            <link>http://kyrita.top/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</link>
+            <category term="wp&amp;wiki" scheme="http://kyrita.top/categories/wp-wiki/" />
+            <category term="misc" scheme="http://kyrita.top/tags/misc/" />
+            <pubDate>Sat, 13 Feb 2021 19:18:57 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Crunch 普遍用于生成密码字典，配合其他工具使用进行暴力破解。作为 kali linux 下前十名最常使用的工具之一，用途非常广泛。&lt;br /&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;-t-命令如下&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#-t-命令如下&#34;&gt;#&lt;/a&gt; -t 命令如下:&lt;/h3&gt;
+&lt;p&gt;-t &#39;@&#39;/&#39;,&#39;/&#39;%&#39;/&#39;&lt;sup&gt;&#39;, 指定模式，&#39;@&#39;/&#39;,&#39;/&#39;%&#39;/&#39;&lt;/sup&gt;&#39; 分别代表意义如下:&lt;br /&gt;
+&lt;span&gt;@ 插入小写字母&lt;/span&gt;&lt;ruby&gt;.yellow}
+[, 插入大写字母]{.purple}
+[% 插入数字]{.green}
+[&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;插入特殊符号]{.red&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&lt;br /&gt;
+ 使用实例：(当确定使用的对象类型但不具体知道是那些时可以使用占位符)&lt;br /&gt;
+ 例 1:&lt;br /&gt;
+ 生成缺位的手机号码 (有可能作为路由器密码或 wifi 密码（8-11 位）)&lt;br /&gt;
+ 命令：crunch 11 11   -t  1503453%%%%   -o 1.txt 或 &amp;gt;&amp;gt; 1.txt (以 % 位数字占位符)&lt;br /&gt;
+ 例二:&lt;br /&gt;
+crunch 4 4  + + 123 + -t %%@^&lt;/p&gt;
+&lt;p&gt;生成 4 位密码，其中格式为 &amp;quot;两个数字&amp;quot;+&amp;quot;一个小写字母&amp;quot;+&amp;quot;常见符号&amp;quot;(其中数字这里被指定只能为 123 组成的所有 2 位数字组合). 比如 12f#,32j^,13t$...etc..&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://kyrita.top/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</guid>
             <title>RSA加密算法详细解说</title>

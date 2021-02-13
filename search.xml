@@ -359,4 +359,30 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
         <tag>misc</tag>
       </tags>
   </entry>
+  <entry>
+    <title>想蹭网先解开密码&amp;Crunch密码生成器</title>
+    <url>/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</url>
+    <content><![CDATA[<p>Crunch 普遍用于生成密码字典，配合其他工具使用进行暴力破解。作为 kali linux 下前十名最常使用的工具之一，用途非常广泛。<br />
+<a id="more"></a></p>
+<h3 id="-t-命令如下"><a class="anchor" href="#-t-命令如下">#</a> -t 命令如下:</h3>
+<p>-t '@'/','/'%'/'<sup>', 指定模式，'@'/','/'%'/'</sup>' 分别代表意义如下:<br />
+<span>@ 插入小写字母</span><ruby>.yellow}
+[, 插入大写字母]{.purple}
+[% 插入数字]{.green}
+[<rp>(</rp><rt>插入特殊符号]{.red</rt><rp>)</rp></ruby><br />
+ 使用实例：(当确定使用的对象类型但不具体知道是那些时可以使用占位符)<br />
+ 例 1:<br />
+ 生成缺位的手机号码 (有可能作为路由器密码或 wifi 密码（8-11 位）)<br />
+ 命令：crunch 11 11   -t  1503453%%%%   -o 1.txt 或 &gt;&gt; 1.txt (以 % 位数字占位符)<br />
+ 例二:<br />
+crunch 4 4  + + 123 + -t %%@^</p>
+<p>生成 4 位密码，其中格式为 &quot;两个数字&quot;+&quot;一个小写字母&quot;+&quot;常见符号&quot;(其中数字这里被指定只能为 123 组成的所有 2 位数字组合). 比如 12f#,32j^,13t$...etc..</p>
+]]></content>
+      <categories>
+        <category>wp&amp;wiki</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
+      </tags>
+  </entry>
 </search>
