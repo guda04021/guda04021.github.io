@@ -290,7 +290,7 @@ crunch 4 4  + + 123 + -t %%@^</p>
  - i ---&gt; 改变输出格式<br />
  - t ---&gt; 定义输出格式<br />
  - l ---&gt; 与 - t 搭配使用<br />
- - p ---&gt; 定义密码元素<br />
+ - p ---&gt; 定义密码组合元素<br />
  - m ---&gt; 与 - p 搭配使用<br />
  - o ---&gt; 保存为<br />
  - q ---&gt; 读取字典<br />
@@ -298,17 +298,29 @@ crunch 4 4  + + 123 + -t %%@^</p>
  - s ---&gt; 第一个密码从 xxx 开始<br />
  - z ---&gt; 打包压缩 格式支持 gzip bzip2 lzma 7z</p>
 <h3 id="实验案例"><a class="anchor" href="#实验案例">#</a> 实验案例</h3>
-<p>== 1. 在终端下输入： crunch 1 4 abcd &gt;&gt;2.txt ==<br />
+<p><mark>1. 在终端下输入： crunch 1 4 abcd &gt;&gt;2.txt</mark><br />
  意思是生成最小为 1, 最大为 4 的由 abcd 为元素的所有组合，结果导出为 2.txt</p>
 <p><mark>2. 在终端下输入 crunch 4 5 -p yale test</mark><br />
  意思是生成以 &quot;yale&quot;&quot;test&quot; 为元素的所有密码组合</p>
-<p>3. 在终端下输入 crunch 1 4 -o START -c 6000<br />
+<p><mark>3. 在终端下输入 crunch 1 4 -o START -c 6000</mark><br />
  意思是生成最小为 1 位，最大为 4 位元素为所有小写字母的密码字典的前 6000 个密码并预估所需时间</p>
-<p>4. 在终端下输入 crunch 4 4 abcd + 1234 @#!* -t ^^%@<br />
+<p><mark>4. 在终端下输入 crunch 4 4 abcd + 1234 @#!* -t ^^%@</mark><br />
 意思是生成 4 位密码，格式为 &quot;字符 + 数字 + 字母&quot; 且字符范围是 @#!*, 数字范围是 1234, 字母范围是 abcd;</p>
-<p>5. 当我们遇到字典文件过大时，我们需要把他们切分成几个文件，这时输入<br />
- crunch 3 4 -b 1mib -0 START<br />
+<p><mark>5. 当我们遇到字典文件过大时，我们需要把他们切分成几个文件，这时输入<br />
+ crunch 3 4 -b 1mib -0 START</mark><br />
  代表以 1M 进行分割</p>
+<p>了解完 Crunch 的大概内容后，我们可以开始着手本题了.</p>
+<h3 id="分析本题"><a class="anchor" href="#分析本题">#</a> 分析本题</h3>
+<p>到手后是一份 cap, 打开流量分析一波没有发现 flag.<br />
+ 根据 HINT 我们会发现这是一道 WiFi 密码破解，提示密码就是破解出的手机号，手机号已经给出前七位我们可以运用上面的 Crunch 命令破解；<br />
+let's do it<br />
+<img data-src="https://i.loli.net/2021/02/14/zYeNb21r6WRC4cu.png" alt="" /><br />
+ 写好 payload 后我们已经生成了字典接下来只需要运用好字典破解 cap 就可.</p>
+<p><img data-src="https://i.loli.net/2021/02/14/gT1qhHXPdAFOK43.png" alt="" /><br />
+采用 aircrack 破解密码，上面提示要我们输入一个数字，我填的 3; 别问，问就是我也不清楚.<br />
+<img data-src="https://i.loli.net/2021/02/14/oPwGITg1nh2EcqZ.png" alt="" /><br />
+ 最后解出手机号</p>
+<p><span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{13910407686}</span></p>
 ]]></content>
       <categories>
         <category>wp&amp;wiki</category>
