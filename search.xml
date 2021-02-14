@@ -116,10 +116,10 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
 <p><span class="green">所以求私钥 d 的公式：d*e≡1mod [(p-1)(q-1)]</span></p>
 <p>代入 φ(n) = (p-1)(q-1),φ(n) 与 e 互质，k 为正整数<br />
 可化为：d= (k*φ(n)+1)/e</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>公钥    n -->  两素数p、q之积</pre></td></tr><tr><td data-num="2"></td><td><pre>        e -->  1&lt;e<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>(p-1)·(q-1)且e与乘积互质</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token attr-name">私钥</span>    <span class="token attr-name">d</span> <span class="token attr-name">--</span><span class="token punctuation">></span></span>  d·e ≡ 1 mod[(p-1)·(q-1)]</pre></td></tr><tr><td data-num="4"></td><td><pre>        n -->  同公钥n</pre></td></tr><tr><td data-num="5"></td><td><pre>加密    ----->  C ≡ M^e mod(n)   M为明文</pre></td></tr><tr><td data-num="6"></td><td><pre>解密    ----->  M ≡ C^d mod(n)   C为密文</pre></td></tr></table></figure><h2 id="由pqdpdqc求明文的算法"><a class="anchor" href="#由pqdpdqc求明文的算法">#</a> 由 p,q,dp,dq,c 求明文的算法</h2>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> gmpy2</pre></td></tr><tr><td data-num="2"></td><td><pre>I <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>q<span class="token punctuation">,</span>p<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>mp <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dp<span class="token punctuation">,</span>p<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>mq <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dq<span class="token punctuation">,</span>q<span class="token punctuation">)</span>               <span class="token comment">#求幂取模运算</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mp<span class="token operator">-</span>mq<span class="token punctuation">)</span><span class="token operator">*</span>I<span class="token punctuation">)</span><span class="token operator">%</span>p<span class="token punctuation">)</span><span class="token operator">*</span>q<span class="token operator">+</span>mq       <span class="token comment">#求明文公式</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment">#转为十六进制</span></pre></td></tr></table></figure><p>== pow (a,b,c) 表示 a^b% c 即 a^b mod c ==</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>公钥    n -->  两素数p、q之积</pre></td></tr><tr><td data-num="2"></td><td><pre>        e -->  1&lt;e<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>(p-1)·(q-1)且e与乘积互质</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token attr-name">私钥</span>    <span class="token attr-name">d</span> <span class="token attr-name">--</span><span class="token punctuation">></span></span>  d·e ≡ 1 mod[(p-1)·(q-1)]</pre></td></tr><tr><td data-num="4"></td><td><pre>        n -->  同公钥n</pre></td></tr><tr><td data-num="5"></td><td><pre>加密    ----->  C ≡ M^e^ mod(n)   M为明文</pre></td></tr><tr><td data-num="6"></td><td><pre>解密    ----->  M ≡ C^d^ mod(n)   C为密文</pre></td></tr></table></figure><h2 id="由pqdpdqc求明文的算法"><a class="anchor" href="#由pqdpdqc求明文的算法">#</a> 由 p,q,dp,dq,c 求明文的算法</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> gmpy2</pre></td></tr><tr><td data-num="2"></td><td><pre>I <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>q<span class="token punctuation">,</span>p<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>mp <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dp<span class="token punctuation">,</span>p<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>mq <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>dq<span class="token punctuation">,</span>q<span class="token punctuation">)</span>               <span class="token comment">#求幂取模运算</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mp<span class="token operator">-</span>mq<span class="token punctuation">)</span><span class="token operator">*</span>I<span class="token punctuation">)</span><span class="token operator">%</span>p<span class="token punctuation">)</span><span class="token operator">*</span>q<span class="token operator">+</span>mq       <span class="token comment">#求明文公式</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment">#转为十六进制</span></pre></td></tr></table></figure><p>== pow (a,b,c) 表示 a<sup>b</sup> % c 即 a<sup>b</sup> mod c ==</p>
 <h3 id="数学运算规律"><a class="anchor" href="#数学运算规律">#</a> 数学运算规律</h3>
-<p>a^b%p = ((a%p)^b)%p<br />
+<p>a<sup>b</sup> %p = ((a%p)<sup>b</sup>)%p<br />
  若 a≡b (% p), 则对任意的 c, 都有 (a+c)≡(b+c)(% p)<br />
  若 a≡b (% p), 则对任意的 c, 都有 (a<em>c)≡(b</em>c)(%p)<br />
  若 a≡b (% p), 对任意的 c, 都有 c≡d (% p), 那么 (a+c)≡(b+d)(% p),(a<em>c)≡(b</em>d)(%p)</p>
@@ -278,9 +278,26 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
  例 1:<br />
  生成缺位的手机号码 (有可能作为路由器密码或 wifi 密码（8-11 位）)<br />
  命令：crunch 11 11   -t  1503453%%%%   -o 1.txt 或 &gt;&gt; 1.txt (以 % 位数字占位符)<br />
- 例二:<br />
+ 例 2:<br />
 crunch 4 4  + + 123 + -t %%@^</p>
 <p>生成 4 位密码，其中格式为 &quot;两个数字&quot;+&quot;一个小写字母&quot;+&quot;常见符号&quot;(其中数字这里被指定只能为 123 组成的所有 2 位数字组合). 比如 12f#,32j^,13t$...etc..</p>
+<h3 id="crunch中常用的命令参数"><a class="anchor" href="#crunch中常用的命令参数">#</a> Crunch 中常用的命令参数</h3>
+<p>-b ---&gt; 按大小分割字典文件，后接 20mib/mb/kb 等<br />
+ - c ---&gt; 密码个数<br />
+ - d ---&gt; 限制出现相同元素的个数 如 - d 3 代表不会出现 aabbbb 的情况<br />
+ - e ---&gt; 定义停止生成密码 如 -e abcd 代表到 abcd 停止生成密码<br />
+ - f ---&gt; 调用密码库文件 如 - f charset.lst mixalpha-numeric 代表调用密码库 charset.lst 中 mixalpha-numeric 项目字符<br />
+ - i ---&gt; 改变输出格式<br />
+ - t ---&gt; 定义输出格式<br />
+ - l ---&gt; 与 - t 搭配使用<br />
+ - p ---&gt; 定义密码元素<br />
+ - m ---&gt; 与 - p 搭配使用<br />
+ - o ---&gt; 保存为<br />
+ - q ---&gt; 读取字典<br />
+ - r ---&gt; 从某处重新开始<br />
+ - s ---&gt; 第一个密码从 xxx 开始<br />
+ - z ---&gt; 打包压缩 格式支持 gzip bzip2 lzma 7z</p>
+<h3 id="实验案例"><a class="anchor" href="#实验案例">#</a> 实验案例</h3>
 ]]></content>
       <categories>
         <category>wp&amp;wiki</category>
