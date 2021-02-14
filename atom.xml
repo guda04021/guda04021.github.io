@@ -8,8 +8,17 @@
     <author>
       <name>Kyrita</name>
     </author>
-    <updated>2021-02-13T11:18:57.823Z</updated>
+    <updated>2021-02-14T07:09:06.710Z</updated>
     <category term="kyrita" />
+    <entry>
+        <id>http://kyrita.top/A-KITE/</id>
+        <title>A KITE</title>
+        <link rel="alternate" href="http://kyrita.top/A-KITE/"/>
+        <content type="html"></content>
+        <category term="随笔" scheme="http://kyrita.top/categories/%E9%9A%8F%E7%AC%94/" />
+        <category term="随笔" scheme="http://kyrita.top/tags/%E9%9A%8F%E7%AC%94/" />
+        <updated>2021-02-14T07:09:06.710Z</updated>
+    </entry>
     <entry>
         <id>http://kyrita.top/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</id>
         <title>想蹭网先解开密码&amp;Crunch密码生成器</title>
