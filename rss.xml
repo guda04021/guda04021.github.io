@@ -10,15 +10,26 @@
         </author>
         <description>以后找不到工作可怎么办啊</description>
         <language>zh-CN</language>
-        <pubDate>Sun, 14 Feb 2021 15:09:06 +0800</pubDate>
-        <lastBuildDate>Sun, 14 Feb 2021 15:09:06 +0800</lastBuildDate>
+        <pubDate>Mon, 15 Feb 2021 12:02:41 +0800</pubDate>
+        <lastBuildDate>Mon, 15 Feb 2021 12:02:41 +0800</lastBuildDate>
         <category term="kyrita" />
+        <item>
+            <guid isPermalink="true">http://kyrita.top/Catherine/</guid>
+            <title>Catherine</title>
+            <link>http://kyrita.top/Catherine/</link>
+            <category term="随笔" scheme="http://kyrita.top/categories/%E9%9A%8F%E7%AC%94/" />
+            <category term="Game" scheme="http://kyrita.top/tags/Game/" />
+            <pubDate>Mon, 15 Feb 2021 12:02:41 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;如果你想测试一下自己适不适合结婚可以进来看一看；&lt;br /&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://kyrita.top/A-KITE/</guid>
             <title>A KITE</title>
             <link>http://kyrita.top/A-KITE/</link>
             <category term="随笔" scheme="http://kyrita.top/categories/%E9%9A%8F%E7%AC%94/" />
-            <category term="随笔" scheme="http://kyrita.top/tags/%E9%9A%8F%E7%AC%94/" />
+            <category term="animation" scheme="http://kyrita.top/tags/animation/" />
             <pubDate>Sun, 14 Feb 2021 15:09:06 +0800</pubDate>
             <description><![CDATA[  ]]></description>
         </item>

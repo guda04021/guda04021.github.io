@@ -433,7 +433,20 @@ let's do it<br />
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>animation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Catherine</title>
+    <url>/Catherine/</url>
+    <content><![CDATA[<p>如果你想测试一下自己适不适合结婚可以进来看一看；<br />
+<a id="more"></a></p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>Game</tag>
       </tags>
   </entry>
 </search>
