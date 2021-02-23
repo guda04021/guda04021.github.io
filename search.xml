@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>A KITE</title>
-    <url>/A-KITE/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>animation</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BJDCTF2020-The mystery of ip</title>
     <url>/BJDCTF2020-The-mystery-of-ip/</url>
     <content><![CDATA[<p>先进入题目给的靶机<br />
@@ -594,6 +583,7 @@ let's do it<br />
 <img data-src="https://i.loli.net/2021/02/21/tbCJB6ODKpyAZ5g.png" alt="" title="在根目录中发现flag" /><br />
  将它下载下来；<br />
 <img data-src="https://i.loli.net/2021/02/21/5oAvpyN2Pi4TlDF.png" alt="" title="得到flag" /></p>
+<p>关于上传漏洞的知识点在<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzkwNzAzL2FydGljbGUvZGV0YWlscy8xMDQ4NTg3MDU/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3JlbGV2YW50Lm5vbmUtdGFzay1ibG9nLUJsb2dDb21tZW5kRnJvbU1hY2hpbmVMZWFyblBhaTItMi5jb250cm9sJmFtcDtkaXN0X3JlcXVlc3RfaWQ9ZDcwNmYwNTYtZjdhNS00NTMxLWEwNGUtYTRlMjk5MmQwMzZiJmFtcDtkZXB0aF8xLXV0bV9zb3VyY2U9ZGlzdHJpYnV0ZS5wY19yZWxldmFudC5ub25lLXRhc2stYmxvZy1CbG9nQ29tbWVuZEZyb21NYWNoaW5lTGVhcm5QYWkyLTIuY29udHJvbA==">这篇博文</span>会有更详细的见解</p>
 ]]></content>
       <categories>
         <category>wp</category>
