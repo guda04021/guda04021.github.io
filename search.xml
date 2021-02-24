@@ -70,7 +70,7 @@
 <mark>To be continued</mark></p>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>生活随笔</category>
       </categories>
       <tags>
         <tag>Game</tag>
@@ -307,7 +307,7 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
         <category>wp</category>
       </categories>
       <tags>
-        <tag>web</tag>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
@@ -539,7 +539,7 @@ let's do it<br />
 <p><span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{13910407686}</span></p>
 ]]></content>
       <categories>
-        <category>wp&amp;wiki</category>
+        <category>wp</category>
       </categories>
       <tags>
         <tag>misc</tag>
@@ -590,6 +590,27 @@ let's do it<br />
       </categories>
       <tags>
         <tag>misc</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python中translate()和maketrans()的使用</title>
+    <url>/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>base64 字典表顺序时可能会用到.<br />
+<a id="more"></a><br />
+payload 如下</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> string</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>str1 <span class="token operator">=</span> <span class="token string">"mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI=="</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>s1<span class="token operator">=</span> <span class="token string">"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0987654321/+"</span></pre></td></tr><tr><td data-num="7"></td><td><pre>s2<span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>str1<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>str1 是需要解码的 base64<br />
+s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
+ 下面简单讲解一下两种语法的使用.</p>
+<p><mark>maketrans()</mark><br />
+ 生成字符串映射，即上述中 s2 是 s1 的映射表，也就是说 a 对应 B，B 对应 C，b 对应 D，以此类推...<br />
+<mark>translate()</mark><br />
+ 这里对 str1 字符串使用这个 s1 与 s2 生成的映射关系，生成新的 base64</p>
+]]></content>
+      <categories>
+        <category>wiki</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>
