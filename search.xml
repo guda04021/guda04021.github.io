@@ -613,4 +613,26 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>something 4 u</title>
+    <url>/something-4-u/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="54def11639b8eeabc4cdbfd2efe22507744dfbf0e33e4c36bc8d6b9a42551f09">7272fabbdbcbcc011d1536b2062d9ec56898eb05acb54e3e1504961aa739cbe933647a8712eca3b4d3d697edaa438a156f102dc1dbe16678de41de3e05086dccd508203926e425f53c2b53c0cf155112</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Do u remember your name(abbreviation)&birth?</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>生活随笔</category>
+      </categories>
+      <tags>
+        <tag>Secret</tag>
+      </tags>
+  </entry>
 </search>

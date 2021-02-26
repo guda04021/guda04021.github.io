@@ -10,9 +10,29 @@
         </author>
         <description>以后找不到工作可怎么办啊</description>
         <language>zh-CN</language>
-        <pubDate>Wed, 24 Feb 2021 11:20:57 +0800</pubDate>
-        <lastBuildDate>Wed, 24 Feb 2021 11:20:57 +0800</lastBuildDate>
+        <pubDate>Fri, 26 Feb 2021 11:25:13 +0800</pubDate>
+        <lastBuildDate>Fri, 26 Feb 2021 11:25:13 +0800</lastBuildDate>
         <category term="kyrita" />
+        <item>
+            <guid isPermalink="true">http://kyrita.top/something-4-u/</guid>
+            <title>something 4 u</title>
+            <link>http://kyrita.top/something-4-u/</link>
+            <category term="生活随笔" scheme="http://kyrita.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/" />
+            <category term="Secret" scheme="http://kyrita.top/tags/Secret/" />
+            <pubDate>Fri, 26 Feb 2021 11:25:13 +0800</pubDate>
+            <description><![CDATA[ &lt;div class=&#34;hbe hbe-container&#34; id=&#34;hexo-blog-encrypt&#34; data-wpm=&#34;Oh, this is an invalid password. Check and try again, please.&#34; data-whm=&#34;OOPS, these decrypted content may changed, but you can still have a look.&#34;&gt;
+  &lt;script id=&#34;hbeData&#34; type=&#34;hbeData&#34; data-hmacdigest=&#34;54def11639b8eeabc4cdbfd2efe22507744dfbf0e33e4c36bc8d6b9a42551f09&#34;&gt;7272fabbdbcbcc011d1536b2062d9ec56898eb05acb54e3e1504961aa739cbe933647a8712eca3b4d3d697edaa438a156f102dc1dbe16678de41de3e05086dccd508203926e425f53c2b53c0cf155112&lt;/script&gt;
+  &lt;div class=&#34;hbe hbe-content&#34;&gt;
+    &lt;div class=&#34;hbe hbe-input hbe-input-default&#34;&gt;
+      &lt;input class=&#34;hbe hbe-input-field hbe-input-field-default&#34; type=&#34;password&#34; id=&#34;hbePass&#34;&gt;
+      &lt;label class=&#34;hbe hbe-input-label hbe-input-label-default&#34; for=&#34;hbePass&#34;&gt;
+        &lt;span class=&#34;hbe hbe-input-label-content hbe-input-label-content-default&#34;&gt;Do u remember your name(abbreviation)&amp;birth?&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script data-pjax src=&#34;/lib/hbe.js&#34;&gt;&lt;/script&gt;&lt;link href=&#34;/css/hbe.style.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://kyrita.top/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
             <title>Python中translate()和maketrans()的使用</title>
