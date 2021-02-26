@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>BJDCTF2020-The mystery of ip</title>
+    <url>/BJDCTF2020-The-mystery-of-ip/</url>
+    <content><![CDATA[<p>先进入题目给的靶机<br />
+<a id="more"></a></p>
+<h1 id="审视页面"><a class="anchor" href="#审视页面">#</a> 审视页面</h1>
+<p>发现左上角有两个标签: Flag 和 Hint;</p>
+<h2 id="hintphp"><a class="anchor" href="#hintphp">#</a> Hint.php</h2>
+<p>给出提示从 IP 地址入手.<br />
+<img data-src="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png" alt="" /><br />
+ 那我们就来看看第二个标签.</p>
+<h2 id="flagphp"><a class="anchor" href="#flagphp">#</a> Flag.php</h2>
+<p>Flag 标签，打开后会给我们一份 IP 地址: 172.16.134.121;<br />
+ 登录这个 IP 瞧瞧.</p>
+<p>使用 bp 抓取 Flag 页面的包；<br />
+<img data-src="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png" alt="" /><br />
+ 尝试更改一下 IP 地址看看？</p>
+<div class="note info">
+<p>添加 X-Forwarded-For: 127.0.0.1</p>
+</div>
+<p><img data-src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" alt="" /></p>
+<p>可以看到 IP 地址发生了变化，直接将 127.0.0.1 输出到了页面上；借助搜索引擎我发现一篇<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ3RhbnpoaS9wLzEyMjM4Nzc5Lmh0bWw=">大佬的博客</span>，里面实际验证了这是一种 SSTI 模板注入；</p>
+<p><span class="green">尝试构造 payload:</span></p>
+<pre><code>X-Forwarded-For: &#123;&#123;system("ls")&#125;&#125;
+</code></pre>
+<p><img data-src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" alt="" /><br />
+发现 flag 文件，利用 cat 拿取 flag;</p>
+<p><span class="green">构造 payload:</span></p>
+<pre><code>X-Forwarded-For: &#123;&#123;system("cat /flag")&#125;&#125;
+</code></pre>
+<p><img data-src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" alt="" /></p>
+<p>于是拿到了 flag, 放入题目中 sumbit;yas</p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Catherine</title>
     <url>/Catherine/</url>
     <content><![CDATA[<p>32 岁还不结婚的男人，总有人希望你去死.<br />
@@ -77,43 +117,38 @@
       </tags>
   </entry>
   <entry>
-    <title>BJDCTF2020-The mystery of ip</title>
-    <url>/BJDCTF2020-The-mystery-of-ip/</url>
-    <content><![CDATA[<p>先进入题目给的靶机<br />
-<a id="more"></a></p>
-<h1 id="审视页面"><a class="anchor" href="#审视页面">#</a> 审视页面</h1>
-<p>发现左上角有两个标签: Flag 和 Hint;</p>
-<h2 id="hintphp"><a class="anchor" href="#hintphp">#</a> Hint.php</h2>
-<p>给出提示从 IP 地址入手.<br />
-<img data-src="https://i.loli.net/2021/01/22/f2snd6E1rZ3pywv.png" alt="" /><br />
- 那我们就来看看第二个标签.</p>
-<h2 id="flagphp"><a class="anchor" href="#flagphp">#</a> Flag.php</h2>
-<p>Flag 标签，打开后会给我们一份 IP 地址: 172.16.134.121;<br />
- 登录这个 IP 瞧瞧.</p>
-<p>使用 bp 抓取 Flag 页面的包；<br />
-<img data-src="https://i.loli.net/2021/01/22/yEoaLhXwBFuAg3N.png" alt="" /><br />
- 尝试更改一下 IP 地址看看？</p>
-<div class="note info">
-<p>添加 X-Forwarded-For: 127.0.0.1</p>
-</div>
-<p><img data-src="https://i.loli.net/2021/01/22/qtWNdmsM8lYQCvb.png" alt="" /></p>
-<p>可以看到 IP 地址发生了变化，直接将 127.0.0.1 输出到了页面上；借助搜索引擎我发现一篇<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ3RhbnpoaS9wLzEyMjM4Nzc5Lmh0bWw=">大佬的博客</span>，里面实际验证了这是一种 SSTI 模板注入；</p>
-<p><span class="green">尝试构造 payload:</span></p>
-<pre><code>X-Forwarded-For: &#123;&#123;system("ls")&#125;&#125;
-</code></pre>
-<p><img data-src="https://i.loli.net/2021/01/22/L7Kyc5H4ZSsqpAG.png" alt="" /><br />
-发现 flag 文件，利用 cat 拿取 flag;</p>
-<p><span class="green">构造 payload:</span></p>
-<pre><code>X-Forwarded-For: &#123;&#123;system("cat /flag")&#125;&#125;
-</code></pre>
-<p><img data-src="https://i.loli.net/2021/01/22/ZfEkqNSDOgRCWl9.png" alt="" /></p>
-<p>于是拿到了 flag, 放入题目中 sumbit;yas</p>
+    <title>HASH破解</title>
+    <url>/HASH%E7%A0%B4%E8%A7%A3/</url>
+    <content><![CDATA[<p>待写<br />
+<a id="more"></a><br />
+ 简单论述 windows hash 破解</p>
 ]]></content>
       <categories>
-        <category>wp</category>
+        <category>wiki</category>
       </categories>
       <tags>
-        <tag>Web</tag>
+        <tag>crypto</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python中translate()和maketrans()的使用</title>
+    <url>/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>base64 字典表顺序时可能会用到.<br />
+<a id="more"></a><br />
+payload 如下</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> string</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>str1 <span class="token operator">=</span> <span class="token string">"mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI=="</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>s1<span class="token operator">=</span> <span class="token string">"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0987654321/+"</span></pre></td></tr><tr><td data-num="7"></td><td><pre>s2<span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>str1<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>str1 是需要解码的 base64<br />
+s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
+ 下面简单讲解一下两种语法的使用.</p>
+<p><mark>maketrans()</mark><br />
+ 生成字符串映射，即上述中 s2 是 s1 的映射表，也就是说 a 对应 B，B 对应 C，b 对应 D，以此类推...<br />
+<mark>translate()</mark><br />
+ 这里对 str1 字符串使用这个 s1 与 s2 生成的映射关系，生成新的 base64</p>
+]]></content>
+      <categories>
+        <category>wiki</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -139,20 +174,6 @@ shift+F12 看一下</p>
       </categories>
       <tags>
         <tag>Re</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HASH破解</title>
-    <url>/HASH%E7%A0%B4%E8%A7%A3/</url>
-    <content><![CDATA[<p>待写<br />
-<a id="more"></a><br />
- 简单论述 windows hash 破解</p>
-]]></content>
-      <categories>
-        <category>wiki</category>
-      </categories>
-      <tags>
-        <tag>crypto</tag>
       </tags>
   </entry>
   <entry>
@@ -208,27 +229,6 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
       </categories>
       <tags>
         <tag>crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python中translate()和maketrans()的使用</title>
-    <url>/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>base64 字典表顺序时可能会用到.<br />
-<a id="more"></a><br />
-payload 如下</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> string</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>str1 <span class="token operator">=</span> <span class="token string">"mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI=="</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>s1<span class="token operator">=</span> <span class="token string">"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0987654321/+"</span></pre></td></tr><tr><td data-num="7"></td><td><pre>s2<span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>str1<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>str1 是需要解码的 base64<br />
-s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
- 下面简单讲解一下两种语法的使用.</p>
-<p><mark>maketrans()</mark><br />
- 生成字符串映射，即上述中 s2 是 s1 的映射表，也就是说 a 对应 B，B 对应 C，b 对应 D，以此类推...<br />
-<mark>translate()</mark><br />
- 这里对 str1 字符串使用这个 s1 与 s2 生成的映射关系，生成新的 base64</p>
-]]></content>
-      <categories>
-        <category>wiki</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -306,32 +306,6 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
       </tags>
   </entry>
   <entry>
-    <title>XOR</title>
-    <url>/XOR/</url>
-    <content><![CDATA[<p>关于 python xor 的脚本<br />
-<a id="more"></a></p>
-<h2 id="ida打开看看"><a class="anchor" href="#ida打开看看">#</a> IDA 打开看看</h2>
-<p>找到 main 函数，我们看到有异或字符，和 global 比较，相同的话就获得 flag</p>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png" alt="" /></p>
-<p><span class="purple">第 9 行得知 flag 的长度为 33</span></p>
-<p><span class="red">第 13 行比较 v6 和 global 处存放的前 31 位字符是否相同；相同则输出 success</span></p>
-<p><span class="rainbow">从 main 函数里面可以得到 V6 的处理方式为 v6 [i] 等于 v6 [i] 原来的值与 v6 [i-1] 按位异或.</span></p>
-<h2 id="查看global字符串"><a class="anchor" href="#查看global字符串">#</a> 查看 global 字符串</h2>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png" alt="" /></p>
-<h2 id="编写解密脚本"><a class="anchor" href="#编写解密脚本">#</a> 编写解密脚本</h2>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'w&amp;O.@'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'Z;U'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'v"M#D'</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'G2O'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>ss <span class="token operator">=</span> <span class="token string">'fkw&amp;O.@xZ;UpFv"M#DghG2O'</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>x <span class="token operator">=</span> <span class="token string">"f"</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">79</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">79</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">#字符串转换成 10 进制</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	x <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">^</span>a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#对应 v6</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></pre></td></tr></table></figure><p>拿到 flag： <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{QianQiuWanDai_YiTongJiangHu}</span></p>
-<h3 id="参考"><a class="anchor" href="#参考">#</a> 参考</h3>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9weXRob24vcHl0aG9uLW9wZXJhdG9ycy5odG1s">https://www.runoob.com/python/python-operators.html</span><br />
-<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMTEwMC9hcnRpY2xlL2RldGFpbHMvODkxNTYxNDE=">https://blog.csdn.net/weixin_44731100/article/details/89156141</span></p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>Re</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ciscn_2019_n_1</title>
     <url>/ciscn-2019-n-1/</url>
     <content><![CDATA[<p>可能是栈溢出吗<br />
@@ -358,6 +332,32 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
       </categories>
       <tags>
         <tag>pwn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XOR</title>
+    <url>/XOR/</url>
+    <content><![CDATA[<p>关于 python xor 的脚本<br />
+<a id="more"></a></p>
+<h2 id="ida打开看看"><a class="anchor" href="#ida打开看看">#</a> IDA 打开看看</h2>
+<p>找到 main 函数，我们看到有异或字符，和 global 比较，相同的话就获得 flag</p>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png" alt="" /></p>
+<p><span class="purple">第 9 行得知 flag 的长度为 33</span></p>
+<p><span class="red">第 13 行比较 v6 和 global 处存放的前 31 位字符是否相同；相同则输出 success</span></p>
+<p><span class="rainbow">从 main 函数里面可以得到 V6 的处理方式为 v6 [i] 等于 v6 [i] 原来的值与 v6 [i-1] 按位异或.</span></p>
+<h2 id="查看global字符串"><a class="anchor" href="#查看global字符串">#</a> 查看 global 字符串</h2>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png" alt="" /></p>
+<h2 id="编写解密脚本"><a class="anchor" href="#编写解密脚本">#</a> 编写解密脚本</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'w&amp;O.@'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'Z;U'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'v"M#D'</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'G2O'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>ss <span class="token operator">=</span> <span class="token string">'fkw&amp;O.@xZ;UpFv"M#DghG2O'</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>x <span class="token operator">=</span> <span class="token string">"f"</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">79</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">79</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">#字符串转换成 10 进制</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	x <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">^</span>a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#对应 v6</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></pre></td></tr></table></figure><p>拿到 flag： <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{QianQiuWanDai_YiTongJiangHu}</span></p>
+<h3 id="参考"><a class="anchor" href="#参考">#</a> 参考</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9weXRob24vcHl0aG9uLW9wZXJhdG9ycy5odG1s">https://www.runoob.com/python/python-operators.html</span><br />
+<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMTEwMC9hcnRpY2xlL2RldGFpbHMvODkxNTYxNDE=">https://blog.csdn.net/weixin_44731100/article/details/89156141</span></p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>Re</tag>
       </tags>
   </entry>
   <entry>
@@ -453,6 +453,54 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
       </tags>
   </entry>
   <entry>
+    <title>夏天就该喝糖果汽水才对嘛</title>
+    <url>/%E5%91%90-%E7%B3%96%E6%9E%9C%E8%89%B2%E8%B0%83%E7%9A%84%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>好想要相机喔<br />
+<a id="more"></a><br />
+ 最近在微博上刷到许多大佬拍的 fine view，学生党暂时没钱买相机，于是就先在这里记录下学习如何后期处理吧。</p>
+<h2 id="澳大利亚摄影师-ben-thomas的摄影作品"><a class="anchor" href="#澳大利亚摄影师-ben-thomas的摄影作品">#</a> 澳大利亚摄影师 Ben Thomas 的摄影作品</h2>
+<p><img data-src="https://i.loli.net/2021/02/20/NF1UvKaRSizG92m.jpg" alt="" title="通过后期调色，将照片的颜色调整为梦幻的糖果色;" /></p>
+<h2 id="这张是我动手调整的别人的摄影作品"><a class="anchor" href="#这张是我动手调整的别人的摄影作品">#</a> 这张是我动手调整的别人的摄影作品</h2>
+<p><img data-src="https://i.loli.net/2021/02/20/IRiyoOATrLCleVw.png" alt="" title="啊哈哈...可能雾霾感重了点喔" /></p>
+<h3 id="how_done_it"><a class="anchor" href="#how_done_it">#</a> How_Done_It</h3>
+<p>并不是所有的图片都适合糖果风，如果整个图中有很深的阴影 (阴影太多也很麻烦)，制作成糖果色要麻烦很多。于是我们可以选择拍一些晴天少云，颜色偏青并且建筑偏黄偏粉 (比如迪士尼)，画面中尽可能有比较规整的大面积色块。</p>
+<p>这里我们使用 Adobe Photoshop 打开图片<br />
+<img data-src="https://i.loli.net/2021/02/20/XfMUBSkZgP5wVN4.jpg" alt="" /></p>
+<p>因为图片本身暗部就比较少了，所以这里就不需要调亮了。<br />
+首先打开色阶，这里将黑场向右拖动让黑场变亮<br />
+<img data-src="https://i.loli.net/2021/02/20/OT712wVP3nlFYqs.png" alt="" /><br />
+其实就是让暗部在变亮一点；</p>
+<p>其次我们将灰场往左拖动，让图片整体变亮。<br />
+<img data-src="https://i.loli.net/2021/02/20/Brnb1gsi5dl7yup.png" alt="" /></p>
+<p>接下来调整色块的颜色。<br />
+这里我是用的色相饱和度调整；饱和度往往用于调整颜色的鲜艳程度，往右可以增加饱和度，往左可以降低饱和度。明度可以用于调整亮度。<br />
+需要对某一颜色进行调整时可以选择一种颜色进行参数变量；<br />
+先将天空的颜色调到偏青：<br />
+<img data-src="https://i.loli.net/2021/02/20/9TZXtnJjOBuaI6F.png" alt="" /><br />
+往左调整，将蓝色调到偏青色。</p>
+<p>先来看看效果如何<br />
+<img data-src="https://i.loli.net/2021/02/20/JgwrS92l84KIRvV.png" alt="" /></p>
+<p>之后，调整便利店的颜色，适当调亮就好啦。<br />
+<img data-src="https://i.loli.net/2021/02/20/PuKgrkS9TH8Z71Y.png" alt="" /><br />
+红色色块和黄色类似，这里忘记上了<br />
+<img data-src="https://i.loli.net/2021/02/20/TSFpKjG9w6uf7Dh.png" alt="" title="差不多就是这样啦" /></p>
+<p>调色过程中可能会碰到部分区块变色，可以使用蒙版将无需变色的部分稍微涂抹一下。就目前颜色差不多达到预期的效果了，接下来可以调整对比度。<br />
+<img data-src="https://i.loli.net/2021/02/20/i7alYSsoqK4eJyD.png" alt="" /><br />
+将亮区往下拖一点，暗区适当增亮；<br />
+如果想要一些其他效果增强图片观感的话最后可以加一下锐化调整分辨率等其他操作，这里就不细说了；</p>
+<p>最后，糖果色的调整就完成啦<br />
+<img data-src="https://ae01.alicdn.com/kf/Ub3ebcfb84a1f48469547c6d577f0a4a6d.jpg" alt="" /></p>
+<p>调整糖果色并不困难，针对不同图像有不同的调法；</p>
+<p>参考：知乎</p>
+]]></content>
+      <categories>
+        <category>摄影</category>
+      </categories>
+      <tags>
+        <tag>PS--色调</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>something 4 u</title>
     <url>/something-4-u/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -538,54 +586,6 @@ let's do it<br />
       </categories>
       <tags>
         <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>夏天就该喝糖果汽水才对嘛</title>
-    <url>/%E5%91%90-%E7%B3%96%E6%9E%9C%E8%89%B2%E8%B0%83%E7%9A%84%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<p>好想要相机喔<br />
-<a id="more"></a><br />
- 最近在微博上刷到许多大佬拍的 fine view，学生党暂时没钱买相机，于是就先在这里记录下学习如何后期处理吧。</p>
-<h2 id="澳大利亚摄影师-ben-thomas的摄影作品"><a class="anchor" href="#澳大利亚摄影师-ben-thomas的摄影作品">#</a> 澳大利亚摄影师 Ben Thomas 的摄影作品</h2>
-<p><img data-src="https://i.loli.net/2021/02/20/NF1UvKaRSizG92m.jpg" alt="" title="通过后期调色，将照片的颜色调整为梦幻的糖果色;" /></p>
-<h2 id="这张是我动手调整的别人的摄影作品"><a class="anchor" href="#这张是我动手调整的别人的摄影作品">#</a> 这张是我动手调整的别人的摄影作品</h2>
-<p><img data-src="https://i.loli.net/2021/02/20/IRiyoOATrLCleVw.png" alt="" title="啊哈哈...可能雾霾感重了点喔" /></p>
-<h3 id="how_done_it"><a class="anchor" href="#how_done_it">#</a> How_Done_It</h3>
-<p>并不是所有的图片都适合糖果风，如果整个图中有很深的阴影 (阴影太多也很麻烦)，制作成糖果色要麻烦很多。于是我们可以选择拍一些晴天少云，颜色偏青并且建筑偏黄偏粉 (比如迪士尼)，画面中尽可能有比较规整的大面积色块。</p>
-<p>这里我们使用 Adobe Photoshop 打开图片<br />
-<img data-src="https://i.loli.net/2021/02/20/XfMUBSkZgP5wVN4.jpg" alt="" /></p>
-<p>因为图片本身暗部就比较少了，所以这里就不需要调亮了。<br />
-首先打开色阶，这里将黑场向右拖动让黑场变亮<br />
-<img data-src="https://i.loli.net/2021/02/20/OT712wVP3nlFYqs.png" alt="" /><br />
-其实就是让暗部在变亮一点；</p>
-<p>其次我们将灰场往左拖动，让图片整体变亮。<br />
-<img data-src="https://i.loli.net/2021/02/20/Brnb1gsi5dl7yup.png" alt="" /></p>
-<p>接下来调整色块的颜色。<br />
-这里我是用的色相饱和度调整；饱和度往往用于调整颜色的鲜艳程度，往右可以增加饱和度，往左可以降低饱和度。明度可以用于调整亮度。<br />
-需要对某一颜色进行调整时可以选择一种颜色进行参数变量；<br />
-先将天空的颜色调到偏青：<br />
-<img data-src="https://i.loli.net/2021/02/20/9TZXtnJjOBuaI6F.png" alt="" /><br />
-往左调整，将蓝色调到偏青色。</p>
-<p>先来看看效果如何<br />
-<img data-src="https://i.loli.net/2021/02/20/JgwrS92l84KIRvV.png" alt="" /></p>
-<p>之后，调整便利店的颜色，适当调亮就好啦。<br />
-<img data-src="https://i.loli.net/2021/02/20/PuKgrkS9TH8Z71Y.png" alt="" /><br />
-红色色块和黄色类似，这里忘记上了<br />
-<img data-src="https://i.loli.net/2021/02/20/TSFpKjG9w6uf7Dh.png" alt="" title="差不多就是这样啦" /></p>
-<p>调色过程中可能会碰到部分区块变色，可以使用蒙版将无需变色的部分稍微涂抹一下。就目前颜色差不多达到预期的效果了，接下来可以调整对比度。<br />
-<img data-src="https://i.loli.net/2021/02/20/i7alYSsoqK4eJyD.png" alt="" /><br />
-将亮区往下拖一点，暗区适当增亮；<br />
-如果想要一些其他效果增强图片观感的话最后可以加一下锐化调整分辨率等其他操作，这里就不细说了；</p>
-<p>最后，糖果色的调整就完成啦<br />
-<img data-src="https://ae01.alicdn.com/kf/Ub3ebcfb84a1f48469547c6d577f0a4a6d.jpg" alt="" /></p>
-<p>调整糖果色并不困难，针对不同图像有不同的调法；</p>
-<p>参考：知乎</p>
-]]></content>
-      <categories>
-        <category>摄影</category>
-      </categories>
-      <tags>
-        <tag>PS--色调</tag>
       </tags>
   </entry>
   <entry>
