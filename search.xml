@@ -41,31 +41,6 @@
       </tags>
   </entry>
   <entry>
-    <title>RE-新年快乐</title>
-    <url>/EZre/</url>
-    <content><![CDATA[<h1 id="新年快乐"><a class="anchor" href="#新年快乐">#</a> 新年快乐</h1>
-<p><a id="more"></a></p>
-<p><img data-src="https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png" alt="" /></p>
-<p>是叫我们输入一个 flag, 看看就知道没什么卵用；</p>
-<p>拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？</p>
-<h2 id="先脱壳"><a class="anchor" href="#先脱壳">#</a> 先脱壳</h2>
-<p><img data-src="https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png" alt="" /></p>
-<p>将脱壳后的 exe 程序拖入 IDA 中；<br />
- 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；<br />
-shift+F12 看一下</p>
-<p><img data-src="https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png" alt="" /></p>
-<p>选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；</p>
-<p><img data-src="https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png" alt="" /></p>
-<p>且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=<span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{HappyNewYear!}</span></p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>Re</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Catherine</title>
     <url>/Catherine/</url>
     <content><![CDATA[<p>32 岁还不结婚的男人，总有人希望你去死.<br />
@@ -142,6 +117,31 @@ shift+F12 看一下</p>
       </tags>
   </entry>
   <entry>
+    <title>RE-新年快乐</title>
+    <url>/EZre/</url>
+    <content><![CDATA[<h1 id="新年快乐"><a class="anchor" href="#新年快乐">#</a> 新年快乐</h1>
+<p><a id="more"></a></p>
+<p><img data-src="https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png" alt="" /></p>
+<p>是叫我们输入一个 flag, 看看就知道没什么卵用；</p>
+<p>拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？</p>
+<h2 id="先脱壳"><a class="anchor" href="#先脱壳">#</a> 先脱壳</h2>
+<p><img data-src="https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png" alt="" /></p>
+<p>将脱壳后的 exe 程序拖入 IDA 中；<br />
+ 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；<br />
+shift+F12 看一下</p>
+<p><img data-src="https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png" alt="" /></p>
+<p>选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；</p>
+<p><img data-src="https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png" alt="" /></p>
+<p>且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=<span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{HappyNewYear!}</span></p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>Re</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HASH破解</title>
     <url>/HASH%E7%A0%B4%E8%A7%A3/</url>
     <content><![CDATA[<p>待写<br />
@@ -153,27 +153,6 @@ shift+F12 看一下</p>
       </categories>
       <tags>
         <tag>crypto</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python中translate()和maketrans()的使用</title>
-    <url>/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>base64 字典表顺序时可能会用到.<br />
-<a id="more"></a><br />
-payload 如下</p>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> string</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>str1 <span class="token operator">=</span> <span class="token string">"mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI=="</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>s1<span class="token operator">=</span> <span class="token string">"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0987654321/+"</span></pre></td></tr><tr><td data-num="7"></td><td><pre>s2<span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>str1<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>str1 是需要解码的 base64<br />
-s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
- 下面简单讲解一下两种语法的使用.</p>
-<p><mark>maketrans()</mark><br />
- 生成字符串映射，即上述中 s2 是 s1 的映射表，也就是说 a 对应 B，B 对应 C，b 对应 D，以此类推...<br />
-<mark>translate()</mark><br />
- 这里对 str1 字符串使用这个 s1 与 s2 生成的映射关系，生成新的 base64</p>
-]]></content>
-      <categories>
-        <category>wiki</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -232,6 +211,27 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
       </tags>
   </entry>
   <entry>
+    <title>Python中translate()和maketrans()的使用</title>
+    <url>/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>base64 字典表顺序时可能会用到.<br />
+<a id="more"></a><br />
+payload 如下</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> base64</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">import</span> string</pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>str1 <span class="token operator">=</span> <span class="token string">"mTyqm7wjODkrNLcWl0eqO8K8gc1BPk1GNLgUpI=="</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>s1<span class="token operator">=</span> <span class="token string">"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0987654321/+"</span></pre></td></tr><tr><td data-num="7"></td><td><pre>s2<span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>str1<span class="token punctuation">.</span>translate<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">.</span>maketrans<span class="token punctuation">(</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>str1 是需要解码的 base64<br />
+s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
+ 下面简单讲解一下两种语法的使用.</p>
+<p><mark>maketrans()</mark><br />
+ 生成字符串映射，即上述中 s2 是 s1 的映射表，也就是说 a 对应 B，B 对应 C，b 对应 D，以此类推...<br />
+<mark>translate()</mark><br />
+ 这里对 str1 字符串使用这个 s1 与 s2 生成的映射关系，生成新的 base64</p>
+]]></content>
+      <categories>
+        <category>wiki</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Rip覆盖</title>
     <url>/Rip%E8%A6%86%E7%9B%96/</url>
     <content><![CDATA[<p>实属栈溢出.<br />
@@ -260,32 +260,6 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
       </categories>
       <tags>
         <tag>pwn</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XOR</title>
-    <url>/XOR/</url>
-    <content><![CDATA[<p>关于 python xor 的脚本<br />
-<a id="more"></a></p>
-<h2 id="ida打开看看"><a class="anchor" href="#ida打开看看">#</a> IDA 打开看看</h2>
-<p>找到 main 函数，我们看到有异或字符，和 global 比较，相同的话就获得 flag</p>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png" alt="" /></p>
-<p><span class="purple">第 9 行得知 flag 的长度为 33</span></p>
-<p><span class="red">第 13 行比较 v6 和 global 处存放的前 31 位字符是否相同；相同则输出 success</span></p>
-<p><span class="rainbow">从 main 函数里面可以得到 V6 的处理方式为 v6 [i] 等于 v6 [i] 原来的值与 v6 [i-1] 按位异或.</span></p>
-<h2 id="查看global字符串"><a class="anchor" href="#查看global字符串">#</a> 查看 global 字符串</h2>
-<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png" alt="" /></p>
-<h2 id="编写解密脚本"><a class="anchor" href="#编写解密脚本">#</a> 编写解密脚本</h2>
-<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'w&amp;O.@'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'Z;U'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'v"M#D'</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'G2O'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>ss <span class="token operator">=</span> <span class="token string">'fkw&amp;O.@xZ;UpFv"M#DghG2O'</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>x <span class="token operator">=</span> <span class="token string">"f"</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">79</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">79</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">#字符串转换成 10 进制</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	x <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">^</span>a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#对应 v6</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></pre></td></tr></table></figure><p>拿到 flag： <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{QianQiuWanDai_YiTongJiangHu}</span></p>
-<h3 id="参考"><a class="anchor" href="#参考">#</a> 参考</h3>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9weXRob24vcHl0aG9uLW9wZXJhdG9ycy5odG1s">https://www.runoob.com/python/python-operators.html</span><br />
-<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMTEwMC9hcnRpY2xlL2RldGFpbHMvODkxNTYxNDE=">https://blog.csdn.net/weixin_44731100/article/details/89156141</span></p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>Re</tag>
       </tags>
   </entry>
   <entry>
@@ -372,6 +346,32 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
       </categories>
       <tags>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XOR</title>
+    <url>/XOR/</url>
+    <content><![CDATA[<p>关于 python xor 的脚本<br />
+<a id="more"></a></p>
+<h2 id="ida打开看看"><a class="anchor" href="#ida打开看看">#</a> IDA 打开看看</h2>
+<p>找到 main 函数，我们看到有异或字符，和 global 比较，相同的话就获得 flag</p>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/f878bebf3c3e1066.png" alt="" /></p>
+<p><span class="purple">第 9 行得知 flag 的长度为 33</span></p>
+<p><span class="red">第 13 行比较 v6 和 global 处存放的前 31 位字符是否相同；相同则输出 success</span></p>
+<p><span class="rainbow">从 main 函数里面可以得到 V6 的处理方式为 v6 [i] 等于 v6 [i] 原来的值与 v6 [i-1] 按位异或.</span></p>
+<h2 id="查看global字符串"><a class="anchor" href="#查看global字符串">#</a> 查看 global 字符串</h2>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/01/827aed457e7cd92a.png" alt="" /></p>
+<h2 id="编写解密脚本"><a class="anchor" href="#编写解密脚本">#</a> 编写解密脚本</h2>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre>s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token string">'k'</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token string">'w&amp;O.@'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token string">'Z;U'</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token string">'F'</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token string">'v"M#D'</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token string">'g'</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token string">'h'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token string">'G2O'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>ss <span class="token operator">=</span> <span class="token string">'fkw&amp;O.@xZ;UpFv"M#DghG2O'</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>x <span class="token operator">=</span> <span class="token string">"f"</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">107</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">119</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">79</span><span class="token punctuation">,</span> <span class="token number">46</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">120</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span> <span class="token number">85</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">118</span><span class="token punctuation">,</span> <span class="token number">34</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token number">68</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">103</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">104</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">79</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment">#字符串转换成 10 进制</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	x <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">^</span>a<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#对应 v6</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span></pre></td></tr></table></figure><p>拿到 flag： <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{QianQiuWanDai_YiTongJiangHu}</span></p>
+<h3 id="参考"><a class="anchor" href="#参考">#</a> 参考</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9weXRob24vcHl0aG9uLW9wZXJhdG9ycy5odG1s">https://www.runoob.com/python/python-operators.html</span><br />
+<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMTEwMC9hcnRpY2xlL2RldGFpbHMvODkxNTYxNDE=">https://blog.csdn.net/weixin_44731100/article/details/89156141</span></p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>Re</tag>
       </tags>
   </entry>
   <entry>
@@ -472,6 +472,53 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
       </categories>
       <tags>
         <tag>Secret</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>请问大吉杯的签到是在这里签吗?</title>
+    <url>/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
+    <content><![CDATA[<p>之前没接触过 zlib 文件格式；一直在思考如何将文件中的 zlib 解压，这一题整整忙了我两天.<br />
+ 我是傻逼.<br />
+<a id="more"></a></p>
+<h2 id="notepad查看"><a class="anchor" href="#notepad查看">#</a> Notepad 查看</h2>
+<p>把下载下来的 png 用 Notepad 打开，发现里面还藏着一个 png.</p>
+<p><img data-src="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png" alt="" /></p>
+<h2 id="我们用binwalk分离一下"><a class="anchor" href="#我们用binwalk分离一下">#</a> 我们用 binwalk 分离一下</h2>
+<p><img data-src="https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png" alt="" /></p>
+<p><img data-src="https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png" alt="" /></p>
+<p>发现分离文件中有一张 png, 一张在 zip 里的 png，一份空白文档 (我以为有什么妙用，缩放 (并不是) 二维码什么的) 以及一份 zlib 文件；(接下来的几天里我一直在攻略这份 zlib)</p>
+<p><img data-src="https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png" alt="" /></p>
+<p>依据在此，我更加确信这是出错在 zlib. 于是在搜索引擎里不断地搜索关于 zlib 解压的方法 (我是傻逼)<br />
+···<br />
+···<br />
+后来，我才知道，有 zlib 说明大概率是 LSB 隐写；</p>
+<p>在此之前，我先把分离出的 4 张 png 都扫了一遍</p>
+<p><img data-src="https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg" alt="" /></p>
+<p><img data-src="https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg" alt="" /></p>
+<p><img data-src="https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg" alt="" /></p>
+<p><img data-src="https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg" alt="" /></p>
+<p>可以清楚地知道，第二张图已经明确告诉我们扫到第二张就行了，error 就在 png2;</p>
+<p><img data-src="https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png" alt="" /></p>
+<h2 id="放入stegsolve-记住此刻原图的形状我觉得倒像是一只兔子"><a class="anchor" href="#放入stegsolve-记住此刻原图的形状我觉得倒像是一只兔子">#</a> 放入 stegsolve (记住此刻原图的形状，我觉得倒像是一只兔子)</h2>
+<p>然后我们查看最低位通道图</p>
+<p><img data-src="https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png" alt="" /></p>
+<p>是的，没看错，二维码变了；但是还不可以扫喔.<br />
+ 接下来我们需要将原图和这张二维码异或一下.</p>
+<p><img data-src="https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png" alt="" /><br />
+不过我还找到另一个简便的出现方式<br />
+<img data-src="https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png" alt="" /><br />
+不约而同地，两张图都出现了神秘的符号；<br />
+ 百度后了解了这是猪圈密码.<br />
+<img data-src="https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png" alt="" /></p>
+<p>按照这个解密就好了；</p>
+<p>最后得到 flag: <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{dajiadoaidjb}</span></p>
+<p>还是挺简单的，但是之前没接触过 zlib,stegsolve 用得也不熟练，还得做加把劲骑士呢</p>
+]]></content>
+      <categories>
+        <category>wp</category>
+      </categories>
+      <tags>
+        <tag>misc</tag>
       </tags>
   </entry>
   <entry>
@@ -580,53 +627,6 @@ let's do it<br />
 <img data-src="https://i.loli.net/2021/02/14/oPwGITg1nh2EcqZ.png" alt="" /><br />
  最后解出手机号</p>
 <p><span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{13910407686}</span></p>
-]]></content>
-      <categories>
-        <category>wp</category>
-      </categories>
-      <tags>
-        <tag>misc</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>请问大吉杯的签到是在这里签吗?</title>
-    <url>/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</url>
-    <content><![CDATA[<p>之前没接触过 zlib 文件格式；一直在思考如何将文件中的 zlib 解压，这一题整整忙了我两天.<br />
- 我是傻逼.<br />
-<a id="more"></a></p>
-<h2 id="notepad查看"><a class="anchor" href="#notepad查看">#</a> Notepad 查看</h2>
-<p>把下载下来的 png 用 Notepad 打开，发现里面还藏着一个 png.</p>
-<p><img data-src="https://i.loli.net/2021/01/27/VJ3P6ty4LqXoUCe.png" alt="" /></p>
-<h2 id="我们用binwalk分离一下"><a class="anchor" href="#我们用binwalk分离一下">#</a> 我们用 binwalk 分离一下</h2>
-<p><img data-src="https://i.loli.net/2021/01/27/FoZMvwyrtHJ6QUD.png" alt="" /></p>
-<p><img data-src="https://i.loli.net/2021/01/27/tdCzyXp8U5wS4iB.png" alt="" /></p>
-<p>发现分离文件中有一张 png, 一张在 zip 里的 png，一份空白文档 (我以为有什么妙用，缩放 (并不是) 二维码什么的) 以及一份 zlib 文件；(接下来的几天里我一直在攻略这份 zlib)</p>
-<p><img data-src="https://i.loli.net/2021/01/27/NIRQDtWlx3kG2gU.png" alt="" /></p>
-<p>依据在此，我更加确信这是出错在 zlib. 于是在搜索引擎里不断地搜索关于 zlib 解压的方法 (我是傻逼)<br />
-···<br />
-···<br />
-后来，我才知道，有 zlib 说明大概率是 LSB 隐写；</p>
-<p>在此之前，我先把分离出的 4 张 png 都扫了一遍</p>
-<p><img data-src="https://i.loli.net/2021/01/27/qsa24LPozNOHSYI.jpg" alt="" /></p>
-<p><img data-src="https://i.loli.net/2021/01/27/nSgAQOD2icHZNMT.jpg" alt="" /></p>
-<p><img data-src="https://i.loli.net/2021/01/27/N13dXg7TDVlZiGJ.jpg" alt="" /></p>
-<p><img data-src="https://i.loli.net/2021/01/27/sbgj7Dx4zcPTWde.jpg" alt="" /></p>
-<p>可以清楚地知道，第二张图已经明确告诉我们扫到第二张就行了，error 就在 png2;</p>
-<p><img data-src="https://i.loli.net/2021/01/27/Z2lDuG6rELa35pF.png" alt="" /></p>
-<h2 id="放入stegsolve-记住此刻原图的形状我觉得倒像是一只兔子"><a class="anchor" href="#放入stegsolve-记住此刻原图的形状我觉得倒像是一只兔子">#</a> 放入 stegsolve (记住此刻原图的形状，我觉得倒像是一只兔子)</h2>
-<p>然后我们查看最低位通道图</p>
-<p><img data-src="https://i.loli.net/2021/01/27/6kRHfnOJqivBZPc.png" alt="" /></p>
-<p>是的，没看错，二维码变了；但是还不可以扫喔.<br />
- 接下来我们需要将原图和这张二维码异或一下.</p>
-<p><img data-src="https://i.loli.net/2021/01/27/CADyL2eYNq9gc6n.png" alt="" /><br />
-不过我还找到另一个简便的出现方式<br />
-<img data-src="https://i.loli.net/2021/01/27/xhVcW7QvK415pIR.png" alt="" /><br />
-不约而同地，两张图都出现了神秘的符号；<br />
- 百度后了解了这是猪圈密码.<br />
-<img data-src="https://i.loli.net/2021/01/27/FznuCJQO48jq7Yd.png" alt="" /></p>
-<p>按照这个解密就好了；</p>
-<p>最后得到 flag: <span class="spoiler bulr" title="快走开(╯▔皿▔)╯">flag{dajiadoaidjb}</span></p>
-<p>还是挺简单的，但是之前没接触过 zlib,stegsolve 用得也不熟练，还得做加把劲骑士呢</p>
 ]]></content>
       <categories>
         <category>wp</category>
