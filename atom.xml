@@ -8,8 +8,55 @@
     <author>
       <name>Kyrita</name>
     </author>
-    <updated>2021-02-26T03:25:13.317Z</updated>
+    <updated>2021-02-27T12:04:05.163Z</updated>
     <category term="kyrita" />
+    <entry>
+        <id>http://kyrita.top/%E4%BB%8A%E6%97%A5%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/</id>
+        <title>今日份的密码学</title>
+        <link rel="alternate" href="http://kyrita.top/%E4%BB%8A%E6%97%A5%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+        <content type="html">&lt;p&gt;在这里分享一个很好用的爆破密码网站&lt;br /&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;br /&gt;
+ 今天在做一道密码题时发现无论怎样，这个密码都解不开来。&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/8Q1sfJvUe2MIp79.png&#34; alt=&#34;&#34; title=&#34;完全没见过的加密排列&#34; /&gt;&lt;br /&gt;
+于是就和今天这个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9xdWlwcWl1cC5jb20v&#34;&gt;网站&lt;/span&gt;邂逅了&lt;/p&gt;
+&lt;p&gt;直接把密文放入 solve 就可以了，下面会把爆破出来的结果一一列出。&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/IPHKnTNwhZpe94O.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;以及凯撒密码都可以使用此类词频分析，自动化爆破。&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/XUMyQtSiwxj1AE2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;脚本工贼都不写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#脚本工贼都不写&#34;&gt;#&lt;/a&gt; 脚本？工贼都不写&lt;/h2&gt;
+&lt;p&gt;Brainfuck and Ook!  ---&amp;gt;   &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuc3BsaXRicmFpbi5vcmcvc2VydmljZXMvb29r&#34;&gt;https://www.splitbrain.org/services/ook&lt;/span&gt;&lt;br /&gt;
+ 条形码 \ 二维码        ---&amp;gt;   &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9vbmxpbmUtYmFyY29kZS1yZWFkZXIuaW5saXRlcmVzZWFyY2guY29tLw==&#34;&gt;https://online-barcode-reader.inliteresearch.com/&lt;/span&gt;&lt;br /&gt;
+ 猪圈密码 \ 维吉尼亚...  ---&amp;gt;   &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5tZXRvb2xzLmluZm8vY29kZS9jOTAuaHRtbA==&#34;&gt;http://www.metools.info/code/c90.html&lt;/span&gt;&lt;br /&gt;
+Quoted-Printable 编码 ---&amp;gt;   &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5teGN6Lm5ldC90b29scy9RdW90ZWRQcmludGFibGUuYXNweA==&#34;&gt;http://www.mxcz.net/tools/QuotedPrintable.aspx&lt;/span&gt;&lt;br /&gt;
+ (一个等号和一个十六进制的数字)&lt;br /&gt;
+ Unicode 编码         ---&amp;gt;   &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuamI1MS5uZXQvdG9vbHMvb25saW5ldG9vbHMvamllbWkvdW5pZW5kZWNvZGUuaHRt&#34;&gt;https://www.jb51.net/tools/onlinetools/jiemi/uniendecode.htm&lt;/span&gt;&lt;br /&gt;
+ 其他工具             ---&amp;gt;   &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2VuY29kZS5jaGFodW8uY29tLw==&#34;&gt;http://encode.chahuo.com/&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;古典密码知多少&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#古典密码知多少&#34;&gt;#&lt;/a&gt; 古典密码知多少&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/02/27/uRHNm9SM3ifIJPl.jpg&#34; alt=&#34;&#34; title=&#34;uhh..可以说是掺杂了各种密码的图谱&#34; /&gt;&lt;br /&gt;
+hint 提示最后可能需要用到栅栏密码，还要求我们所有字母大写&lt;/p&gt;
+&lt;p&gt;紫色部分有些基础的都可以看出是猪圈密码，我们参照猪圈密码的解码图解开就好了&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/v1ZjQlWVEdXLhTB.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;get &amp;quot;FGCP&amp;quot; 和 &amp;quot;A&amp;quot; &amp;quot;N&amp;quot;&lt;/p&gt;
+&lt;p&gt;橙色部分不太常见，通过百度知道叫做圣堂骑士 (串戏) 密码，由猪圈密码演化而来&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/nwBV8d6butsQ3CS.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;参照译文得到 &amp;quot;FLI&amp;quot; &amp;quot;S&amp;quot;&lt;/p&gt;
+&lt;p&gt;最后，黑色部分更更更没听说过了&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/iaKsltmrSZqXGxT.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+后来百度搜图才知道是个银河什么密码&lt;br /&gt;
+不知道该怎么办，给大家表演个原地死王八 *&lt;br /&gt;
+&lt;img data-src=&#34;https://i.loli.net/2021/02/27/ui3WsQzAkxFLTMc.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+get &amp;quot;rtu&amp;quot; &amp;quot;yo&amp;quot;&lt;/p&gt;
+&lt;p&gt;综上排列一下&lt;br /&gt;
+ &amp;quot;FGCPFLIRTUASYON&amp;quot;&lt;br /&gt;
+ 解密得到&lt;br /&gt;
+ &amp;quot;FLAGISCRYPTOFUN&amp;quot;&lt;br /&gt;
+ 即 flag 为 CRYPTOFUN&lt;/p&gt;
+</content>
+        <category term="wp" scheme="http://kyrita.top/categories/wp/" />
+        <category term="硬核爆破" scheme="http://kyrita.top/categories/wp/%E7%A1%AC%E6%A0%B8%E7%88%86%E7%A0%B4/" />
+        <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
+        <updated>2021-02-27T12:04:05.163Z</updated>
+    </entry>
     <entry>
         <id>http://kyrita.top/something-4-u/</id>
         <title>something 4 u</title>
