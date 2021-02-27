@@ -35,9 +35,10 @@
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>web</category>
       </categories>
       <tags>
-        <tag>Web</tag>
+        <tag>SSTI</tag>
       </tags>
   </entry>
   <entry>
@@ -111,9 +112,10 @@
 ]]></content>
       <categories>
         <category>生活随笔</category>
+        <category>GAME</category>
       </categories>
       <tags>
-        <tag>Game</tag>
+        <tag>凯瑟琳</tag>
       </tags>
   </entry>
   <entry>
@@ -136,9 +138,10 @@ shift+F12 看一下</p>
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>Re</category>
       </categories>
       <tags>
-        <tag>Re</tag>
+        <tag>逆向先脱壳</tag>
       </tags>
   </entry>
   <entry>
@@ -150,9 +153,10 @@ shift+F12 看一下</p>
 ]]></content>
       <categories>
         <category>wiki</category>
+        <category>密码学</category>
       </categories>
       <tags>
-        <tag>crypto</tag>
+        <tag>HASH</tag>
       </tags>
   </entry>
   <entry>
@@ -205,9 +209,10 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)</p>
 ]]></content>
       <categories>
         <category>wiki</category>
+        <category>密码学</category>
       </categories>
       <tags>
-        <tag>crypto</tag>
+        <tag>RSA</tag>
       </tags>
   </entry>
   <entry>
@@ -226,9 +231,10 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
 ]]></content>
       <categories>
         <category>wiki</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>python</tag>
+        <tag>python语法</tag>
       </tags>
   </entry>
   <entry>
@@ -257,9 +263,10 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>pwn</category>
       </categories>
       <tags>
-        <tag>pwn</tag>
+        <tag>栈溢出</tag>
       </tags>
   </entry>
   <entry>
@@ -300,9 +307,10 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.<br />
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>web</category>
       </categories>
       <tags>
-        <tag>Web</tag>
+        <tag>上传漏洞</tag>
       </tags>
   </entry>
   <entry>
@@ -369,9 +377,10 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>Re</category>
       </categories>
       <tags>
-        <tag>Re</tag>
+        <tag>逆向异或脚本</tag>
       </tags>
   </entry>
   <entry>
@@ -398,9 +407,10 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>pwn</category>
       </categories>
       <tags>
-        <tag>pwn</tag>
+        <tag>栈溢出</tag>
       </tags>
   </entry>
   <entry>
@@ -447,9 +457,10 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>pwn</category>
       </categories>
       <tags>
-        <tag>pwn</tag>
+        <tag>栈溢出</tag>
       </tags>
   </entry>
   <entry>
@@ -516,9 +527,10 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>misc</category>
       </categories>
       <tags>
-        <tag>misc</tag>
+        <tag>图片隐写</tag>
       </tags>
   </entry>
   <entry>
@@ -630,9 +642,10 @@ let's do it<br />
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>misc</category>
       </categories>
       <tags>
-        <tag>misc</tag>
+        <tag>aircarck破解wifi密码(其一)</tag>
       </tags>
   </entry>
   <entry>
@@ -678,7 +691,7 @@ get &quot;rtu&quot; &quot;yo&quot;</p>
 ]]></content>
       <categories>
         <category>wp</category>
-        <category>硬核爆破</category>
+        <category>crypto</category>
       </categories>
       <tags>
         <tag>crypto</tag>

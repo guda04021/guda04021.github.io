@@ -18,7 +18,7 @@
             <title>今日份的密码学</title>
             <link>http://kyrita.top/%E4%BB%8A%E6%97%A5%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="硬核爆破" scheme="http://kyrita.top/categories/wp/%E7%A1%AC%E6%A0%B8%E7%88%86%E7%A0%B4/" />
+            <category term="crypto" scheme="http://kyrita.top/categories/wp/crypto/" />
             <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
             <pubDate>Sat, 27 Feb 2021 20:04:05 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;在这里分享一个很好用的爆破密码网站&lt;br /&gt;
@@ -85,7 +85,8 @@ get &amp;quot;rtu&amp;quot; &amp;quot;yo&amp;quot;&lt;/p&gt;
             <title>Python中translate()和maketrans()的使用</title>
             <link>http://kyrita.top/Python%E4%B8%ADtranslate-%E5%92%8Cmaketrans-%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
             <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
-            <category term="python" scheme="http://kyrita.top/tags/python/" />
+            <category term="python" scheme="http://kyrita.top/categories/wiki/python/" />
+            <category term="python语法" scheme="http://kyrita.top/tags/python%E8%AF%AD%E6%B3%95/" />
             <pubDate>Wed, 24 Feb 2021 11:20:57 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;base64 字典表顺序时可能会用到.&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;br /&gt;
@@ -104,7 +105,8 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.&lt;br /&gt;
             <title>UPLOAD</title>
             <link>http://kyrita.top/UPLOAD/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="Web" scheme="http://kyrita.top/tags/Web/" />
+            <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
+            <category term="上传漏洞" scheme="http://kyrita.top/tags/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" />
             <pubDate>Sun, 21 Feb 2021 21:05:00 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;涉及到.htaccess&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;br /&gt;
@@ -191,7 +193,8 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.&lt;br /&gt;
             <title>Catherine</title>
             <link>http://kyrita.top/Catherine/</link>
             <category term="生活随笔" scheme="http://kyrita.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/" />
-            <category term="Game" scheme="http://kyrita.top/tags/Game/" />
+            <category term="GAME" scheme="http://kyrita.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/GAME/" />
+            <category term="凯瑟琳" scheme="http://kyrita.top/tags/%E5%87%AF%E7%91%9F%E7%90%B3/" />
             <pubDate>Mon, 15 Feb 2021 12:02:41 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;32 岁还不结婚的男人，总有人希望你去死.&lt;br /&gt;
 ----《Catherine:remake》&lt;br /&gt;
@@ -265,7 +268,8 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.&lt;br /&gt;
             <title>想蹭网先解开密码&amp;Crunch密码生成器</title>
             <link>http://kyrita.top/%E6%83%B3%E8%B9%AD%E7%BD%91%E5%85%88%E8%A7%A3%E5%BC%80%E5%AF%86%E7%A0%81-Crunch%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="misc" scheme="http://kyrita.top/tags/misc/" />
+            <category term="misc" scheme="http://kyrita.top/categories/wp/misc/" />
+            <category term="aircarck破解wifi密码(其一)" scheme="http://kyrita.top/tags/aircarck%E7%A0%B4%E8%A7%A3wifi%E5%AF%86%E7%A0%81-%E5%85%B6%E4%B8%80/" />
             <pubDate>Sat, 13 Feb 2021 19:18:57 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;Crunch 普遍用于生成密码字典，配合其他工具使用进行暴力破解。作为 kali linux 下前十名最常使用的工具之一，用途非常广泛。&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -329,7 +333,8 @@ let&#39;s do it&lt;br /&gt;
             <title>RSA加密算法详细解说</title>
             <link>http://kyrita.top/RSA%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E7%BB%86%E8%A7%A3%E8%AF%B4/</link>
             <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
-            <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
+            <category term="密码学" scheme="http://kyrita.top/categories/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6/" />
+            <category term="RSA" scheme="http://kyrita.top/tags/RSA/" />
             <pubDate>Mon, 08 Feb 2021 16:04:48 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;RSA 加密算法是一种非对称加密算法，加密由公钥，私钥，明文，密文四部分组成.&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -382,7 +387,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
             <title>XOR</title>
             <link>http://kyrita.top/XOR/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="Re" scheme="http://kyrita.top/tags/Re/" />
+            <category term="Re" scheme="http://kyrita.top/categories/wp/Re/" />
+            <category term="逆向异或脚本" scheme="http://kyrita.top/tags/%E9%80%86%E5%90%91%E5%BC%82%E6%88%96%E8%84%9A%E6%9C%AC/" />
             <pubDate>Thu, 28 Jan 2021 10:52:10 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;关于 python xor 的脚本&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -406,7 +412,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
             <title>Rip覆盖</title>
             <link>http://kyrita.top/Rip%E8%A6%86%E7%9B%96/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="pwn" scheme="http://kyrita.top/tags/pwn/" />
+            <category term="pwn" scheme="http://kyrita.top/categories/wp/pwn/" />
+            <category term="栈溢出" scheme="http://kyrita.top/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
             <pubDate>Wed, 27 Jan 2021 19:07:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;实属栈溢出.&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;br /&gt;
@@ -435,7 +442,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
             <title>ciscn_2019_n_1</title>
             <link>http://kyrita.top/ciscn-2019-n-1/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="pwn" scheme="http://kyrita.top/tags/pwn/" />
+            <category term="pwn" scheme="http://kyrita.top/categories/wp/pwn/" />
+            <category term="栈溢出" scheme="http://kyrita.top/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
             <pubDate>Wed, 27 Jan 2021 17:54:57 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;可能是栈溢出吗&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -462,7 +470,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
             <title>请问大吉杯的签到是在这里签吗?</title>
             <link>http://kyrita.top/%E8%AF%B7%E9%97%AE%E5%A4%A7%E5%90%89%E6%9D%AF%E7%9A%84%E7%AD%BE%E5%88%B0%E6%98%AF%E5%9C%A8%E8%BF%99%E9%87%8C%E7%AD%BE%E5%90%97/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="misc" scheme="http://kyrita.top/tags/misc/" />
+            <category term="misc" scheme="http://kyrita.top/categories/wp/misc/" />
+            <category term="图片隐写" scheme="http://kyrita.top/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" />
             <pubDate>Wed, 27 Jan 2021 10:16:08 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;之前没接触过 zlib 文件格式；一直在思考如何将文件中的 zlib 解压，这一题整整忙了我两天.&lt;br /&gt;
  我是傻逼.&lt;br /&gt;
@@ -507,7 +516,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
             <title>HASH破解</title>
             <link>http://kyrita.top/HASH%E7%A0%B4%E8%A7%A3/</link>
             <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
-            <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
+            <category term="密码学" scheme="http://kyrita.top/categories/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6/" />
+            <category term="HASH" scheme="http://kyrita.top/tags/HASH/" />
             <pubDate>Tue, 26 Jan 2021 13:25:40 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;待写&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;br /&gt;
@@ -519,7 +529,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
             <title>砰！</title>
             <link>http://kyrita.top/pwn/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="pwn" scheme="http://kyrita.top/tags/pwn/" />
+            <category term="pwn" scheme="http://kyrita.top/categories/wp/pwn/" />
+            <category term="栈溢出" scheme="http://kyrita.top/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
             <pubDate>Tue, 26 Jan 2021 12:07:07 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;放假在家准备接触一下从未挑战过的 pwn&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -607,7 +618,8 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
             <title>BJDCTF2020-The mystery of ip</title>
             <link>http://kyrita.top/BJDCTF2020-The-mystery-of-ip/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="Web" scheme="http://kyrita.top/tags/Web/" />
+            <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
+            <category term="SSTI" scheme="http://kyrita.top/tags/SSTI/" />
             <pubDate>Fri, 22 Jan 2021 10:22:19 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;先进入题目给的靶机&lt;br /&gt;
 &lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -645,7 +657,8 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
             <title>RE-新年快乐</title>
             <link>http://kyrita.top/EZre/</link>
             <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-            <category term="Re" scheme="http://kyrita.top/tags/Re/" />
+            <category term="Re" scheme="http://kyrita.top/categories/wp/Re/" />
+            <category term="逆向先脱壳" scheme="http://kyrita.top/tags/%E9%80%86%E5%90%91%E5%85%88%E8%84%B1%E5%A3%B3/" />
             <pubDate>Thu, 21 Jan 2021 22:20:33 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;新年快乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#新年快乐&#34;&gt;#&lt;/a&gt; 新年快乐&lt;/h1&gt;
 &lt;p&gt;&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;

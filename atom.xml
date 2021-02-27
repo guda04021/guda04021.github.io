@@ -53,7 +53,7 @@ get &amp;quot;rtu&amp;quot; &amp;quot;yo&amp;quot;&lt;/p&gt;
  即 flag 为 CRYPTOFUN&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="硬核爆破" scheme="http://kyrita.top/categories/wp/%E7%A1%AC%E6%A0%B8%E7%88%86%E7%A0%B4/" />
+        <category term="crypto" scheme="http://kyrita.top/categories/wp/crypto/" />
         <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
         <updated>2021-02-27T12:04:05.163Z</updated>
     </entry>
@@ -93,7 +93,8 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.&lt;br /&gt;
  这里对 str1 字符串使用这个 s1 与 s2 生成的映射关系，生成新的 base64&lt;/p&gt;
 </content>
         <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
-        <category term="python" scheme="http://kyrita.top/tags/python/" />
+        <category term="python" scheme="http://kyrita.top/categories/wiki/python/" />
+        <category term="python语法" scheme="http://kyrita.top/tags/python%E8%AF%AD%E6%B3%95/" />
         <updated>2021-02-24T03:20:57.015Z</updated>
     </entry>
     <entry>
@@ -134,7 +135,8 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.&lt;br /&gt;
 &lt;p&gt;关于上传漏洞的知识点在&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzkwNzAzL2FydGljbGUvZGV0YWlscy8xMDQ4NTg3MDU/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3JlbGV2YW50Lm5vbmUtdGFzay1ibG9nLUJsb2dDb21tZW5kRnJvbU1hY2hpbmVMZWFyblBhaTItMi5jb250cm9sJmFtcDtkaXN0X3JlcXVlc3RfaWQ9ZDcwNmYwNTYtZjdhNS00NTMxLWEwNGUtYTRlMjk5MmQwMzZiJmFtcDtkZXB0aF8xLXV0bV9zb3VyY2U9ZGlzdHJpYnV0ZS5wY19yZWxldmFudC5ub25lLXRhc2stYmxvZy1CbG9nQ29tbWVuZEZyb21NYWNoaW5lTGVhcm5QYWkyLTIuY29udHJvbA==&#34;&gt;这篇博文&lt;/span&gt;会有更详细的见解&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="Web" scheme="http://kyrita.top/tags/Web/" />
+        <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
+        <category term="上传漏洞" scheme="http://kyrita.top/tags/%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" />
         <updated>2021-02-21T13:05:00.061Z</updated>
     </entry>
     <entry>
@@ -254,7 +256,8 @@ s1 是给出的字典表，s2 是 s1 的（常规）映射表.&lt;br /&gt;
 &lt;mark&gt;To be continued&lt;/mark&gt;&lt;/p&gt;
 </content>
         <category term="生活随笔" scheme="http://kyrita.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/" />
-        <category term="Game" scheme="http://kyrita.top/tags/Game/" />
+        <category term="GAME" scheme="http://kyrita.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/GAME/" />
+        <category term="凯瑟琳" scheme="http://kyrita.top/tags/%E5%87%AF%E7%91%9F%E7%90%B3/" />
         <updated>2021-02-15T04:02:41.833Z</updated>
     </entry>
     <entry>
@@ -318,7 +321,8 @@ let&#39;s do it&lt;br /&gt;
 &lt;p&gt;&lt;span class=&#34;spoiler bulr&#34; title=&#34;快走开(╯▔皿▔)╯&#34;&gt;flag{13910407686}&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="misc" scheme="http://kyrita.top/tags/misc/" />
+        <category term="misc" scheme="http://kyrita.top/categories/wp/misc/" />
+        <category term="aircarck破解wifi密码(其一)" scheme="http://kyrita.top/tags/aircarck%E7%A0%B4%E8%A7%A3wifi%E5%AF%86%E7%A0%81-%E5%85%B6%E4%B8%80/" />
         <updated>2021-02-13T11:18:57.823Z</updated>
     </entry>
     <entry>
@@ -371,7 +375,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://ftp.bmp.ovh/imgs/2021/02/2488b83b697b9b94.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
-        <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
+        <category term="密码学" scheme="http://kyrita.top/categories/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6/" />
+        <category term="RSA" scheme="http://kyrita.top/tags/RSA/" />
         <updated>2021-02-08T08:04:48.652Z</updated>
     </entry>
     <entry>
@@ -395,7 +400,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczMTEwMC9hcnRpY2xlL2RldGFpbHMvODkxNTYxNDE=&#34;&gt;https://blog.csdn.net/weixin_44731100/article/details/89156141&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="Re" scheme="http://kyrita.top/tags/Re/" />
+        <category term="Re" scheme="http://kyrita.top/categories/wp/Re/" />
+        <category term="逆向异或脚本" scheme="http://kyrita.top/tags/%E9%80%86%E5%90%91%E5%BC%82%E6%88%96%E8%84%9A%E6%9C%AC/" />
         <updated>2021-01-28T02:52:10.605Z</updated>
     </entry>
     <entry>
@@ -424,7 +430,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
 &lt;p&gt;get &lt;span class=&#34;spoiler bulr&#34; title=&#34;快走开(╯▔皿▔)╯&#34;&gt;flag{8bf972eb-867d-485b-94d5-737f5bc12947}&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="pwn" scheme="http://kyrita.top/tags/pwn/" />
+        <category term="pwn" scheme="http://kyrita.top/categories/wp/pwn/" />
+        <category term="栈溢出" scheme="http://kyrita.top/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
         <updated>2021-01-27T11:07:12.924Z</updated>
     </entry>
     <entry>
@@ -451,7 +458,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9sb3N0cGhwLmNvbS9oZXhjb252ZXJ0Lw==&#34;&gt;CLICK ME&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="pwn" scheme="http://kyrita.top/tags/pwn/" />
+        <category term="pwn" scheme="http://kyrita.top/categories/wp/pwn/" />
+        <category term="栈溢出" scheme="http://kyrita.top/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
         <updated>2021-01-27T09:54:57.711Z</updated>
     </entry>
     <entry>
@@ -496,7 +504,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
 &lt;p&gt;还是挺简单的，但是之前没接触过 zlib,stegsolve 用得也不熟练，还得做加把劲骑士呢&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="misc" scheme="http://kyrita.top/tags/misc/" />
+        <category term="misc" scheme="http://kyrita.top/categories/wp/misc/" />
+        <category term="图片隐写" scheme="http://kyrita.top/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" />
         <updated>2021-01-27T02:16:08.102Z</updated>
     </entry>
     <entry>
@@ -508,7 +517,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
  简单论述 windows hash 破解&lt;/p&gt;
 </content>
         <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
-        <category term="crypto" scheme="http://kyrita.top/tags/crypto/" />
+        <category term="密码学" scheme="http://kyrita.top/categories/wiki/%E5%AF%86%E7%A0%81%E5%AD%A6/" />
+        <category term="HASH" scheme="http://kyrita.top/tags/HASH/" />
         <updated>2021-01-26T05:25:40.419Z</updated>
     </entry>
     <entry>
@@ -555,7 +565,8 @@ a^φ(n) = a × a^(φ(n)−1)≡1(modn)&lt;/p&gt;
 &lt;p class=&#34;bulr&#34;&gt;&lt;span class=&#34;spoiler&#34; title=&#34;快走开(╯▔皿▔)╯&#34;&gt;flag{a15dd406-0d79-4f49-b5a0-3dde546a4d3d}&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="pwn" scheme="http://kyrita.top/tags/pwn/" />
+        <category term="pwn" scheme="http://kyrita.top/categories/wp/pwn/" />
+        <category term="栈溢出" scheme="http://kyrita.top/tags/%E6%A0%88%E6%BA%A2%E5%87%BA/" />
         <updated>2021-01-26T04:07:07.903Z</updated>
     </entry>
     <entry>
@@ -634,7 +645,8 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
 &lt;p&gt;于是拿到了 flag, 放入题目中 sumbit;yas&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="Web" scheme="http://kyrita.top/tags/Web/" />
+        <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
+        <category term="SSTI" scheme="http://kyrita.top/tags/SSTI/" />
         <updated>2021-01-22T02:22:19.668Z</updated>
     </entry>
     <entry>
@@ -657,7 +669,8 @@ shift+F12 看一下&lt;/p&gt;
 &lt;p&gt;且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=&lt;span class=&#34;spoiler bulr&#34; title=&#34;快走开(╯▔皿▔)╯&#34;&gt;flag{HappyNewYear!}&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="Re" scheme="http://kyrita.top/tags/Re/" />
+        <category term="Re" scheme="http://kyrita.top/categories/wp/Re/" />
+        <category term="逆向先脱壳" scheme="http://kyrita.top/tags/%E9%80%86%E5%90%91%E5%85%88%E8%84%B1%E5%A3%B3/" />
         <updated>2021-01-21T14:20:33.994Z</updated>
     </entry>
 </feed>
