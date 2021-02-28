@@ -607,7 +607,8 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
 &lt;p&gt;payload: 使用 &#39;1000&#39;&lt;/p&gt;
 </content>
         <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="Web" scheme="http://kyrita.top/tags/Web/" />
+        <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
+        <category term="SQL绕过" scheme="http://kyrita.top/tags/SQL%E7%BB%95%E8%BF%87/" />
         <updated>2021-01-24T02:48:40.021Z</updated>
     </entry>
     <entry>

@@ -351,9 +351,10 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
 ]]></content>
       <categories>
         <category>wp</category>
+        <category>web</category>
       </categories>
       <tags>
-        <tag>Web</tag>
+        <tag>SQL绕过</tag>
       </tags>
   </entry>
   <entry>
