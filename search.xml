@@ -473,7 +473,7 @@ if(preg_match(&quot;/or|-|\|/|\*|&lt;|&gt;|!|x|hex|(|)|+|select/i&quot;,$id))<br
   <entry>
     <title>今日份的密码学</title>
     <url>/%E4%BB%8A%E6%97%A5%E4%BB%BD%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
-    <content><![CDATA[<p>在这里分享一个很好用的爆破密码网站<br />
+    <content><![CDATA[<p>在这里记录一个很好用的爆破密码网站<br />
 <a id="more"></a><br />
  今天在做一道密码题时发现无论怎样，这个密码都解不开来。<br />
 <img data-src="https://i.loli.net/2021/02/27/8Q1sfJvUe2MIp79.png" alt="" title="完全没见过的加密排列" /><br />
