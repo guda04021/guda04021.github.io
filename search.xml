@@ -717,4 +717,52 @@ let's do it<br />
         <tag>MD5修复</tag>
       </tags>
   </entry>
+  <entry>
+    <title>English grammar</title>
+    <url>/English-grammar/</url>
+    <content><![CDATA[<h1 id="句子成分"><a class="anchor" href="#句子成分">#</a> 句子成分</h1>
+<h2 id="表语"><a class="anchor" href="#表语">#</a> 表语:</h2>
+<p>He looks <span class="orange">tired</span>. 形容词在系动词后作表语</p>
+<p>My job is <span class="orange">cleaning</span> the manager's office. 动名词 (反复性) 在系动词后作表语</p>
+<p>My dream is <span class="orange">to become a doctor</span> 不定式在系动词后作表语</p>
+<p>Lucy is <span class="orange">in the classroom</span> 介宾短语在系动词后作表语</p>
+<h2 id="定语"><a class="anchor" href="#定语">#</a> 定语:</h2>
+<p>This is an <span class="aqua">interesting</span> story. 形容词修饰名词作前置定语</p>
+<p>I have something <span class="aqua">interesting</span> to tell u. 形容词修饰不定代词作后置定语</p>
+<p>The girl <span class="aqua">in the classroom</span> is my friend. 介宾短语修饰名词作后置定语</p>
+<p>The man <span class="aqua">talking with my father</span> is my teacher. 现在分词 (主动 / 正在发生) 作后置定语</p>
+<p>The book <span class="aqua">written by u</span> is interesting. 过去分词 (被动 / 已发生) 作后置定语</p>
+<p>The bike <span class="aqua">being repaired</span> is mine. 过去分词进行时 (被动 / 正在发生) 作后置定语</p>
+<p>The days <span class="aqua">to come</span> are sunny. 动词不定式的主动式 (主动 / 将来发生) 作后置定语</p>
+<p>The building <span class="aqua">to be built</span> is our library. 动词不定式的被动式 (被动 / 准备发生) 作后置定语</p>
+<p>The <span class="aqua">washing</span> machine is new. 动名词 (表用途) 作前置定语</p>
+<p>The <span class="aqua">two</span> boys are students. 数词作前置定语</p>
+<p>Jack won the <span class="aqua">golden</span> medal. 名词修饰名词作前置定语</p>
+<h2 id="状语"><a class="anchor" href="#状语">#</a> 状语:</h2>
+<p>The question is <span class="red">too</span> difficult. 状语副词修饰形容词作状语</p>
+<p>He runs <span class="red">fast</span>. 副词修饰动词作状语</p>
+<p>He runs very <span class="red">fast</span> 副词修饰副词作状语</p>
+<p><span class="red">Luckily</span>,he passed the exam. 副词修饰句子作状语</p>
+<p>He goes to school <span class="red">on foot</span> 介宾短语修饰动词作状语</p>
+<h1 id="复合句"><a class="anchor" href="#复合句">#</a> 复合句</h1>
+<h2 id="名词性从句"><a class="anchor" href="#名词性从句">#</a> 名词性从句</h2>
+<p><img data-src="https://i.loli.net/2021/03/09/RhYbSDH3i6pFjJx.jpg" alt="" /></p>
+<p>引导名词性从句的连接代词：what,which,whatever,whichever,who,whoever,whose,whom,whomever</p>
+<p><img data-src="https://ftp.bmp.ovh/imgs/2021/03/dae129441aa6becb.jpg" alt="" /></p>
+<p>引导名词性从句的连接副词：when,where,wht,how</p>
+<p><img data-src="https://i.loli.net/2021/03/09/vxuGATYze34FIQ1.jpg" alt="" /></p>
+<p><img data-src="https://i.loli.net/2021/03/09/AlS2VdwE1zbFWQ9.jpg" alt="" /><br />
+引导名词性从句的从属连词：that (无意义，不做成份),if (&quot;是否&quot;，不做成份)，whether (广泛)</p>
+<p><img data-src="https://i.loli.net/2021/03/09/2VMXZiyxhbtu8Nl.jpg" alt="" /></p>
+<figure class="highlight latex"><figcaption data-lang="LaTeX"></figcaption><table><tr><td data-num="1"></td><td><pre>总结: f(x)=<span class="token function selector">\left</span><span class="token function selector">\&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token function selector">\begin</span><span class="token punctuation">&#123;</span><span class="token keyword">aligned</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>主语从句 <span class="token function selector">\\</span></pre></td></tr><tr><td data-num="4"></td><td><pre>宾语从句 <span class="token function selector">\\</span></pre></td></tr><tr><td data-num="5"></td><td><pre>表语从句 <span class="token function selector">\\</span></pre></td></tr><tr><td data-num="6"></td><td><pre>同位语从句</pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token function selector">\end</span><span class="token punctuation">&#123;</span><span class="token keyword">aligned</span><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token function selector">\right</span>.</pre></td></tr></table></figure><p><img data-src="https://i.loli.net/2021/03/09/1GBWZMux2pHCvfz.jpg" alt="" /></p>
+<p><img data-src="https://i.loli.net/2021/03/09/vFY3HieylbLOIJ5.jpg" alt="" /></p>
+]]></content>
+      <categories>
+        <category>英语</category>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>英语语法</tag>
+      </tags>
+  </entry>
 </search>
