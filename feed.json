@@ -7,6 +7,26 @@
     "home_page_url": "http://kyrita.top",
     "items": [
         {
+            "id": "http://kyrita.top/Python%E5%AE%9E%E7%8E%B0%E5%AD%97%E9%A2%91%E7%BB%9F%E8%AE%A1/",
+            "url": "http://kyrita.top/Python%E5%AE%9E%E7%8E%B0%E5%AD%97%E9%A2%91%E7%BB%9F%E8%AE%A1/",
+            "title": "Python实现字频统计",
+            "date_published": "2021-07-10T06:45:42.826Z",
+            "content_html": "<p>做题时遇到大量字符串怎么办？？<br />\n<a id=\"more\"></a></p>\n<p>利用 collection 模块简化代码</p>\n<figure class=\"highlight python\"><figcaption data-lang=\"python\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token keyword\">from</span> collections <span class=\"token keyword\">import</span> Counter</pre></td></tr><tr><td data-num=\"2\"></td><td><pre></pre></td></tr><tr><td data-num=\"3\"></td><td><pre><span class=\"token keyword\">with</span> <span class=\"token builtin\">open</span><span class=\"token punctuation\">(</span><span class=\"token string\">\"flag.txt\"</span><span class=\"token punctuation\">)</span> <span class=\"token keyword\">as</span> f<span class=\"token punctuation\">:</span></pre></td></tr><tr><td data-num=\"4\"></td><td><pre>\ttext_list <span class=\"token operator\">=</span> f<span class=\"token punctuation\">.</span>readlines<span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span></pre></td></tr><tr><td data-num=\"5\"></td><td><pre>\t<span class=\"token triple-quoted-string string\">'''将读取的内容转换为字符串'''</span></pre></td></tr><tr><td data-num=\"6\"></td><td><pre>\ttext_str <span class=\"token operator\">=</span> <span class=\"token string\">''</span><span class=\"token punctuation\">.</span>join<span class=\"token punctuation\">(</span>text_list<span class=\"token punctuation\">)</span></pre></td></tr><tr><td data-num=\"7\"></td><td><pre>\tcount <span class=\"token operator\">=</span> Counter<span class=\"token punctuation\">(</span>text_str<span class=\"token punctuation\">)</span></pre></td></tr><tr><td data-num=\"8\"></td><td><pre>\t<span class=\"token keyword\">print</span> <span class=\"token punctuation\">(</span>count<span class=\"token punctuation\">)</span></pre></td></tr></table></figure>",
+            "tags": [
+                "wiki",
+                "python",
+                "python"
+            ]
+        },
+        {
+            "id": "http://kyrita.top/O-Captain-my-captain/",
+            "url": "http://kyrita.top/O-Captain-my-captain/",
+            "title": "O Captain my captain",
+            "date_published": "2021-06-10T13:40:46.000Z",
+            "content_html": "",
+            "tags": []
+        },
+        {
             "id": "http://kyrita.top/English-grammar/",
             "url": "http://kyrita.top/English-grammar/",
             "title": "English grammar",
@@ -218,18 +238,6 @@
                 "wp",
                 "web",
                 "SSTI"
-            ]
-        },
-        {
-            "id": "http://kyrita.top/EZre/",
-            "url": "http://kyrita.top/EZre/",
-            "title": "RE-新年快乐",
-            "date_published": "2021-01-21T14:20:33.994Z",
-            "content_html": "<h1 id=\"新年快乐\"><a class=\"anchor\" href=\"#新年快乐\">#</a> 新年快乐</h1>\n<p><a id=\"more\"></a></p>\n<p><img data-src=\"https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png\" alt=\"\" /></p>\n<p>是叫我们输入一个 flag, 看看就知道没什么卵用；</p>\n<p>拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？</p>\n<h2 id=\"先脱壳\"><a class=\"anchor\" href=\"#先脱壳\">#</a> 先脱壳</h2>\n<p><img data-src=\"https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png\" alt=\"\" /></p>\n<p>将脱壳后的 exe 程序拖入 IDA 中；<br />\n 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；<br />\nshift+F12 看一下</p>\n<p><img data-src=\"https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png\" alt=\"\" /></p>\n<p>选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；</p>\n<p><img data-src=\"https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png\" alt=\"\" /></p>\n<p>且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=<span class=\"spoiler bulr\" title=\"快走开(╯▔皿▔)╯\">flag{HappyNewYear!}</span></p>\n",
-            "tags": [
-                "wp",
-                "Re",
-                "逆向先脱壳"
             ]
         }
     ]

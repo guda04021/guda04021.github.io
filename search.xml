@@ -787,4 +787,24 @@ let's do it<br />
         <tag>英语语法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Python实现字频统计</title>
+    <url>/Python%E5%AE%9E%E7%8E%B0%E5%AD%97%E9%A2%91%E7%BB%9F%E8%AE%A1/</url>
+    <content><![CDATA[<p>做题时遇到大量字符串怎么办？？<br />
+<a id="more"></a></p>
+<p>利用 collection 模块简化代码</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">from</span> collections <span class="token keyword">import</span> Counter</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"flag.txt"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>	text_list <span class="token operator">=</span> f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token triple-quoted-string string">'''将读取的内容转换为字符串'''</span></pre></td></tr><tr><td data-num="6"></td><td><pre>	text_str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>text_list<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>	count <span class="token operator">=</span> Counter<span class="token punctuation">(</span>text_str<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre>	<span class="token keyword">print</span> <span class="token punctuation">(</span>count<span class="token punctuation">)</span></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>wiki</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>O Captain my captain</title>
+    <url>/O-Captain-my-captain/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
