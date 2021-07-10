@@ -19,14 +19,6 @@
             ]
         },
         {
-            "id": "http://kyrita.top/O-Captain-my-captain/",
-            "url": "http://kyrita.top/O-Captain-my-captain/",
-            "title": "O Captain my captain",
-            "date_published": "2021-06-10T13:40:46.000Z",
-            "content_html": "",
-            "tags": []
-        },
-        {
             "id": "http://kyrita.top/English-grammar/",
             "url": "http://kyrita.top/English-grammar/",
             "title": "English grammar",
@@ -238,6 +230,18 @@
                 "wp",
                 "web",
                 "SSTI"
+            ]
+        },
+        {
+            "id": "http://kyrita.top/EZre/",
+            "url": "http://kyrita.top/EZre/",
+            "title": "RE-新年快乐",
+            "date_published": "2021-01-21T14:20:33.994Z",
+            "content_html": "<h1 id=\"新年快乐\"><a class=\"anchor\" href=\"#新年快乐\">#</a> 新年快乐</h1>\n<p><a id=\"more\"></a></p>\n<p><img data-src=\"https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png\" alt=\"\" /></p>\n<p>是叫我们输入一个 flag, 看看就知道没什么卵用；</p>\n<p>拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？</p>\n<h2 id=\"先脱壳\"><a class=\"anchor\" href=\"#先脱壳\">#</a> 先脱壳</h2>\n<p><img data-src=\"https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png\" alt=\"\" /></p>\n<p>将脱壳后的 exe 程序拖入 IDA 中；<br />\n 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；<br />\nshift+F12 看一下</p>\n<p><img data-src=\"https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png\" alt=\"\" /></p>\n<p>选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；</p>\n<p><img data-src=\"https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png\" alt=\"\" /></p>\n<p>且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=<span class=\"spoiler bulr\" title=\"快走开(╯▔皿▔)╯\">flag{HappyNewYear!}</span></p>\n",
+            "tags": [
+                "wp",
+                "Re",
+                "逆向先脱壳"
             ]
         }
     ]

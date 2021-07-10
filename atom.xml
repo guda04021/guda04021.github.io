@@ -24,13 +24,6 @@
         <updated>2021-07-10T06:45:42.826Z</updated>
     </entry>
     <entry>
-        <id>http://kyrita.top/O-Captain-my-captain/</id>
-        <title>O Captain my captain</title>
-        <link rel="alternate" href="http://kyrita.top/O-Captain-my-captain/"/>
-        <content type="html"></content>
-        <updated>2021-06-10T13:40:46.000Z</updated>
-    </entry>
-    <entry>
         <id>http://kyrita.top/English-grammar/</id>
         <title>English grammar</title>
         <link rel="alternate" href="http://kyrita.top/English-grammar/"/>
@@ -754,5 +747,29 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
         <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
         <category term="SSTI" scheme="http://kyrita.top/tags/SSTI/" />
         <updated>2021-01-22T02:22:19.668Z</updated>
+    </entry>
+    <entry>
+        <id>http://kyrita.top/EZre/</id>
+        <title>RE-新年快乐</title>
+        <link rel="alternate" href="http://kyrita.top/EZre/"/>
+        <content type="html">&lt;h1 id=&#34;新年快乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#新年快乐&#34;&gt;#&lt;/a&gt; 新年快乐&lt;/h1&gt;
+&lt;p&gt;&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;是叫我们输入一个 flag, 看看就知道没什么卵用；&lt;/p&gt;
+&lt;p&gt;拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？&lt;/p&gt;
+&lt;h2 id=&#34;先脱壳&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#先脱壳&#34;&gt;#&lt;/a&gt; 先脱壳&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;将脱壳后的 exe 程序拖入 IDA 中；&lt;br /&gt;
+ 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；&lt;br /&gt;
+shift+F12 看一下&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=&lt;span class=&#34;spoiler bulr&#34; title=&#34;快走开(╯▔皿▔)╯&#34;&gt;flag{HappyNewYear!}&lt;/span&gt;&lt;/p&gt;
+</content>
+        <category term="wp" scheme="http://kyrita.top/categories/wp/" />
+        <category term="Re" scheme="http://kyrita.top/categories/wp/Re/" />
+        <category term="逆向先脱壳" scheme="http://kyrita.top/tags/%E9%80%86%E5%90%91%E5%85%88%E8%84%B1%E5%A3%B3/" />
+        <updated>2021-01-21T14:20:33.994Z</updated>
     </entry>
 </feed>
