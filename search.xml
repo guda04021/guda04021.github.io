@@ -807,7 +807,7 @@ let's do it<br />
     <url>/ret2text/</url>
     <content><![CDATA[<p><a id="more"></a></p>
 <h2 id="检查保护机制"><a class="anchor" href="#检查保护机制">#</a> 检查保护机制</h2>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>checksec ret2text</pre></td></tr></table></figure><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>Arch:    i386-32-little //文件为32位程序</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>RELRO:    Partial RELRO</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>Stack:    No canary found    //未开启canary保护</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>NX:      NX enabled    //开启了栈不可执行保护</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>PIE:      No PIE (0x8048000)    //未开启地址无关可执行</pre></td></tr></table></figure><p><img data-src="pic/ret2text/22508867-848911d41f68e4a3.png" alt="" /></p>
+<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>checksec ret2text</pre></td></tr></table></figure><figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre>Arch:    i386-32-little //文件为32位程序</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>RELRO:    Partial RELRO</pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>Stack:    No canary found    //未开启canary保护</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>NX:      NX enabled    //开启了栈不可执行保护</pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>PIE:      No PIE (0x8048000)    //未开启地址无关可执行</pre></td></tr></table></figure><p>pic/ret2text/22508867-848911d41f68e4a3.png</p>
 <h3 id="canary栈保护"><a class="anchor" href="#canary栈保护">#</a> canary（栈保护)</h3>
 <p>当启用栈保护后，函数开始执行的时候会先往栈底插入 cookie 信息，当函数真正返回的时候会验证 cookie 信息是否合法 (栈帧销毁前测试该值是否被改变);<br />
  如果不合法就停止程序运行 (栈溢出发生)。<br />
@@ -820,7 +820,7 @@ let's do it<br />
 <p>ASLR（地址随机化）是一种针对缓冲区溢出的安全保护技术，通过对堆、栈、共享库映射等线性区布局的随机化，通过增加攻击者预测目的地址的难度，防止攻击者直接定位攻击代码位置，达到阻止溢出攻击的目的。</p>
 <h2 id="0x2"><a class="anchor" href="#0x2">#</a> 0x2</h2>
 <p>本题是 32 位程序，对应的是 32 的 IDA。加载出来的是汇编语言，然后就要去看它的 main 函数按 F5 反汇编</p>
-<p><img data-src="pic/ret2text/22508867-2c22be6edd039812.png" alt="" title="这里存在栈溢出漏洞" /></p>
+<p>pic/ret2text/22508867-2c22be6edd039812.png &quot;这里存在栈溢出漏洞&quot;</p>
 <h3 id="栈溢出漏洞"><a class="anchor" href="#栈溢出漏洞">#</a> 栈溢出漏洞</h3>
 <p>简单讲，栈溢出就是向栈中某个变量中写入的字节数超过了这个变量本身所申请的字节数，造成溢出。</p>
 <p><mark>发生栈溢出的条件</mark> 程序必须向栈上写入数据。写入的数据大小没有被良好地控制</p>
